@@ -10,9 +10,12 @@ You can easily add the figure to the database and update them later using CLI (c
 
 ## Installation
 
-Package is being developed ...
+Install the development version from GitHub:
 
-TBD
+```r
+# install.packages("remotes")
+remotes::install_github("wenjie1991/ggfigdone")
+```
 
 ## Demo
 
