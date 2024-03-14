@@ -1,0 +1,25 @@
+Package: ggfigdone
+Title: Manage ggplot figures using ggfigdone
+Version: 0.0.0.9000
+Authors@R: 
+    person("Wenjie", "SUN", , "sunwjie@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-3100-2346"))
+Description: When you prepare a presentation or a report, you often need to manage a large number of ggplot figures. You need to change the figure size, modify the title, label, themes, etc. It is inconvinient to go back to the original code to make these changes. This package provides a simple way to manage ggplot figures. You can easily add the figure to the database and update them later using CLI (command line interface) or GUI (graphical user interface).
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.0.0)
+Imports:
+    ggplot2,
+    httpuv,
+    httr,
+    readr,
+    jsonlite,
+    uuid,
+    data.table,
+    sysfonts
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Suggests: testthat (>= 3.0.0), knitr, rmarkdown, R.utils
+BugReports: http://github.com/wenjie1991/ggfigdone
+VignetteBuilder: knitr
+

@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <div id="mask"></div>
+    <h1>ggfigdone [Making ggplot figure done quickly]</h1>
+
+    <div id="img_grid_container"></div>
+
+    <div id="img_edit_container">
+      <button class="btn_delete" onclick="deleteFigure()">Delete</button>
+      <button class="btn_close"">X</button>
+      <div id="img_canvas"></div>
+
+      <div id="edit_tools">
+
+        <div> <h2 id="et_figure_name"></h2>
+          <p>ID: <span id="et_figure_id"></span></p>
+          <p>Create date: <span id="et_create_date"></span></p>
+          <p>Update date: <span id="et_update_date"></span></p>
+        </div>
+
+        <div class="et_options_h3"> <h3>Canvas Size</h3>
+          <p>
+            Units:
+            <select id="fig_size_units">
+              <option value="px">px</option>
+              <option value="in">in</option>
+              <option value="cm">cm</option>
+              <option value="mm">mm</option>
+            </select>
+          </p>
+          <p>Width:  <input type="number" id="width" value="400" /></p>
+          <p>Height: <input type="number" id="height" value="400" /></p>
+        </div>
+
+        <br />
+
+        <div> <h3>Update the figure</h3>
+
+          <div class="et_options_h4"> <h4>Quick code preparation</h4>
+            <p>Title: <input type="text" id="et_figure_title" /></p>
+            <p>X lab: <input type="text" id="et_figure_xlab" /></p>
+            <p>Y lab: <input type="text" id="et_figure_ylab" /></p>
+            <p>Font family: 
+              <select id='et_figure_font_family'>
+                <option value="">No selected</option>
+              </select>
+            </p>
+            <button id="btn_add_to_code">Add to code input box</button>
+          </div>
+
+          <div class="et_options_h4"> <h4>ggplot2 code input box</h3>
+          <textarea
+            id="code"
+            rows="5"
+            placeholder='Input the ggplot code here.&#10;Example: theme_classic() + xlab("I am xlab")'
+          ></textarea>
+          </div>
+        </div>
+
+        <button id="change">Apply Changes</button>
+
+        <div id="error_window">
+          <p id="error_message"></p>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"
+></script>
+  <script src="./js/main.js"></script>
+</html>

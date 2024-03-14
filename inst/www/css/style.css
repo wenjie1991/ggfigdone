@@ -1,0 +1,211 @@
+* {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+p {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+h1 {
+    font-family: 'JetBrains Mono', monospace;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'JetBrains Mono', monospace;
+    text-align: center;
+}
+
+h3 {
+    margin: 20px 0 0 0;
+    font-family: 'JetBrains Mono', monospace;
+    text-align: left;
+}
+
+h4 {
+    margin: 0 0 0 0;
+    font-family: 'JetBrains Mono', monospace;
+    text-align: left;
+}
+
+#img_grid_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+    justify-items: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.grid_figure {
+    width: 190px;
+    height: 210px;
+    object-fit: contain;
+    resize: none;
+    overflow: hidden;
+    line-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+}
+
+/* Add the title below the image */
+.grid_figure p {
+    margin: 0;
+    padding: 10px;
+    text-align: left;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.grid_figure:hover {
+    border-color: darkred; /* Change border color on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+    transform: scale(1.05); /* Slightly increase size */
+}
+
+
+.grid_figure img {
+    width: 90%;
+    height: 80%;
+    object-fit: contain;
+    object-position: center;
+    cursor: pointer;
+    border: 2px solid black; /* Initial border color */
+}
+
+.et_options_h4 {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* let img_edit_container is the center of the screen */
+#img_edit_container {
+    position: fixed;
+    align-items: center;
+    height: 80%;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: none;
+    background-color: white;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+
+}
+
+.btn_close {
+  position: absolute; /* Position the close button absolutely within the .container */
+  top: 0;
+  right: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none; /* Style the button as desired */
+  background-color: black;
+  color: white;
+}
+
+.btn_close:hover {
+  background-color: grey; /* Background color on hover */
+  color: yellow; /* Text color on hover */
+}
+
+.btn_delete {
+    position: absolute; /* Position the close button absolutely within the .container */
+    bottom: 0;
+    right: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none; /* Style the button as desired */
+    background-color: red;
+    color: white;
+}
+
+.btn_delete:hover {
+    background-color: darkred; /* Background color on hover */
+    color: yellow; /* Text color on hover */
+}
+
+#edit_tools {
+    height: 100%;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex: 1;
+    flex-direction: column;
+    border: 10px solid lightskyblue;
+    padding: 0 20px;
+    gap: 0px;
+}
+
+#edit_tools textarea {
+    width: 100%;
+}
+
+#edit_tools p {
+    margin: 5px 0;
+}
+
+button {
+    align-self: flex-end;
+}
+
+#edit_tools button {
+    /* align self to the Right */
+    align-self: flex-end;
+    margin: 5px 20px;
+}
+
+#img_canvas {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: 10px solid black;
+    resize: none;
+    overflow: hidden;
+    line-height: 0;
+    /* cursor: pointer; */
+    flex: 2;
+
+    display: flex; /* Helps center the image if using object-fit: contain; */
+    justify-content: center;
+    align-items: center;
+    /* height: 400px; */
+    /* width: 400px; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* margin: 10px; */
+}
+
+
+
+#img_canvas img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+    cursor: default;
+}
+
+#mask {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    display: none;
+}
+
+#error_message {
+    color: red;
+    font-weight: bold;
+}
