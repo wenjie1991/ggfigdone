@@ -1,8 +1,9 @@
-library(ggplot2)
-library(httpuv)
-library(httr)
-library(jsonlite)
+# library(ggplot2)
+# library(httpuv)
+# library(httr)
+# library(jsonlite)
 
+#' @export
 fd_init = function(dir) {
     if (!dir.exists(dir)) {
         dir.create(dir)
@@ -19,6 +20,7 @@ fd_init = function(dir) {
 }
 
 
+#' @export
 fd_load = function(dir) {
     if (!dir.exists(dir)) {
         stop("Directory does not exist")
@@ -44,6 +46,7 @@ fd_load = function(dir) {
     obj
 }
 
+#' @export
 fd_plot = function(fdObj, id) {
     file_path = file.path(fdObj$dir, "figures", paste0(id, ".png"))
     canvas_options = fdObj$env[[id]]$canvas_options
@@ -55,6 +58,7 @@ fd_plot = function(fdObj, id) {
            dpi = canvas_options$dpi)
 }
 
+#' @export
 fd_add = function(g, name, fdObj,
     width = 5,
     height = 5,
@@ -90,6 +94,7 @@ fd_add = function(g, name, fdObj,
     fd_plot(fdObj, id)
 }
 
+#' @export
 format.fdObj = function(fdObj) {
     lapply(names(fdObj$env), function(id) {
 
@@ -108,6 +113,7 @@ format.fdObj = function(fdObj) {
     }) |> data.table::rbindlist()
 }
 
+#' @export
 fd_ls = function(fdObj) {
     lapply(names(fdObj$env), function(id) {
 
@@ -129,6 +135,7 @@ fd_ls = function(fdObj) {
     })
 }
 
+#' @export
 fd_rm = function(id, fdObj) {
     if (id %in% names(fdObj$env)) {
         message(paste0("Figure ", fdObj$env[[id]]$name,  " is removed."))
@@ -137,6 +144,7 @@ fd_rm = function(id, fdObj) {
     }
 }
 
+#' @export
 fd_update_fig = function(id, expr, fdObj) {
     ## TODO: keep the history of the changes
     if (id %in% names(fdObj$env)) {
@@ -161,12 +169,14 @@ fd_update_fig = function(id, expr, fdObj) {
     }
 }
 
+#' @export
 fd_update_ls = function(id, fdObj) {
     if (id %in% names(fdObj$env)) {
         fdObj$env[[id]]$update_history
     }
 }
 
+#' @export
 fd_update_rm = function(id, index, fdObj) {
     if (id %in% names(fdObj$env)) {
         g = fdObj$env[[id]]$g_origin
@@ -181,6 +191,7 @@ fd_update_rm = function(id, index, fdObj) {
     }
 }
 
+#' @export
 fd_canvas = function(
     id, 
     fdObj,
@@ -197,6 +208,7 @@ fd_canvas = function(
     }
 }
 
+#' @export
 fd_save = function(fdObj) {
     message("Saving the ggfigdone data to the disk...")
     readr::write_rds(fdObj$env, file.path(fdObj$dir, "env.rds"))
@@ -206,7 +218,7 @@ fd_save = function(fdObj) {
 #  Server  #
 ############
 
-library(sysfonts)
+# library(sysfonts)
 font_list = sort(unique(sysfonts::font_files()$family))
 
 response_fg_font_ls = function() {
@@ -275,7 +287,8 @@ response_fg_rm = function(fo, req) {
     )
 }
 
-fd_server = function(dir) {
+#' @export
+fd_server = function(dir, port = 8080) {
     fo = fd_load(dir)
 
     on.exit(fd_save(fo))
@@ -321,8 +334,10 @@ fd_server = function(dir) {
     )
 
     # start the server
-    message("Start service: http://localhost:8080/index.html")
-    runServer(host = "0.0.0.0", port = 8080, app = app)
+    message_text = paste0("Start service: http://localhost:", port, "/index.html")
+    message(message_text)
+    ## TODO: change the port info in javascript
+    runServer(host = "0.0.0.0", port = port, app = app)
 }
 
 
