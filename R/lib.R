@@ -1,7 +1,33 @@
-# library(ggplot2)
-# library(httpuv)
-# library(httr)
-# library(jsonlite)
+fd_update = function(fdObj_loc) {
+    fdObj_global = as.character(substitute(fdObj, env = parent.frame(n = 1)))
+    fdObj_parent = as.character(substitute(fdObj))
+    print(fdObj_global)
+    lock = lock(file.path(fdObj_loc$dir, "/db.lock"), exclusive = FALSE)
+    if (!dir.exists(fdObj_loc$dir)) {
+        stop("Directory does not exist")
+    }
+    env = readr::read_rds(file.path(fdObj_loc$dir, "env.rds"))
+    fdObj_loc$env = env
+    unlock(lock)
+    assign(fdObj_global, fdObj_loc, envir = parent.frame(n = 2))
+    assign(fdObj_parent, fdObj_loc, envir = parent.frame(n = 1))
+}
+
+fd_plot = function(fdObj, id) {
+    file_path = file.path(fdObj$dir, "figures", paste0(id, ".png"))
+    canvas_options = fdObj$env[[id]]$canvas_options
+    g = fdObj$env[[id]]$g_updated
+    lock = lock(file.path(fdObj$dir, "/db.lock"), exclusive = TRUE)
+    ggsave(file_path, plot = g, 
+           width = canvas_options$width, 
+           height = canvas_options$height, 
+           units = canvas_options$units, 
+           dpi = canvas_options$dpi)
+    unlock(lock)
+    fd_save(fdObj)
+}
+
+
 
 #' @export
 fd_init = function(dir) {
@@ -11,6 +37,7 @@ fd_init = function(dir) {
     }
 
     ## TODO: Configure the Rprofile
+
     # write("", "Fdprofile.R", append = F)
 
     env = new.env()
@@ -22,11 +49,13 @@ fd_init = function(dir) {
 
 #' @export
 fd_load = function(dir) {
+    lock = lock(file.path(dir, "/db.lock"), exclusive = FALSE)
     if (!dir.exists(dir)) {
         stop("Directory does not exist")
     }
 
     env = readr::read_rds(file.path(dir, "env.rds"))
+    unlock(lock)
 
     obj = list(
         env = env,
@@ -47,18 +76,6 @@ fd_load = function(dir) {
 }
 
 #' @export
-fd_plot = function(fdObj, id) {
-    file_path = file.path(fdObj$dir, "figures", paste0(id, ".png"))
-    canvas_options = fdObj$env[[id]]$canvas_options
-    g = fdObj$env[[id]]$g_updated
-    ggsave(file_path, plot = g, 
-           width = canvas_options$width, 
-           height = canvas_options$height, 
-           units = canvas_options$units, 
-           dpi = canvas_options$dpi)
-}
-
-#' @export
 fd_add = function(g, name, fdObj,
     width = 5,
     height = 5,
@@ -67,6 +84,7 @@ fd_add = function(g, name, fdObj,
     overwrite = F,
     id = uuid::UUIDgenerate()) 
 {
+    fd_update(fdObj)
     if (id %in% names(fdObj$env) && !overwrite) {
         stop("Figure already exists")
     }
@@ -96,6 +114,7 @@ fd_add = function(g, name, fdObj,
 
 #' @export
 format.fdObj = function(fdObj) {
+    fd_update(fdObj)
     lapply(names(fdObj$env), function(id) {
 
 
@@ -108,13 +127,14 @@ format.fdObj = function(fdObj) {
             height = fdObj$env[[id]]$canvas_options$height,
             units = fdObj$env[[id]]$canvas_options$units,
             dpi = fdObj$env[[id]]$canvas_options$dpi,
-            file_name = file.path(paste0(id, ".png")),
+            file_name = file.path(paste0(id, ".png"))
         )
     }) |> data.table::rbindlist()
 }
 
 #' @export
 fd_ls = function(fdObj) {
+    fd_update(fdObj)
     lapply(names(fdObj$env), function(id) {
 
         plot_labels = fdObj$env[[id]]$g_updated$labels
@@ -137,16 +157,23 @@ fd_ls = function(fdObj) {
 
 #' @export
 fd_rm = function(id, fdObj) {
+    fd_update(fdObj)
     if (id %in% names(fdObj$env)) {
+        lock = lock(file.path(fdObj$dir, "/db.lock"), exclusive = TRUE)
         message(paste0("Figure ", fdObj$env[[id]]$name,  " is removed."))
         file.remove(file.path(fdObj$dir, "figures", paste0(id, ".png")))
         rm(list = id, envir = fdObj$env)
+        unlock(lock)
+        fd_save(fdObj)
+    } else {
+        message("Figure does not exist")
     }
 }
 
 #' @export
 fd_update_fig = function(id, expr, fdObj) {
     ## TODO: keep the history of the changes
+    fd_update(fdObj)
     if (id %in% names(fdObj$env)) {
         g = fdObj$env[[id]]$g_origin
         update_history = fdObj$env[[id]]$update_history
@@ -171,6 +198,7 @@ fd_update_fig = function(id, expr, fdObj) {
 
 #' @export
 fd_update_ls = function(id, fdObj) {
+    fd_update(fdObj)
     if (id %in% names(fdObj$env)) {
         fdObj$env[[id]]$update_history
     }
@@ -178,6 +206,7 @@ fd_update_ls = function(id, fdObj) {
 
 #' @export
 fd_update_rm = function(id, index, fdObj) {
+    fd_update(fdObj)
     if (id %in% names(fdObj$env)) {
         g = fdObj$env[[id]]$g_origin
         update_history = fdObj$env[[id]]$update_history
@@ -199,6 +228,7 @@ fd_canvas = function(
     height = fdObj$env[[id]]$canvas_options$height,
     units = fdObj$env[[id]]$canvas_options$units
 ) {
+    fd_update(fdObj)
     if (id %in% names(fdObj$env)) {
         fdObj$env[[id]]$canvas_options$width = width
         fdObj$env[[id]]$canvas_options$height = height
@@ -211,133 +241,9 @@ fd_canvas = function(
 #' @export
 fd_save = function(fdObj) {
     message("Saving the ggfigdone data to the disk...")
+    lock = lock(file.path(fdObj$dir, "/db.lock"), exclusive = TRUE)
     readr::write_rds(fdObj$env, file.path(fdObj$dir, "env.rds"))
-}
-
-############
-#  Server  #
-############
-
-# library(sysfonts)
-font_list = sort(unique(sysfonts::font_files()$family))
-
-response_fg_font_ls = function() {
-    list(
-        status = 200L,
-        headers = list('Content-Type' = "application/json"),
-        body = toJSON(font_list, auto_unbox = F)
-    )
-}
-
-
-response_fg_ls = function(fo) {
-    # print("response_fg_ls")
-    list(
-        status = 200L,
-        headers = list('Content-Type' = "application/json"),
-        body = toJSON(fd_ls(fo), auto_unbox = F)
-    )
-}
-
-response_fg_canvas = function(fo, req) {
-    # print("response_fg_canvas")
-    parsed_qeury = parse_url(req$QUERY_STRING)$query
-    figure_name = parsed_qeury$id
-    width = as.numeric(parsed_qeury$width)
-    height = as.numeric(parsed_qeury$height)
-    units = parsed_qeury$units
-    fd_canvas(figure_name, fo, width, height, units)
-    list(
-        status = 200L,
-        headers = list('Content-Type' = "text/plain"),
-        body = "OK"
-    )
-}
-
-response_fg_update_fig = function(fo, req) {
-    # print("response_fg_update_fig")
-    parsed_qeury = parse_url(req$QUERY_STRING)$query
-    figure_name = parsed_qeury$id
-    expr = parsed_qeury$gg_code
-    res = fd_update_fig(figure_name, expr, fo)
-    if (inherits(res, "try-error")) {
-        list(
-            status = 400L,
-            headers = list('Content-Type' = "text/plain"),
-            body = "Error: The ggplot code is not valide"
-        )
-    } else {
-        list(
-            status = 200L,
-            headers = list('Content-Type' = "text/plain"),
-            body = "OK"
-        )
-    }
-}
-
-response_fg_rm = function(fo, req) {
-    # print("response_fg_rm")
-    parsed_qeury = parse_url(req$QUERY_STRING)$query
-    figure_id = parsed_qeury$id
-    fd_rm(figure_id, fo)
-    list(
-        status = 200L,
-        headers = list('Content-Type' = "text/plain"),
-        body = "OK"
-    )
-}
-
-#' @export
-fd_server = function(dir, port = 8080) {
-    fo = fd_load(dir)
-
-    on.exit(fd_save(fo))
-
-    www_dir = system.file("www", package = "ggfigdone")
-
-    # create a server
-    # which can change the file size, and the figure will be updated
-    app = list(
-        call = function(req) {
-            ## req:
-            # PATH_INFO: the path of the request
-            # QUERY_STRING: the query string of the request
-
-            path = req$PATH_INFO
-            # print(path)
-            if (path == "/fd_ls") {
-                response_fg_ls(fo)
-            } else if (path == "/fd_rm") {
-                response_fg_rm(fo, req)
-            } else if (path == "/fd_update_fig") {
-                response_fg_update_fig(fo, req)
-            } else if (path == "/fd_update_ls") {
-            } else if (path == "/fd_update_rm") {
-            } else if (path == "/fd_font_ls") {
-                response_fg_font_ls()
-            } else if (path == "/fd_canvas") {
-                response_fg_canvas(fo, req)
-            } else {
-                list(
-                    status = 404L,
-                    headers = list('Content-Type' = "text/plain"),
-                    body = "Not Found"
-                )
-            }
-        },
-        staticPaths = list(
-            "/figure" = file.path(dir, "figures"),
-            "/css" = file.path(www_dir, "css"),
-            "/js" = file.path(www_dir, "js"),
-            "/index.html" = file.path(www_dir, "index.html")
-        )
-    )
-
-    # start the server
-    message_text = paste0("Start service: http://localhost:", port, "/index.html")
-    message(message_text)
-    ## TODO: change the port info in javascript
-    runServer(host = "0.0.0.0", port = port, app = app)
+    unlock(lock)
 }
 
 

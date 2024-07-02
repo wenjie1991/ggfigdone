@@ -8,4 +8,5 @@
 #' @import httpuv
 #' @import httr
 #' @importFrom jsonlite fromJSON toJSON
+#' @importFrom filelock lock unlock
 NULL
