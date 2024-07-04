@@ -153,13 +153,17 @@ h4 {
 
 button {
     align-self: flex-end;
-}
-
-#edit_tools button {
-    /* align self to the Right */
-    align-self: flex-end;
     margin: 5px 0px;
 }
+
+.btn_delete {
+    align-self: center;
+}
+
+#btn_add_to_code {
+    align-self: center;
+}
+
 
 #img_canvas {
     width: 100%;

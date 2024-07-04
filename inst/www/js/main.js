@@ -1,15 +1,18 @@
 // Jquery is enabled in the html file
 
+
 // Delete the figure
 function deleteFigure() {
     // get the parent id
     let figure_id = $("#et_figure_id").text();
+    let baseUrl = window.location.origin;
+
     console.log(figure_id);
 
     // Use dialog to confirm the delete action
     if (confirm("Are you sure you want to delete the figure?")) {
         // if the user click "OK", delete the figure
-        let url = "http://localhost:8080/fd_rm?id=" + figure_id;
+        let url = baseUrl + "/fd_rm?id=" + figure_id;
         $.ajax({
             url: url,
             type: "GET",
@@ -34,7 +37,8 @@ function deleteFigure() {
 // Get font list from server
 function getFontList() {
     let fontList;
-    let url = "http://localhost:8080/fd_font_ls";
+    let baseUrl = window.location.origin;
+    let url = baseUrl + "/fd_font_ls";
     $.ajax({
         url: url,
         type: "GET",
@@ -76,7 +80,8 @@ function checkChangeText(new_value, old_value) {
 // Get figure list and info from server
 function getFigureList() {
     let figureList;
-    let url = "http://localhost:8080/fd_ls";
+    let baseUrl = window.location.origin;
+    let url = baseUrl + "/fd_ls";
     $.ajax({
         url: url,
         type: "GET",
@@ -89,9 +94,10 @@ function getFigureList() {
 }
 
 function linkFigure(img, figure) {
+    let baseUrl = window.location.origin;
     img.attr(
         "src",
-        "http://localhost:8080/figure/" +
+        baseUrl + "/figure/" +
             figure.file_name +
             "?" +
             figure.updated_date,
@@ -205,9 +211,10 @@ function preparePlotLabsCode() {
 function updateFigure(figure_id, gg_code, figureList) {
 
     console.log(gg_code);
+    let baseUrl = window.location.origin;
 
     let url =
-        "http://localhost:8080/fd_update_fig" +
+        baseUrl + "/fd_update_fig" +
             "?id=" +
             figure_id +
             "&gg_code=" +
@@ -234,8 +241,9 @@ function updateFigure(figure_id, gg_code, figureList) {
 }
 
 function updataFigureSize(figure_id, height, width, units, figureList) {
+    let baseUrl = window.location.origin;
     let url =
-        "http://localhost:8080/fd_canvas" +
+        baseUrl + "/fd_canvas" +
             "?id =" +
             figure_id +
             "&height=" +
@@ -375,8 +383,8 @@ $("#btn_add_to_code").click(function () {
     }
 });
 
-// When the button with id "change" is clicked, change the figure size
-$("#change").click(function () {
+// Submit changes of canvas
+$("#btn_change_canvas").click(function () {
     // Delete the error message
     $("#error_window").css("display", "none");
 
@@ -384,13 +392,6 @@ $("#change").click(function () {
     let figure_id = $("#img_canvas img").attr("alt");
     // Get the figure from global_figureList
     let figure = getFigure(figure_id, global_figureList);
-
-    // If code textarea is empty, update the figure
-    let gg_code = $("#code").val();
-    
-    if (gg_code != "") {
-        global_figureList = updateFigure(figure_id, gg_code, global_figureList);
-    }
 
     // If the height and width are changed, update the figure
     let height = $("#height").val();
@@ -406,6 +407,24 @@ $("#change").click(function () {
         units,
         global_figureList,
     );
+});
+
+// When the button with id "change" is clicked, change the figure size
+$("#btn_change_figure").click(function () {
+    // Delete the error message
+    $("#error_window").css("display", "none");
+
+    // Get the figure id
+    let figure_id = $("#img_canvas img").attr("alt");
+    // Get the figure from global_figureList
+    let figure = getFigure(figure_id, global_figureList);
+
+    // If code textarea is empty, update the figure
+    let gg_code = $("#code").val();
+    
+    if (gg_code != "") {
+        global_figureList = updateFigure(figure_id, gg_code, global_figureList);
+    }
 });
 
 

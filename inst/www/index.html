@@ -30,6 +30,7 @@
           <p>Create date: <span id="et_create_date"></span></p>
           <p>Update date: <span id="et_update_date"></span></p>
         </div>
+        <button class="btn_delete" onclick="deleteFigure()">Delete</button>
 
         <div class="et_options_h3"> <h3>Canvas Size</h3>
           <p>
@@ -44,8 +45,7 @@
           <p>Width:  <input type="number" id="width" value="400" /></p>
           <p>Height: <input type="number" id="height" value="400" /></p>
         </div>
-
-        <br />
+        <button id="btn_change_canvas">Apply Changes</button>
 
         <div> <h3>Update the figure</h3>
 
@@ -58,7 +58,7 @@
                 <option value="">No selected</option>
               </select>
             </p>
-            <button id="btn_add_to_code">Add to code input box</button>
+            <button id="btn_add_to_code">Add to code input box <br> ↓ </button>
           </div>
 
           <div class="et_options_h4"> <h4>ggplot2 code input box</h3>
@@ -70,20 +70,15 @@
           </div>
         </div>
 
-        <button id="change">Apply Changes</button>
+        <button id="btn_change_figure">Apply Changes</button>
 
         <div id="error_window">
           <p id="error_message"></p>
         </div>
-        <button class="btn_delete" onclick="deleteFigure()">Delete</button>
       </div>
     </div>
   </body>
 
-  <script
-  src="https://code.jquery.com/jquery-3.7.1.min.js"
-  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-  crossorigin="anonymous"
-></script>
+  <script src="./js/jquery-3.7.1.min.js"></script>
   <script src="./js/main.js"></script>
 </html>
