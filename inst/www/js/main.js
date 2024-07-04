@@ -407,3 +407,12 @@ $("#change").click(function () {
         global_figureList,
     );
 });
+
+
+// Close Editor container by ESC key
+// Add an event listener to the document
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape" || event.keyCode === 27) {
+    closeEditContainer();
+  }
+});
