@@ -2,20 +2,8 @@
 % Please edit documentation in R/pkg_ggfigdone.R
 \docType{package}
 \name{ggfigdone}
-\alias{ggfigdone-package}
 \alias{ggfigdone}
 \title{ggfigdone}
 \description{
 ggfigdone: Manage ggplot figures using ggfigdone
-}
-\seealso{
-Useful links:
-\itemize{
-  \item Report bugs at \url{http://github.com/wenjie1991/ggfigdone}
-}
-
-}
-\author{
-\strong{Maintainer}: Wenjie SUN \email{sunwjie@gmail.com} (\href{https://orcid.org/0000-0002-3100-2346}{ORCID})
-
 }

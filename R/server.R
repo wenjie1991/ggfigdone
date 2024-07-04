@@ -72,8 +72,9 @@ fd_server = function(dir, port = 8080) {
     fo = fd_load(dir)
 
     # print(fd_ls(fo))
+    print(format(fo))
 
-    on.exit(fd_save(fo))
+    # on.exit(fd_save(fo))
 
     www_dir = system.file("www", package = "ggfigdone")
 
@@ -81,7 +82,8 @@ fd_server = function(dir, port = 8080) {
     # which can change the file size, and the figure will be updated
     app = list(
         call = function(req) {
-            print(fd_ls(fo))
+            # print(fd_ls(fo))
+            print(format(fo))
             ## req:
             # PATH_INFO: the path of the request
             # QUERY_STRING: the query string of the request
