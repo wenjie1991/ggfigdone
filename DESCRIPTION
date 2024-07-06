@@ -1,5 +1,5 @@
 Package: ggfigdone
-Title: Manage ggplot figures using ggfigdone
+Title: Manage & Modify ggplot figures using ggfigdone
 Version: 0.0.0.9001
 Authors@R: 
     person("Wenjie", "SUN", , "sunwjie@gmail.com", role = c("aut", "cre"),
