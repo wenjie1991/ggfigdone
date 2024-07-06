@@ -1,3 +1,4 @@
+## Update fdObj by reading the data from the disk
 fd_update = function(fdObj_loc) {
     fdObj_global = as.character(substitute(fdObj, env = parent.frame(n = 1)))
     fdObj_parent = as.character(substitute(fdObj))
@@ -13,6 +14,15 @@ fd_update = function(fdObj_loc) {
     assign(fdObj_parent, fdObj_loc, envir = parent.frame(n = 1))
 }
 
+## Save the ggfigdone data to the disk
+fd_save = function(fdObj) {
+    message("Saving the ggfigdone data to the disk...")
+    lock = lock(file.path(fdObj$dir, "/db.lock"), exclusive = TRUE)
+    readr::write_rds(fdObj$env, file.path(fdObj$dir, "env.rds"))
+    unlock(lock)
+}
+
+## Save the figure png example to the disk
 fd_plot = function(fdObj, id) {
     file_path = file.path(fdObj$dir, "figures", paste0(id, ".png"))
     canvas_options = fdObj$env[[id]]$canvas_options
@@ -28,17 +38,26 @@ fd_plot = function(fdObj, id) {
 }
 
 
-
+#' Initiates the ggfigdone database
+#' 
+#' This function creates a directory serves as a database for ggfigdone.
+#'
+#' @param dir A character string of the directory path
+#' @param recursive A logical value. If TRUE, the function creates the directory and its parent directories if they do not exist. If FALSE, the function creates the directory only if its parent directory exists.
+#' @return An object of class `fdObj`
+#' @examples
+#' ## create ggfigdone database in a temporary directory
+#' db_dir = tempdir()
+#' 
+#' ## Initate the ggfigdone database
+#' fd_init(db_dir)
+#'
 #' @export
-fd_init = function(dir) {
+fd_init = function(dir, recursive = TRUE) {
     if (!dir.exists(dir)) {
-        dir.create(dir)
+        dir.create(dir, recursive = recursive)
         dir.create(file.path(dir, "figures"))
     }
-
-    ## TODO: Configure the Rprofile
-
-    # write("", "Fdprofile.R", append = F)
 
     env = new.env()
     readr::write_rds(env, file.path(dir, "env.rds"))
@@ -46,7 +65,20 @@ fd_init = function(dir) {
     fd_load(dir)
 }
 
-
+#' Load the ggfigdone database
+#' 
+#' This function loads the ggfigdone database from the disk.
+#' 
+#' @param dir A character string of the directory path
+#' @return An object of class `fdObj`
+#' @examples
+#' ## create ggfigdone database in a temporary directory
+#' db_dir = tempdir()
+#' fd_init(db_dir)
+#'
+#' ## Load the ggfigdone database
+#' fd_load(db_dir)
+#'
 #' @export
 fd_load = function(dir) {
     lock = lock(file.path(dir, "/db.lock"), exclusive = FALSE)
@@ -75,6 +107,38 @@ fd_load = function(dir) {
     obj
 }
 
+#' Add a ggplot object to the ggfigdone database
+#'
+#' This function adds a ggplot object to the ggfigdone database, which also can be used to update the figure given the figure id.
+#' 
+#' @param g A ggplot object
+#' @param name A character string of the figure name
+#' @param fdObj An object of class `fdObj`
+#' @param width A numeric value of the width of the canvas
+#' @param height A numeric value of the height of the canvas
+#' @param units A character string of the units of the canvas
+#' @param dpi A numeric value of the dpi of the canvas
+#' @param overwrite A logical value. If TRUE, the function overwrites the figure if it already exists. If FALSE, the function stops with an error message.
+#' @param id A character string of the figure id. If not provided, the function generates a random id. Otherwise, you can give an existing id to update the corresponding figure.
+#' @return An object of class `fdObj`
+#' @examples
+#'
+#' ## Initial ggfigdone database using `fd_init`
+#' db_dir = tempdir()
+#' fo = fd_init(db_dir)
+#' 
+#' ## Draw a ggplot figure
+#' g = ggplot(mtcars, aes(x=wt, y=mpg)) + geom_point()
+#' 
+#' ## Add the figure to the database
+#' fd_add(g = g, name  = "fig1", fo)
+#' 
+#' ## Add the same figure with a different name
+#' fd_add(g = g, name  = "fig2", fo)
+#' 
+#' ## Show the updated ggfigdone database
+#' print(fo)
+#'
 #' @export
 fd_add = function(g, name, fdObj,
     width = 5,
@@ -101,9 +165,6 @@ fd_add = function(g, name, fdObj,
             height = height,
             units = units,
             dpi = dpi
-        ),
-        theme_options = list(
-            font_family = ""
         )
     )
     class(figObj) = "figObj"
@@ -133,6 +194,28 @@ format.fdObj = function(fdObj) {
 }
 
 #' @export
+print.fdObj = function(fdObj) {
+    format(fdObj)
+}
+
+#' List the figures
+#' 
+#' This function returns figures with their parameters.
+#' The parameters include:
+#' - id: the figure id
+#' - name: the figure name
+#' - created_date: the created date
+#' - updated_date: the updated date
+#' - width: the width of the canvas
+#' - height: the height of the canvas
+#' - units: the units of the canvas
+#' - dpi: the dpi of the canvas
+#' - file_name: the file name
+#' - plot_labels: the plot labels
+#'
+#' @param fdObj An object of class `fdObj`
+#' @return A list of the figures with their parameters
+#' @export
 fd_ls = function(fdObj) {
     fd_update(fdObj)
     lapply(names(fdObj$env), function(id) {
@@ -149,12 +232,17 @@ fd_ls = function(fdObj) {
             units = fdObj$env[[id]]$canvas_options$units,
             dpi = fdObj$env[[id]]$canvas_options$dpi,
             file_name = file.path(paste0(id, ".png")),
-            plot_labels = plot_labels,
-            theme_options = fdObj$env[[id]]$theme_options
+            plot_labels = plot_labels
         )
     })
 }
 
+#' Remove a figure
+#' 
+#' This function removes a figure from the ggfigdone database.
+#'
+#' @param id A character string of the figure id
+#' @param fdObj An object of class `fdObj`
 #' @export
 fd_rm = function(id, fdObj) {
     fd_update(fdObj)
@@ -165,14 +253,32 @@ fd_rm = function(id, fdObj) {
         rm(list = id, envir = fdObj$env)
         unlock(lock)
         fd_save(fdObj)
+        message("Figure is removed.")
     } else {
         message("Figure does not exist")
     }
 }
 
+## TODO: Add function to recover the original figure
+fd_back_to_origin = function(id, fdObj) {
+    fd_update(fdObj)
+    if (id %in% names(fdObj$env)) {
+        fdObj$env[[id]]$update_histroy = c()
+        fdObj$env[[id]]$updated_date = Sys.time()
+        fd_plot(fdObj, id)
+    }
+}
+
+#' Update a figure using ggplot expression
+#'
+#' This function updates a figure using a ggplot expression.
+#'
+#' @param id A character string of the figure id
+#' @param expr A character string of the ggplot expression
+#' @param fdObj An object of class `fdObj`
+#' @return A character string of the status
 #' @export
 fd_update_fig = function(id, expr, fdObj) {
-    ## TODO: keep the history of the changes
     fd_update(fdObj)
     if (id %in% names(fdObj$env)) {
         g = fdObj$env[[id]]$g_origin
@@ -196,7 +302,7 @@ fd_update_fig = function(id, expr, fdObj) {
     }
 }
 
-#' @export
+## TODO: Browse the editing history of a figure
 fd_update_ls = function(id, fdObj) {
     fd_update(fdObj)
     if (id %in% names(fdObj$env)) {
@@ -204,7 +310,7 @@ fd_update_ls = function(id, fdObj) {
     }
 }
 
-#' @export
+## TODO: Specifically remove an change of a figure
 fd_update_rm = function(id, index, fdObj) {
     fd_update(fdObj)
     if (id %in% names(fdObj$env)) {
@@ -220,6 +326,15 @@ fd_update_rm = function(id, index, fdObj) {
     }
 }
 
+#' Update the figure canvas size
+#' 
+#' This function updates the figure canvas size.
+#' 
+#' @param id A character string of the figure id
+#' @param fdObj An object of class `fdObj`
+#' @param width A numeric value of the width of the canvas
+#' @param height A numeric value of the height of the canvas
+#' @param units A character string of the units of the canvas, e.g., "cm", "in", "mm", "px"
 #' @export
 fd_canvas = function(
     id, 
@@ -236,14 +351,6 @@ fd_canvas = function(
         fdObj$env[[id]]$updated_date = Sys.time()
         fd_plot(fdObj, id)
     }
-}
-
-#' @export
-fd_save = function(fdObj) {
-    message("Saving the ggfigdone data to the disk...")
-    lock = lock(file.path(fdObj$dir, "/db.lock"), exclusive = TRUE)
-    readr::write_rds(fdObj$env, file.path(fdObj$dir, "env.rds"))
-    unlock(lock)
 }
 
 

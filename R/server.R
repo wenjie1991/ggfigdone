@@ -26,6 +26,7 @@ response_fg_canvas = function(fo, req) {
     width = as.numeric(parsed_qeury$width)
     height = as.numeric(parsed_qeury$height)
     units = parsed_qeury$units
+    print(figure_name)
     fd_canvas(figure_name, fo, width, height, units)
     list(
         status = 200L,
@@ -67,6 +68,10 @@ response_fg_rm = function(fo, req) {
     )
 }
 
+#' Start a server for ggfigdone
+#' 
+#' @param dir The directory to save the figures
+#' @param port The port of the server, default is 8080
 #' @export
 fd_server = function(dir, port = 8080) {
     fo = fd_load(dir)
