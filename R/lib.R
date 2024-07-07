@@ -46,6 +46,7 @@ fd_plot = function(fdObj, id) {
 #' @param recursive A logical value. If TRUE, the function creates the directory and its parent directories if they do not exist. If FALSE, the function creates the directory only if its parent directory exists.
 #' @return An object of class `fdObj`
 #' @examples
+#' library(ggplot2)
 #' ## create ggfigdone database in a temporary directory
 #' db_dir = tempdir()
 #' 
@@ -72,6 +73,7 @@ fd_init = function(dir, recursive = TRUE) {
 #' @param dir A character string of the directory path
 #' @return An object of class `fdObj`
 #' @examples
+#' library(ggplot2)
 #' ## create ggfigdone database in a temporary directory
 #' db_dir = tempdir()
 #' fd_init(db_dir)
@@ -122,6 +124,7 @@ fd_load = function(dir) {
 #' @param id A character string of the figure id. If not provided, the function generates a random id. Otherwise, you can give an existing id to update the corresponding figure.
 #' @return An object of class `fdObj`
 #' @examples
+#' library(ggplot2)
 #'
 #' ## Initial ggfigdone database using `fd_init`
 #' db_dir = tempdir()

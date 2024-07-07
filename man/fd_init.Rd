@@ -18,6 +18,7 @@ An object of class \code{fdObj}
 This function creates a directory serves as a database for ggfigdone.
 }
 \examples{
+library(ggplot2)
 ## create ggfigdone database in a temporary directory
 db_dir = tempdir()
 

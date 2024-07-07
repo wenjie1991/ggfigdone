@@ -16,6 +16,7 @@ An object of class \code{fdObj}
 This function loads the ggfigdone database from the disk.
 }
 \examples{
+library(ggplot2)
 ## create ggfigdone database in a temporary directory
 db_dir = tempdir()
 fd_init(db_dir)

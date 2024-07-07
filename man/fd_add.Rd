@@ -42,6 +42,7 @@ An object of class \code{fdObj}
 This function adds a ggplot object to the ggfigdone database, which also can be used to update the figure given the figure id.
 }
 \examples{
+library(ggplot2)
 
 ## Initial ggfigdone database using `fd_init`
 db_dir = tempdir()
