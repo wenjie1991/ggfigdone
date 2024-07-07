@@ -1,4 +1,3 @@
-# library(sysfonts)
 font_list = sort(unique(sysfonts::font_files()$family))
 
 response_fg_font_ls = function() {
