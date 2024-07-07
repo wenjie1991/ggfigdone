@@ -57,6 +57,8 @@ fd_plot = function(fdObj, id) {
 fd_init = function(dir, recursive = TRUE) {
     if (!dir.exists(dir)) {
         dir.create(dir, recursive = recursive)
+    }
+    if (!dir.exists(file.path(dir, "figures"))) {
         dir.create(file.path(dir, "figures"))
     }
 
