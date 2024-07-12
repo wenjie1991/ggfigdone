@@ -40,9 +40,7 @@ fd_add(g = g, name  = "fig1", fo, overwrite = T)
 ## Add the same figure with a different name
 fd_add(g = g, name  = "fig2", fo, overwrite = T)
 
-## Save the database
-fd_save(fo)
-
+## The hard disk database is automatically updated, no need to save operations.
 ```
 
 ### Manage the figures in browser
