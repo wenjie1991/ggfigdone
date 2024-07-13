@@ -25,7 +25,7 @@ response_fg_canvas = function(fo, req) {
     width = as.numeric(parsed_qeury$width)
     height = as.numeric(parsed_qeury$height)
     units = parsed_qeury$units
-    print(figure_name)
+    # print(figure_name)
     fd_canvas(figure_name, fo, width, height, units)
     list(
         status = 200L,
@@ -76,7 +76,7 @@ fd_server = function(dir, port = 8080) {
     fo = fd_load(dir)
 
     # print(fd_ls(fo))
-    print(format(fo))
+    # print(format(fo))
 
     # on.exit(fd_save(fo))
 
@@ -87,7 +87,7 @@ fd_server = function(dir, port = 8080) {
     app = list(
         call = function(req) {
             # print(fd_ls(fo))
-            print(format(fo))
+            # print(format(fo))
             ## req:
             # PATH_INFO: the path of the request
             # QUERY_STRING: the query string of the request

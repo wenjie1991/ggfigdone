@@ -2,7 +2,7 @@
 fd_update = function(fdObj_loc) {
     fdObj_global = as.character(substitute(fdObj, env = parent.frame(n = 1)))
     fdObj_parent = as.character(substitute(fdObj))
-    print(fdObj_global)
+    # print(fdObj_global)
     lock = lock(file.path(fdObj_loc$dir, "/db.lock"), exclusive = FALSE)
     if (!dir.exists(fdObj_loc$dir)) {
         stop("Directory does not exist")
