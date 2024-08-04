@@ -1,5 +1,39 @@
 // Jquery is enabled in the html file
 
+// Change the figure name
+function changeFigureName() {
+    // Get the old name
+    let old_name = $("#et_figure_name").text();
+    // Popup a dialog to get the new name
+    let new_name = prompt("Please enter the new name", old_name);
+    if (new_name == null && new_name == "") {
+        // popup a dialog to warn the user
+        alert("The name cannot be empty");
+    } else if (new_name != old_name) {
+        // Get the figure id
+        let figure_id = $("#et_figure_id").text();
+        let baseUrl = window.location.origin;
+        let url = baseUrl + "/fd_change_name?id=" + figure_id + "&new_name=" + new_name;
+        $.ajax({
+            url: url,
+            type: "GET",
+            success: function (data) {
+                console.log(data);
+                // Update the figure name in the global_figureList
+                for (let i = 0; i < global_figureList.length; i++) {
+                    if (global_figureList[i].id == figure_id) {
+                        global_figureList[i].name = new_name;
+                        break;
+                    }
+                }
+                // Update the figure name in the grid
+                $("#" + figure_id + " p").text(new_name);
+                // Update the figure name in the edit container
+                $("#et_figure_name").text(new_name);
+            },
+        });
+    }
+}
 
 // Delete the figure
 function deleteFigure() {
@@ -116,6 +150,8 @@ function updateEditToolHtml(figure) {
     $("#et_create_date").text(figure.created_date);
     // Update figure update data
     $("#et_update_date").text(figure.updated_date);
+    // Update code
+    $("#code").val(figure.code_updated);
 
     // Update figure labels
     // if (figure.plot_labels.title != undefined) {
@@ -144,6 +180,7 @@ function updateEditToolHtml(figure) {
     // Updata canvas size
     $("#height").val(figure.height);
     $("#width").val(figure.width);
+    $("#dpi").val(figure.dpi);
     // Update units
     $("#fig_size_units option").each(function () {
         if ($(this).val() == figure.units) {
@@ -185,6 +222,7 @@ function preparePlotThemeCode() {
     return gg_code_theme.join(" +\n");
 }
 
+// NOTE: No longer needed, need to be removed
 function preparePlotLabsCode() {
     let gg_code_lab = [];
 
@@ -240,7 +278,39 @@ function updateFigure(figure_id, gg_code, figureList) {
     return figureList;
 }
 
-function updataFigureSize(figure_id, height, width, units, figureList) {
+// make a post versio of the updateFigure function
+function updateFigurePost(figure_id, gg_code, figureList) {
+    let baseUrl = window.location.origin;
+    let url = baseUrl + "/fd_update_fig";
+    let data = {
+        id: figure_id,
+        gg_code: gg_code,
+    };
+    $.ajax({
+        url: url,
+        async: false,
+        // send data in format of JSON
+        type: "POST",
+        data: JSON.stringify(data),
+        contentType: "application/json",
+        success: function (data) {
+            console.log(data);
+            figureList = getFigureList();
+            loadFigure(figure_id, figureList);
+        },
+        error: function (xhr, status, error) {
+            if (xhr.status == 400) {
+                // Show the error message in the #error_window
+                $("#error_window").css("display", "flex");
+                $("#error_message").text(xhr.responseText);
+                console.log(xhr.responseText);
+            }
+        },
+    });
+    return figureList;
+}
+
+function updataFigureSize(figure_id, height, width, units, dpi, figureList) {
     let baseUrl = window.location.origin;
     let url =
         baseUrl + "/fd_canvas" +
@@ -251,7 +321,10 @@ function updataFigureSize(figure_id, height, width, units, figureList) {
             "&width=" +
             width +
             "&units=" +
-            units;
+            units +
+            "&dpi=" +
+            dpi;
+
     $.ajax({
         url: url,
         async: false,
@@ -306,17 +379,17 @@ function closeEditContainer() {
 //////////////////
 
 // Get font list from server
-var global_fontList = getFontList();
-console.log(global_fontList);
+//var global_fontList = getFontList();
+//console.log(global_fontList);
 // Add the font list to the select option
-let font_select = $("#et_figure_font_family");
-for (let i = 0; i < global_fontList.length; i++) {
-    let font = global_fontList[i];
-    let option = $("<option></option>");
-    option.attr("value", font);
-    option.text(font);
-    font_select.append(option);
-}
+//let font_select = $("#et_figure_font_family");
+//for (let i = 0; i < global_fontList.length; i++) {
+    //let font = global_fontList[i];
+    //let option = $("<option></option>");
+    //option.attr("value", font);
+    //option.text(font);
+    //font_select.append(option);
+//}
 
 // Get the figure list table from server
 var global_figureList = getFigureList();
@@ -361,11 +434,15 @@ for (let i = 0; i < global_figureList.length; i++) {
         $("#img_edit_container").css("display", "flex");
         $("#mask").css("display", "flex");
 
+        // Load the previous code
+        $("#code").val(figure.code_updated[0]);
+
         loadFigure(figure_id, global_figureList);
     });
 }
 
 // Update ggplot code textarea
+// NOTE: No longer needed, need to be removed
 $("#btn_add_to_code").click(function () {
     let figure_id = $("#img_canvas img").attr("alt");
 
@@ -396,6 +473,7 @@ $("#btn_change_canvas").click(function () {
     // If the height and width are changed, update the figure
     let height = $("#height").val();
     let width = $("#width").val();
+    let dpi = $("#dpi").val();
     // get the units by the select option
     let units = $("#fig_size_units option:selected").val();
 
@@ -405,6 +483,7 @@ $("#btn_change_canvas").click(function () {
         height,
         width,
         units,
+        dpi,
         global_figureList,
     );
 });
@@ -419,11 +498,11 @@ $("#btn_change_figure").click(function () {
     // Get the figure from global_figureList
     let figure = getFigure(figure_id, global_figureList);
 
-    // If code textarea is empty, update the figure
+    // If code textarea is not empty, update the figure
     let gg_code = $("#code").val();
     
     if (gg_code != "") {
-        global_figureList = updateFigure(figure_id, gg_code, global_figureList);
+        global_figureList = updateFigurePost(figure_id, gg_code, global_figureList);
     }
 });
 

@@ -4,7 +4,7 @@
 \alias{fd_load}
 \title{Load the ggfigdone database}
 \usage{
-fd_load(dir)
+fd_load(dir, auto_database_upgrade = TRUE)
 }
 \arguments{
 \item{dir}{A character string of the directory path}

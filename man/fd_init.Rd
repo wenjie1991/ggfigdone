@@ -4,7 +4,7 @@
 \alias{fd_init}
 \title{Initiates the ggfigdone database}
 \usage{
-fd_init(dir, recursive = TRUE)
+fd_init(dir, recursive = TRUE, ...)
 }
 \arguments{
 \item{dir}{A character string of the directory path}

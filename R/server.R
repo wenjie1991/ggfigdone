@@ -1,5 +1,18 @@
 font_list = sort(unique(sysfonts::font_files()$family))
 
+response_fg_change_name = function(fo, req) {
+    # print("response_fg_change_name")
+    parsed_qeury = parse_url(req$QUERY_STRING)$query
+    figure_id = parsed_qeury$id
+    new_name = parsed_qeury$new_name
+    fd_change_name(figure_id, new_name, fo)
+    list(
+        status = 200L,
+        headers = list('Content-Type' = "text/plain"),
+        body = "OK"
+    )
+}
+
 response_fg_font_ls = function() {
     list(
         status = 200L,
@@ -25,8 +38,9 @@ response_fg_canvas = function(fo, req) {
     width = as.numeric(parsed_qeury$width)
     height = as.numeric(parsed_qeury$height)
     units = parsed_qeury$units
+    dpi = as.numeric(parsed_qeury$dpi)
     # print(figure_name)
-    fd_canvas(figure_name, fo, width, height, units)
+    fd_canvas(figure_name, fo, width, height, units, dpi)
     list(
         status = 200L,
         headers = list('Content-Type' = "text/plain"),
@@ -36,7 +50,10 @@ response_fg_canvas = function(fo, req) {
 
 response_fg_update_fig = function(fo, req) {
     # print("response_fg_update_fig")
-    parsed_qeury = parse_url(req$QUERY_STRING)$query
+    input <- req[["rook.input"]]
+    ## get the data from the POST request
+    postdata <- input$read_lines()
+    parsed_qeury = jsonlite::fromJSON(postdata)
     figure_name = parsed_qeury$id
     expr = parsed_qeury$gg_code
     res = fd_update_fig(figure_name, expr, fo)
@@ -105,7 +122,9 @@ fd_server = function(dir, port = 8080) {
             } else if (path == "/fd_font_ls") {
                 response_fg_font_ls()
             } else if (path == "/fd_canvas") {
-                response_fg_canvas(fo, req)
+                response_fg_canvas(fo, req) 
+            } else if (path == "/fd_change_name") {
+                response_fg_change_name(fo, req)
             } else {
                 list(
                     status = 404L,
@@ -125,7 +144,6 @@ fd_server = function(dir, port = 8080) {
     # start the server
     message_text = paste0("Start service: http://localhost:", port, "/index.html")
     message(message_text)
-    ## TODO: change the port info in javascript
     runServer(host = "0.0.0.0", port = port, app = app)
 }
 

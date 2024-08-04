@@ -1,20 +1,40 @@
-## Update fdObj by reading the data from the disk
-fd_update = function(fdObj_loc) {
+## extract code from the ggplot object
+fd_extract_ggplot_code = function(g) {
+    ## Extract the original code from ggplot object
+    code = constructive:::.cstr_construct(g$mapping)
+    code = constructive:::pipe_to_layers(code, g$layers, plot_env = g$plot_env, one_liner = TRUE)
+    code = constructive:::pipe_to_facets(code, g$facet, one_liner = TRUE)
+    code = constructive:::pipe_to_labels(code, g$labels, g$mapping, g$layers, one_liner = TRUE)
+    code = constructive:::pipe_to_scales(code, g$scales, one_liner = TRUE)
+    code = constructive:::pipe_to_theme(code, g$theme, one_liner = TRUE)
+    code = constructive:::pipe_to_coord(code, g$coordinates, one_liner = TRUE)
+    code = constructive:::repair_attributes_ggplot(g, code, one_liner = TRUE)
+    code = paste0("ggplot(data) + ", gsub("ggplot2::", "", code))
+    code
+}
+
+
+## Update fdObj by reading the data **from the disk**
+fd_update = function(fdObj_loc, do_lock = TRUE) {
     fdObj_global = as.character(substitute(fdObj, env = parent.frame(n = 1)))
     fdObj_parent = as.character(substitute(fdObj))
     # print(fdObj_global)
-    lock = lock(file.path(fdObj_loc$dir, "/db.lock"), exclusive = FALSE)
+    if (do_lock) {
+        lock = lock(file.path(fdObj_loc$dir, "/db.lock"), exclusive = FALSE)
+    }
     if (!dir.exists(fdObj_loc$dir)) {
         stop("Directory does not exist")
     }
     env = readr::read_rds(file.path(fdObj_loc$dir, "env.rds"))
     fdObj_loc$env = env
-    unlock(lock)
+    if (do_lock) {
+        unlock(lock)
+    }
     assign(fdObj_global, fdObj_loc, envir = parent.frame(n = 2))
     assign(fdObj_parent, fdObj_loc, envir = parent.frame(n = 1))
 }
 
-## Save the ggfigdone data to the disk
+## Update the ggfigdone database changes **to the disk**
 fd_save = function(fdObj) {
     message("Saving the ggfigdone data to the disk...")
     lock = lock(file.path(fdObj$dir, "/db.lock"), exclusive = TRUE)
@@ -54,7 +74,7 @@ fd_plot = function(fdObj, id) {
 #' fd_init(db_dir)
 #'
 #' @export
-fd_init = function(dir, recursive = TRUE) {
+fd_init = function(dir, recursive = TRUE, ...) {
     if (!dir.exists(dir)) {
         dir.create(dir, recursive = recursive)
     }
@@ -65,7 +85,7 @@ fd_init = function(dir, recursive = TRUE) {
     env = new.env()
     readr::write_rds(env, file.path(dir, "env.rds"))
 
-    fd_load(dir)
+    fd_load(dir, ...)
 }
 
 #' Load the ggfigdone database
@@ -84,15 +104,34 @@ fd_init = function(dir, recursive = TRUE) {
 #' fd_load(db_dir)
 #'
 #' @export
-fd_load = function(dir) {
-    lock = lock(file.path(dir, "/db.lock"), exclusive = FALSE)
+fd_load = function(dir, auto_database_upgrade = TRUE) {
+    ## Check if the directory exists
     if (!dir.exists(dir)) {
         stop("Directory does not exist")
     }
 
+    ## Check the version of the database
+    if (auto_database_upgrade) {
+        if (!file.exists(file.path(dir, "version.txt"))) {
+            x_version = "v0"
+        } else {
+            x_version = readLines(file.path(dir, "version.txt"))
+        }
+
+        if (x_version == "v0") {
+            message(paste0("The database is version 0. It will be transformed to version 1. Please stop other processes that are using the database."))
+            transform_db_v02v1(dir)
+        } else if (x_version != "v1") { 
+            stop(paste0("The version of the database is ", x_version, " which is not supported."))
+        } else {
+            message("The database version is up-to-date.")
+        }
+    }
+
+    ## Load the ggfigdone database
+    lock = lock(file.path(dir, "/db.lock"), exclusive = FALSE)
     env = readr::read_rds(file.path(dir, "env.rds"))
     unlock(lock)
-
     obj = list(
         env = env,
         dir = dir
@@ -149,7 +188,7 @@ fd_add = function(g, name, fdObj,
     width = 5,
     height = 5,
     units = "cm",
-    dpi = 600,
+    dpi = 200,
     overwrite = F,
     id = uuid::UUIDgenerate()) 
 {
@@ -157,14 +196,19 @@ fd_add = function(g, name, fdObj,
     if (id %in% names(fdObj$env) && !overwrite) {
         stop("Figure already exists")
     }
+
+    code_origin = fd_extract_ggplot_code(g)
+
     figObj = list(
         g_origin = g,
         g_updated = g,
+        data = g$data,
+        code_origin = code_origin,
+        code_updated = code_origin,
         name = name,
         id = id,
         created_date = Sys.time(),
         updated_date = Sys.time(),
-        update_history = c(),
         canvas_options = list(
             width = width,
             height = height,
@@ -182,7 +226,6 @@ fd_add = function(g, name, fdObj,
 format.fdObj = function(fdObj) {
     fd_update(fdObj)
     lapply(names(fdObj$env), function(id) {
-
 
         data.table::data.table(
             id = id,
@@ -232,6 +275,8 @@ fd_ls = function(fdObj) {
             name = fdObj$env[[id]]$name,
             created_date = fdObj$env[[id]]$created_date,
             updated_date = fdObj$env[[id]]$updated_date,
+            code_origin = fdObj$env[[id]]$code_origin,
+            code_updated = fdObj$env[[id]]$code_updated,
             width = fdObj$env[[id]]$canvas_options$width,
             height = fdObj$env[[id]]$canvas_options$height,
             units = fdObj$env[[id]]$canvas_options$units,
@@ -274,6 +319,16 @@ fd_back_to_origin = function(id, fdObj) {
     }
 }
 
+fd_change_name = function(id, name, fdObj) {
+    fd_update(fdObj)
+    lock = lock(file.path(fdObj$dir, "/db.lock"), exclusive = TRUE)
+    if (id %in% names(fdObj$env)) {
+        fdObj$env[[id]]$name = name
+        fdObj$env[[id]]$updated_date = Sys.time()
+    }
+    unlock(lock)
+}
+
 #' Update a figure using ggplot expression
 #'
 #' This function updates a figure using a ggplot expression.
@@ -284,51 +339,29 @@ fd_back_to_origin = function(id, fdObj) {
 #' @return A character string of the status
 #' @export
 fd_update_fig = function(id, expr, fdObj) {
-    fd_update(fdObj)
+    return_val = NULL
+    lock = lock(file.path(fdObj$dir, "/db.lock"), exclusive = TRUE)
+    fd_update(fdObj, do_lock = FALSE)
     if (id %in% names(fdObj$env)) {
-        g = fdObj$env[[id]]$g_origin
-        update_history = fdObj$env[[id]]$update_history
-        update_history = c(update_history, expr)
-        expr_new = paste0("g +", paste(update_history, collapse = " + "))
-        g = try(eval(parse(text = expr_new)))
+        data = fdObj$env[[id]]$data
+        code_updated = expr
+        g = try(eval(parse(text = code_updated)))
         # Update the environment when the figure is updated
         if (inherits(g, "try-error")) {
-            return(g)
+            return_val = g
         } else {
-            fdObj$env[[id]]$update_history = update_history
+            fdObj$env[[id]]$code_updated = code_updated
             fdObj$env[[id]]$g_updated = g
             fdObj$env[[id]]$updated_date = Sys.time()
             fd_plot(fdObj, id)
 
-            return("OK")
+            return_val = "OK"
         }
     } else {
-        return("Figure does not exist")
+        return_val = "Figure does not exist"
     }
-}
-
-## TODO: Browse the editing history of a figure
-fd_update_ls = function(id, fdObj) {
-    fd_update(fdObj)
-    if (id %in% names(fdObj$env)) {
-        fdObj$env[[id]]$update_history
-    }
-}
-
-## TODO: Specifically remove an change of a figure
-fd_update_rm = function(id, index, fdObj) {
-    fd_update(fdObj)
-    if (id %in% names(fdObj$env)) {
-        g = fdObj$env[[id]]$g_origin
-        update_history = fdObj$env[[id]]$update_history
-        update_history = update_history[-index]
-        fdObj$env[[id]]$update_history = update_history
-        expr_new = paste0("g +", paste(update_history, collapse = " + "))
-        g = eval(parse(text = expr_new))
-        fdObj$env[[id]]$g_updated = g
-        fdObj$env[[id]]$updated_date = Sys.time()
-        fd_plot(fdObj, id)
-    }
+    unlock(lock)
+    return(return_val)
 }
 
 #' Update the figure canvas size
@@ -346,13 +379,15 @@ fd_canvas = function(
     fdObj,
     width = fdObj$env[[id]]$canvas_options$width,
     height = fdObj$env[[id]]$canvas_options$height,
-    units = fdObj$env[[id]]$canvas_options$units
+    units = fdObj$env[[id]]$canvas_options$units,
+    dpi = fdObj$env[[id]]$canvas_options$dpi
 ) {
     fd_update(fdObj)
     if (id %in% names(fdObj$env)) {
         fdObj$env[[id]]$canvas_options$width = width
         fdObj$env[[id]]$canvas_options$height = height
         fdObj$env[[id]]$canvas_options$units = units
+        fdObj$env[[id]]$canvas_options$dpi = dpi
         fdObj$env[[id]]$updated_date = Sys.time()
         fd_plot(fdObj, id)
     }

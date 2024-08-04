@@ -1,31 +1,50 @@
 * {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: monospace;
 }
 
 p {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: monospace;
 }
-
 h1 {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: monospace;
     text-align: center;
 }
 
 h2 {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: monospace;
     text-align: center;
 }
 
 h3 {
     margin: 20px 0 0 0;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: monospace;
     text-align: left;
 }
 
 h4 {
     margin: 0 0 0 0;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: monospace;
     text-align: left;
+}
+
+button {
+    font-family: monospace;
+    border-radius: 3px;
+    color: white;
+    background-color: black;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+hr {
+    width: 90%;
+}
+
+#div_update_buttons {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 #img_grid_container {
@@ -49,7 +68,6 @@ h4 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
 }
 
 /* Add the title below the image */
@@ -61,12 +79,9 @@ h4 {
     font-weight: bold;
 }
 
-.grid_figure:hover {
-    border-color: darkred; /* Change border color on hover */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
-    transform: scale(1.05); /* Slightly increase size */
+.grid_figure img:hover {
+    border-style: solid;
 }
-
 
 .grid_figure img {
     width: 90%;
@@ -74,7 +89,8 @@ h4 {
     object-fit: contain;
     object-position: center;
     cursor: pointer;
-    border: 2px solid black; /* Initial border color */
+    border: 2px dotted black; /* Initial border color */
+    border-radius: 5px;
 }
 
 .et_options_h4 {
@@ -87,58 +103,61 @@ h4 {
 #img_edit_container {
     position: fixed;
     align-items: center;
-    height: 80%;
-    width: 80%;
+    height: 90%;
+    width: 90%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 3;
     display: none;
-    background-color: white;
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
-
 }
 
 .btn_close {
-  position: absolute; /* Position the close button absolutely within the .container */
-  top: 0;
-  right: 10px;
-  padding: 5px 10px;
-  cursor: pointer;
-  border: none; /* Style the button as desired */
-  background-color: black;
-  color: white;
+    position: absolute; /* Position the close button absolutely within the .container */
+    top: 0;
+    right: 10px;
+    /*padding: 5px 10px;*/
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border-radius: 3px;
 }
 
-.btn_close:hover {
-  background-color: grey; /* Background color on hover */
-  color: yellow; /* Text color on hover */
+.btn_close:active {
+    background-color: black;
+    color: white;
 }
 
 .btn_delete {
     bottom: 0;
-    right: 0px;
-    padding: 5px 10px;
-    cursor: pointer;
-    border: none; /* Style the button as desired */
-    background-color: red;
+    background-color: black;
     color: white;
+    right: 0px;
+    cursor: pointer;
+    align-self: center;
 }
 
 .btn_delete:hover {
-    background-color: darkred; /* Background color on hover */
-    color: yellow; /* Text color on hover */
+    background-color: darkred;
+    color: yellow;
+}
+
+.tab_container_canvas {
+    display: flex;
+    flex-direction: column;
 }
 
 #edit_tools {
     height: 100%;
+    background-color: white;
     display: flex;
     overflow: auto;
     /* justify-content: center; */
     /* align-items: center; */
     flex: 1;
     flex-direction: column;
-    border: 10px solid lightskyblue;
+    border: 3px solid black;
+    border-radius: 5px;
     padding: 0 20px;
     gap: 0px;
 }
@@ -156,10 +175,6 @@ button {
     margin: 5px 0px;
 }
 
-.btn_delete {
-    align-self: center;
-}
-
 #btn_add_to_code {
     align-self: center;
 }
@@ -168,23 +183,20 @@ button {
 #img_canvas {
     width: 100%;
     height: 100%;
+    margin-right: 4px;
     object-fit: contain;
-    border: 10px solid black;
+    border: 3px solid black;
+    border-radius: 5px;
     resize: none;
     overflow: hidden;
     line-height: 0;
+    background-color: white;
     /* cursor: pointer; */
     flex: 2;
 
     display: flex; /* Helps center the image if using object-fit: contain; */
     justify-content: center;
     align-items: center;
-    /* height: 400px; */
-    /* width: 400px; */
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* margin: 10px; */
 }
 
 
@@ -212,4 +224,19 @@ button {
 #error_message {
     color: red;
     font-weight: bold;
+}
+
+
+.et_options_h4 {
+    display: flex; /* Arrange elements side by side */
+}
+
+.fixed-text {
+    white-space: nowrap; /* Prevent fixed text from wrapping */
+    margin-right: 5px;   /* Add some spacing between fixed text and textarea */
+}
+
+#code {
+    flex: 1;            /* Make the textarea expand to fill available space */
+    resize: vertical;   /* Allow resizing only vertically */
 }
