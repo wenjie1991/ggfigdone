@@ -1,5 +1,45 @@
 # font_list = sort(unique(sysfonts::font_files()$family))
 
+response_fd_str_data = function(fo, req) {
+    # print("response_fd_str_data")
+    parsed_qeury = parse_url(req$QUERY_STRING)$query
+    figure_id = parsed_qeury$id
+    res = fd_str_data(fo, figure_id)
+    if (res$status == "error") {
+        list(
+            status = 400L,
+            headers = list('Content-Type' = "text/plain"),
+            body = res$message
+        )
+    } else {
+        list(
+            status = 200L,
+            headers = list('Content-Type' = "text/plain"),
+            body = res$message
+        )
+    }
+}
+
+response_fd_download_data = function(fo, req) {
+    # print("response_fd_download_data")
+    parsed_qeury = parse_url(req$QUERY_STRING)$query
+    figure_id = parsed_qeury$id
+    res = fd_generate_data(fo, figure_id)
+    if (res$status == "error") {
+        list(
+            status = 400L,
+            headers = list('Content-Type' = "text/plain"),
+            body = res$message
+        )
+    } else {
+        list(
+            status = 200L,
+            headers = list('Content-Type' = "text/plain"),
+            body = res$message
+        )
+    }
+}
+
 response_fd_download_pdf = function(fo, req) {
     print("response_fd_download_pdf")
     parsed_qeury = parse_url(req$QUERY_STRING)$query
@@ -147,6 +187,10 @@ fd_server = function(dir, port = 8080) {
                 response_fd_change_name(fo, req)
             } else if (path == "/fd_download_pdf") {
                 response_fd_download_pdf(fo, req)
+            } else if (path == "/fd_download_data") {
+                response_fd_download_data(fo, req)
+            } else if (path == "/fd_str_data") {
+                response_fd_str_data(fo, req)
             } else {
                 list(
                     status = 404L,

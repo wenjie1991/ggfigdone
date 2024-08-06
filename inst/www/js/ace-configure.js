@@ -1,7 +1,10 @@
 // Ace editor configuration options:
 // https://github.com/ajaxorg/ace/wiki/Configuring-Ace#editor-options
 
-var editor = ace.edit("editor");
+//////////////////////////////////////////////
+// Configure of the ggplot code editor
+
+var editor_code = ace.edit("editor_code");
 
 //editor.session.setMode("ace/mode/javascript");
 // pass options to ace.edit
@@ -11,7 +14,7 @@ var editor = ace.edit("editor");
 //    })
 
 // use setOptions method to set several options at once
-editor.setOptions({
+editor_code.setOptions({
     mode: "ace/mode/r",
     selectionStyle: "text",
     maxLines: 36,
@@ -25,14 +28,14 @@ editor.setOptions({
     highlightActiveLine: false,
 });
 // use setOptions method
-editor.setOption("mergeUndoDeltas", "always");
+editor_code.setOption("mergeUndoDeltas", "always");
 
 // set wrap limit range
-editor.session.setUseWrapMode(true);
+editor_code.session.setUseWrapMode(true);
 
 // some options are also available as methods e.g. 
 //editor.setTheme("ace/theme/github_light_default");
-editor.setTheme("ace/theme/tomorrow_night");
+editor_code.setTheme("ace/theme/tomorrow_night");
 
 // to get the value of the option use
 //editor.getOption("optionName");
@@ -42,8 +45,8 @@ fetch("./js/ggplot2.json")
     .then(response => response.json())
     .then(data => {
         //console.log(data);
-        editor.completers.push({
-            getCompletions: function(editor, session, pos, prefix, callback) {
+        editor_code.completers.push({
+            getCompletions: function(editor_code, session, pos, prefix, callback) {
                 callback(null, 
                     data
                 );
@@ -51,13 +54,23 @@ fetch("./js/ggplot2.json")
         })
     });
 
-//editor.completers.push({
-//    getCompletions: function(editor, session, pos, prefix, callback) {
-//        callback(null, 
-//            [
-//            {value: "foo", score: 1000, meta: "custom"},
-//            {value: "bar", score: 1000, meta: "custom"}
-//            ]
-//        );
-//    }
-//})
+//////////////////////////////////////////////
+// Configure of the dataset editor
+
+var editor_data = ace.edit("editor_data");
+
+// The dataset editor is read-only
+editor_data.setReadOnly(true);
+
+editor_data.setOptions({
+    mode: "ace/mode/r",
+    selectionStyle: "text",
+    maxLines: 36,
+    minLines: 12,
+    autoScrollEditorIntoView: true,
+    copyWithEmptySelection: true,
+    showGutter: false,
+    //highlightActiveLine: false,
+});
+
+editor_data.setTheme("ace/theme/tomorrow_night");

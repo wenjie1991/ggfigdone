@@ -42,6 +42,39 @@ fd_save = function(fdObj) {
     unlock(lock)
 }
 
+fd_str_data = function(fdObj, id) {
+    fd_update(fdObj)
+    status = "error"
+    message = "Figure does not exist"
+    if (id %in% names(fdObj$env)) {
+        data = fdObj$env[[id]]$data
+        status = "ok"
+        message = capture.output(str(data)) |> paste(collapse = "\n")
+    }
+    return(list(
+        status = status,
+        message = message
+    ))
+}
+
+fd_generate_data = function(fdObj, id) {
+    fd_update(fdObj)
+    status = "error"
+    if (id %in% names(fdObj$env)) {
+        g = fdObj$env[[id]]$g_updated
+        fig_name = fdObj$env[[id]]$name
+        csv_file = file.path(fdObj$dir, "tmp", paste0(fig_name, ".csv"))
+        data = fdObj$env[[id]]$data
+        write.csv(data, csv_file, row.names = FALSE)
+        status = "ok"
+        print(paste0("The csv file is saved to ", csv_file))
+    }
+    return(list(
+        status = status,
+        message = status
+    ))
+}
+
 fd_generate_pdf = function(fdObj, id) {
     fd_update(fdObj)
     status = "error"

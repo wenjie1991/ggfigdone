@@ -154,15 +154,12 @@ hr {
 }
 
 .tab_container {
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 
-#tab_canvas {
-    display: none;
-}
-
 #tab_ggplot {
+    display: flex;
 }
 
 

@@ -1,5 +1,40 @@
 // Jquery is enabled in the html file
 
+function strData() {
+    // Get the figure id
+    let figure_id = $("#et_figure_id").text();
+    let figure_name = $("#et_figure_name").text();
+    let baseUrl = window.location.origin;
+    let url = baseUrl + "/fd_str_data?id=" + figure_id;
+    $.ajax({
+        url: url,
+        type: "GET",
+        success: function (data) {
+            console.log(data);
+            // Show the data in the #editor_data
+            //$("#editor_data").val(data);
+            editor_data.setValue(data, -1);
+        },
+    });
+}
+
+function downloadData() {
+    // Get the figure id
+    let figure_id = $("#et_figure_id").text();
+    let figure_name = $("#et_figure_name").text();
+    let baseUrl = window.location.origin;
+    let url = baseUrl + "/fd_download_data?id=" + figure_id;
+    $.ajax({
+        url: url,
+        type: "GET",
+        success: function (data) {
+            console.log(data);
+            // Force the browser to download the file
+            window.open(baseUrl + "/tmp/" + figure_name + ".csv");
+        },
+    });
+}
+
 function downloadPDF() {
     // Get the figure id
     let figure_id = $("#et_figure_id").text();
@@ -172,7 +207,7 @@ function updateEditToolHtml(figure) {
     $("#et_update_date").text(figure.updated_date);
     // Update code
     //$("#code").val(figure.code_updated);
-    editor.setValue(figure.code_updated[0], 1);
+    editor_code.setValue(figure.code_updated[0], 1);
 
 
     // Update figure labels
@@ -390,7 +425,7 @@ function closeEditContainer() {
 
     // Delete the code in the textarea
     //$("#code").val("");
-    editor.setValue("");
+    editor_code.setValue("");
 
     // Hide the mask
     $("#mask").css("display", "none");
@@ -460,7 +495,7 @@ for (let i = 0; i < global_figureList.length; i++) {
         // Load the previous code
         //$("#code").val(figure.code_updated[0]);
         //editor.setValue(figure.code_updated[0]);
-        editor.setValue(figure.code_updated[0], 1);
+        editor_code.setValue(figure.code_updated[0], 1);
 
 
         loadFigure(figure_id, global_figureList);
@@ -483,7 +518,7 @@ $("#btn_add_to_code").click(function () {
 
     if (gg_code != "") {
         //$("#code").val(gg_code);
-        editor.setValue(gg_code);
+        editor_code.setValue(gg_code);
     }
 });
 
@@ -527,7 +562,7 @@ $("#btn_change_figure").click(function () {
 
     // If code textarea is not empty, update the figure
     //let gg_code = $("#code").val();
-    let gg_code = editor.getValue();
+    let gg_code = editor_code.getValue();
     
     if (gg_code != "") {
         global_figureList = updateFigurePost(figure_id, gg_code, global_figureList);
@@ -547,13 +582,28 @@ document.addEventListener("keydown", function(event) {
 $("#bt_canvas").click(function () {
     $("#tab_canvas").css("display", "flex");
     $("#tab_ggplot").css("display", "none");
+    $("#tab_data").css("display", "none");
     $("#bt_canvas").addClass("tab_active");
     $("#bt_ggplot").removeClass("tab_active");
+    $("#bt_data").removeClass("tab_active");
 });
 
 $("#bt_ggplot").click(function () {
     $("#tab_canvas").css("display", "none");
     $("#tab_ggplot").css("display", "flex");
+    $("#tab_data").css("display", "none");
     $("#bt_canvas").removeClass("tab_active");
     $("#bt_ggplot").addClass("tab_active");
+    $("#bt_data").removeClass("tab_active");
 });
+
+$("#bt_data").click(function () {
+    $("#tab_canvas").css("display", "none");
+    $("#tab_ggplot").css("display", "none");
+    $("#tab_data").css("display", "flex");
+    $("#bt_canvas").removeClass("tab_active");
+    $("#bt_ggplot").removeClass("tab_active");
+    $("#bt_data").addClass("tab_active");
+    strData();
+});
+
