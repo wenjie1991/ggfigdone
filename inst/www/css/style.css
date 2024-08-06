@@ -1,6 +1,6 @@
-* {
-    font-family: monospace;
-}
+/** {*/
+    /*font-family: monospace;*/
+/*}*/
 
 p {
     font-family: monospace;
@@ -142,9 +142,32 @@ hr {
     color: yellow;
 }
 
-.tab_container_canvas {
+.tab_button_container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.tablinks {
+    color: black;
+    background: white;
+    border-style: dotted;
+}
+
+.tab_container {
     display: flex;
     flex-direction: column;
+}
+
+#tab_canvas {
+    display: none;
+}
+
+#tab_ggplot {
+}
+
+
+.tab_active {
+    border-style: solid;
 }
 
 #edit_tools {
@@ -192,7 +215,7 @@ button {
     line-height: 0;
     background-color: white;
     /* cursor: pointer; */
-    flex: 2;
+    flex: 1.25;
 
     display: flex; /* Helps center the image if using object-fit: contain; */
     justify-content: center;
@@ -239,4 +262,13 @@ button {
 #code {
     flex: 1;            /* Make the textarea expand to fill available space */
     resize: vertical;   /* Allow resizing only vertically */
+    width: 90%;
+}
+
+#editor { 
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }

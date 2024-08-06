@@ -1,7 +1,27 @@
-font_list = sort(unique(sysfonts::font_files()$family))
+# font_list = sort(unique(sysfonts::font_files()$family))
 
-response_fg_change_name = function(fo, req) {
-    # print("response_fg_change_name")
+response_fd_download_pdf = function(fo, req) {
+    print("response_fd_download_pdf")
+    parsed_qeury = parse_url(req$QUERY_STRING)$query
+    figure_id = parsed_qeury$id
+    res = fd_generate_pdf(fo, figure_id)
+    if (res$status == "error") {
+        list(
+            status = 400L,
+            headers = list('Content-Type' = "text/plain"),
+            body = res$message
+        )
+    } else {
+        list(
+            status = 200L,
+            headers = list('Content-Type' = "text/plain"),
+            body = res$message
+        )
+    }
+}
+
+response_fd_change_name = function(fo, req) {
+    # print("response_fd_change_name")
     parsed_qeury = parse_url(req$QUERY_STRING)$query
     figure_id = parsed_qeury$id
     new_name = parsed_qeury$new_name
@@ -13,7 +33,7 @@ response_fg_change_name = function(fo, req) {
     )
 }
 
-response_fg_font_ls = function() {
+response_fd_font_ls = function() {
     list(
         status = 200L,
         headers = list('Content-Type' = "application/json"),
@@ -22,8 +42,8 @@ response_fg_font_ls = function() {
 }
 
 
-response_fg_ls = function(fo) {
-    # print("response_fg_ls")
+response_fd_ls = function(fo) {
+    # print("response_fd_ls")
     list(
         status = 200L,
         headers = list('Content-Type' = "application/json"),
@@ -31,8 +51,8 @@ response_fg_ls = function(fo) {
     )
 }
 
-response_fg_canvas = function(fo, req) {
-    # print("response_fg_canvas")
+response_fd_canvas = function(fo, req) {
+    # print("response_fd_canvas")
     parsed_qeury = parse_url(req$QUERY_STRING)$query
     figure_name = parsed_qeury$id
     width = as.numeric(parsed_qeury$width)
@@ -48,8 +68,8 @@ response_fg_canvas = function(fo, req) {
     )
 }
 
-response_fg_update_fig = function(fo, req) {
-    # print("response_fg_update_fig")
+response_fd_update_fig = function(fo, req) {
+    # print("response_fd_update_fig")
     input <- req[["rook.input"]]
     ## get the data from the POST request
     postdata <- input$read_lines()
@@ -72,8 +92,8 @@ response_fg_update_fig = function(fo, req) {
     }
 }
 
-response_fg_rm = function(fo, req) {
-    # print("response_fg_rm")
+response_fd_rm = function(fo, req) {
+    # print("response_fd_rm")
     parsed_qeury = parse_url(req$QUERY_STRING)$query
     figure_id = parsed_qeury$id
     fd_rm(figure_id, fo)
@@ -112,19 +132,21 @@ fd_server = function(dir, port = 8080) {
             path = req$PATH_INFO
             # print(path)
             if (path == "/fd_ls") {
-                response_fg_ls(fo)
+                response_fd_ls(fo)
             } else if (path == "/fd_rm") {
-                response_fg_rm(fo, req)
+                response_fd_rm(fo, req)
             } else if (path == "/fd_update_fig") {
-                response_fg_update_fig(fo, req)
+                response_fd_update_fig(fo, req)
             } else if (path == "/fd_update_ls") {
             } else if (path == "/fd_update_rm") {
             } else if (path == "/fd_font_ls") {
-                response_fg_font_ls()
+                response_fd_font_ls()
             } else if (path == "/fd_canvas") {
-                response_fg_canvas(fo, req) 
+                response_fd_canvas(fo, req) 
             } else if (path == "/fd_change_name") {
-                response_fg_change_name(fo, req)
+                response_fd_change_name(fo, req)
+            } else if (path == "/fd_download_pdf") {
+                response_fd_download_pdf(fo, req)
             } else {
                 list(
                     status = 404L,
@@ -135,6 +157,7 @@ fd_server = function(dir, port = 8080) {
         },
         staticPaths = list(
             "/figure" = file.path(dir, "figures"),
+            "/tmp" = file.path(dir, "tmp"),
             "/css" = file.path(www_dir, "css"),
             "/js" = file.path(www_dir, "js"),
             "/index.html" = file.path(www_dir, "index.html")

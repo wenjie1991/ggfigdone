@@ -1,0 +1,7842 @@
+[
+  {
+    "value": "[.mapped_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "[.uneval",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "[[.ggproto",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "[[<-.uneval",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "[<-.mapped_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "[<-.uneval",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "%+replace%",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "%||%",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "%|W|%",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "+.gg",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "$.ggproto",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "$.ggproto_parent",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "$.theme",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "$<-.uneval",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "absoluteGrob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "absorb_grdevice_args",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "add_ggplot",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "add_group",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "add_theme",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "adjust_breaks",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "aes_",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "aes_all",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "aes_auto",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "aes_q",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "aes_string",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "aes_to_scale",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "after_scale",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "after_stat",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "allow_lambda",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "alternative_aes_extract_usage",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "annotate",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "annotation_custom",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "annotation_id",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "annotation_logticks",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "annotation_map",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "annotation_raster",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "arg_enquos",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "as_cli",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "as_facets",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "as_facets_list",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "as_gg_data_frame",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "as_labeller",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "as_quoted",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "as_unordered_factor",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "as.data.frame.mapped_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "as.list.ggproto",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "as.mask",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "as.quoted",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "assemble_strips",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "attach_plot_env",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "autolayer",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "autolayer.default",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "autoplot",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "autoplot.default",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis_label_element_overrides",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis_label_priority",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis_label_priority_between",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "backport_unit_methods",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "benchplot",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "bin_breaks",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "bin_breaks_bins",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "bin_breaks_width",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "bin_loc",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "bin_out",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "bin_vector",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "bin2d_breaks",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "binned_scale",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "bins",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "borders",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "breaks",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "build_strip",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "by_layer",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "c.mapped_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "calc_bw",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "calc_element",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "calc_limits_bbox",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "calc_logticks",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "calculate_ellipse",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "camelize",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "cases",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "censor_labels",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_aesthetics",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_arg",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_bool",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_breaks_labels",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_call",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_character",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_closure",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_coord_limits",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_data_frame",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_device",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_environment",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_facet_vars",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_formula",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_function",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_inherits",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_labeller",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_layout",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_linewidth",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_logical",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_name",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_nondata_cols",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_number_decimal",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_number_whole",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_numeric",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_object",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_path",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_polar_guide",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_required_aesthetics",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_scale_type",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_string",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_subclass",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_symbol",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_transformation",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "clist",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "close_poly",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "collapse_labels_lines",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "collide",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "collide_setup",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "collide2",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "combine_elements",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "combine_vars",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "compact",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "compact_facets",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "compute_density",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "compute_just",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "continuous_scale",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "contour_breaks",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "contour_deduplicate",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "convertInd",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "coord_cartesian",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "coord_equal",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "coord_fixed",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "coord_flip",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "coord_map",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "coord_munch",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "coord_polar",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "coord_quickmap",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "coord_radial",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "coord_sf",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "coord_trans",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "count",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "create_layout",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "create_quantile_segment_frame",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "cunion",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "cut_interval",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "cut_number",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "cut_width",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "dapply",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "data_frame0",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "datetime_scale",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "default_aesthetics",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "default_expansion",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "default_transform",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "defaults",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "deg2rad",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "densitybin",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "deparse2",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "deprecate_soft0",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "deprecate_warn0",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "deprecated_guide_args",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "derive",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "detect_missing",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "detect_sf_type",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "df_col",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "df_rows",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "df.grid",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "discard_dots",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "discrete_scale",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "dispatch_args",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "dist_central_angle",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "dist_euclidean",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "dist_polar",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "dotstackGrob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "downto",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "draw_axis",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "draw_axis_labels",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "draw_key_abline",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "draw_key_blank",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "draw_key_boxplot",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "draw_key_crossbar",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "draw_key_dotplot",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "draw_key_label",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "draw_key_linerange",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "draw_key_path",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "draw_key_point",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "draw_key_pointrange",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "draw_key_polygon",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "draw_key_rect",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "draw_key_smooth",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "draw_key_text",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "draw_key_timeseries",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "draw_key_vline",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "draw_key_vpath",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "drawDetails.zeroGrob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "dual_param",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "dummy_data",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "dup_axis",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "el_def",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "element_blank",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "element_grob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "element_grob.element_blank",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "element_grob.element_line",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "element_grob.element_rect",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "element_grob.element_text",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "element_line",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "element_rect",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "element_render",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "element_text",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "empty",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ensure_nonempty_data",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "eval_facet",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "eval_facets",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "expand_limits",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "expand_limits_continuous",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "expand_limits_continuous_trans",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "expand_limits_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "expand_limits_discrete_trans",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "expand_limits_scale",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "expand_range4",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "expand_scale",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "expansion",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "extract_target_is_likely_data",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "f_as_facets",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "f_as_facets_list",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "facet_grid",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "facet_null",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "facet_wrap",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fetch_ggproto",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fill_alpha",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "find_args",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "find_global",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "find_line_formula",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "find_names",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "find_origin",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "find_panel",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "find_scale",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "find_x_overlaps",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "firstUpper",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fit_data_to_bounds",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "flip_axis_labels",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "flip_data",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "flip_data_text_angle",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "flip_element_grob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "flip_text_angle",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "flipped_names",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "font_descent",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "format.ggproto",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "format.ggproto_method",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify.cld",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify.confint.glht",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify.data.frame",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify.default",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify.formula",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify.function",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify.glht",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify.grouped_df",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify.Line",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify.Lines",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify.lm",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify.map",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify.NULL",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify.Polygon",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify.Polygons",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify.sfc",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify.sfg",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify.SpatialLinesDataFrame",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify.SpatialPolygons",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify.SpatialPolygonsDataFrame",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify.summary.glht",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify.tbl",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fortify.tbl_df",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "gam_method",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "generate_alt_text",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_abline",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_area",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_bar",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_bin_2d",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_bin2d",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_blank",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_boxplot",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_col",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_column",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_contour",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_contour_filled",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_count",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_crossbar",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_curve",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_density",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_density_2d",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_density_2d_filled",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_density2d",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_density2d_filled",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_dotplot",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_errorbar",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_errorbarh",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_freqpoly",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_function",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_hex",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_histogram",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_hline",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_jitter",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_label",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_line",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_linerange",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_map",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_path",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_point",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_pointrange",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_polygon",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_qq",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_qq_line",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_quantile",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_raster",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_rect",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_ribbon",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_rug",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_segment",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_sf",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_sf_label",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_sf_text",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_smooth",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_spoke",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_step",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_text",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_tile",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_violin",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom_vline",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "get_alt_text",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "get_alt_text.ggplot",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "get_alt_text.ggplot_built",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "get_alt_text.gtable",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "get_element_tree",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "get_guide_data",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "get_key_size",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "gg_dep",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggname",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggplot",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggplot_add",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggplot_add.by",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggplot_add.Coord",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggplot_add.data.frame",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggplot_add.default",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggplot_add.Facet",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggplot_add.function",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggplot_add.Guides",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggplot_add.labels",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggplot_add.Layer",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggplot_add.list",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggplot_add.NULL",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggplot_add.Scale",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggplot_add.theme",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggplot_add.uneval",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggplot_build",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggplot_build.ggplot",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggplot_gtable",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggplot_gtable.ggplot_built",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggplot.default",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggplot.function",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggplotGrob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggproto",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggproto_formals",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggproto_parent",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggsave",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ggtitle",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "grid_as_facets_list",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "grid.draw.absoluteGrob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "grid.draw.ggplot",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "grobHeight.absoluteGrob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "grobHeight.zeroGrob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "grobWidth.absoluteGrob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "grobWidth.zeroGrob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "grobX.absoluteGrob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "grobY.absoluteGrob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide_axis",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide_axis_logticks",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide_axis_stack",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide_axis_theta",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide_bins",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide_colorbar",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide_colorsteps",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide_colourbar",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide_coloursteps",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide_custom",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide_gengrob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide_gengrob.default",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide_geom",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide_geom.default",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide_grid",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide_legend",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide_merge",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide_merge.default",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide_none",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide_train",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide_train.default",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide_transform",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide_transform.default",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guides",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guides_list",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "has_default_transform",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "has_flipped_aes",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "has_groups",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "has_name",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "height_cm",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "heightDetails.titleGrob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "heightDetails.zeroGrob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "hex_binwidth",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "hex_bounds",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "hexBinSummarise",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "hexGrob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "id_var",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "in_arc",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "include_layer_in_guide",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "indent",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "interleave",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "interleave.default",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "interleave.unit",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "interp",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_bang",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_bins",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_calculated",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_calculated_aes",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_column_vec",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_complete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_dotted_var",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_facets",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_finite",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_labeller",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_mapped_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_missing_arg",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_npc",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_pattern",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_position_aes",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_scalar_numeric",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_scaled",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_scaled_aes",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_sf",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_staged",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_staged_aes",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_theme_complete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_theme_validate",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_triple_bang",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_unique",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is.constant",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is.Coord",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is.derived",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is.discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is.facet",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is.formula",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is.ggplot",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is.ggproto",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is.layer",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is.margin",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is.rel",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is.sec_axis",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is.subclass",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is.theme",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is.waive",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is.zero",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "iso_to_path",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "iso_to_polygon",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "isoband_z_matrix",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "join_keys",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "just_dir",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "justify_grobs",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "keep_key_data",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "keep_mid_true",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "label_both",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "label_bquote",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "label_context",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "label_parsed",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "label_value",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "label_variable",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "label_wrap_gen",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "labelGrob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "labeller",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "labs",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "last_plot",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "layer",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "layer_data",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "layer_grob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "layer_scales",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "layer_sf",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "layout_null",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend_position",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "len0_null",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "limits",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "limits.character",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "limits.Date",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "limits.factor",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "limits.numeric",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "limits.POSIXct",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "limits.POSIXlt",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "lims",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "link_book",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "make_labels",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "make_proto_method",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "make_scale",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "make_summary_fun",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "makeContext.dotstackGrob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "manual_scale",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "map_data",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "mapped_aesthetics",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "mapped_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "margin",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "mat_2_df",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "matched_aes",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "max_height",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "max_width",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "mean_cl_boot",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "mean_cl_normal",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "mean_sdl",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "mean_se",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "measure_axes",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "measure_legend_keys",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "median_hilow",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "merge_element",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "merge_element.default",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "merge_element.element",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "merge_element.element_blank",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "mid_rescaler",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "modify_list",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "modifyList",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "mproject",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "munch_data",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "new_aes",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "new_aesthetic",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "new_guide",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "new_mapped_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "obj_type_friendly",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "obj_type_oo",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "object_summaries",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "old_guide",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "opposite_position",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "oxford_comma",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "pal_binned",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "pal_ordinal",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "pal_qualitative",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "panel_cols",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "panel_guides_grob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "panel_rows",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "parse_axes_labeling",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "parse_binned_breaks",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "parse_dpi",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "parse_safe",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "pattern",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "pattern_alpha",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "pattern_alpha.default",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "pattern_alpha.GridPattern",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "pattern_alpha.GridTilingPattern",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "pattern_alpha.list",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "plot_clone",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "plot_dev",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "plot_dim",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "plot_extent",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "plot_theme",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "plot.ggplot",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "polar_bbox",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "pos_dodge",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "pos_dodge2",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "pos_stack",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "position_dodge",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "position_dodge2",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "position_fill",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "position_identity",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "position_jitter",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "position_jitterdodge",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "position_margin",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "position_nudge",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "position_stack",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "precompute_bw",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "predictdf",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "predictdf.default",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "predictdf.glm",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "predictdf.locfit",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "predictdf.loess",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "pretty_isoband_levels",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "print.element",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "print.ggplot",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "print.ggplot2_bins",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "print.ggproto",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "print.ggproto_method",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "print.rel",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "print.theme",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "print.uneval",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "qplot",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "quant_pred",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "quickplot",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "r_rescale",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "rad2deg",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "random_tip",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "rd_aesthetics",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "rd_aesthetics_item",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "rd_computed_vars",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "rd_match_docpage",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "rd_orientation",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "redistribute_null_units",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "reflect_density",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "register_theme_elements",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "release_questions",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "remove_missing",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "rename",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "rename_aes",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "rename_data",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "render_axes",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "render_axis",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "render_strips",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "repair_segment_arrow",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "replace_null",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "rescale01",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "reset_theme_settings",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "reshape_add_margins",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "reshape_margins",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "resolution",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "resolve_guide",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "resolve_labeller",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "resolve_text_unit",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "revalue",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "rotate_just",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "rotate_r_axis",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "round_any",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "safe_string",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_alpha",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_alpha_binned",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_alpha_continuous",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_alpha_date",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_alpha_datetime",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_alpha_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_alpha_identity",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_alpha_manual",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_alpha_ordinal",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_apply",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_color_binned",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_color_brewer",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_color_continuous",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_color_date",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_color_datetime",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_color_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_color_distiller",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_color_fermenter",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_color_gradient",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_color_gradient2",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_color_gradientn",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_color_grey",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_color_hue",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_color_identity",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_color_manual",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_color_ordinal",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_color_steps",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_color_steps2",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_color_stepsn",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_color_viridis_b",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_color_viridis_c",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_color_viridis_d",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_colour_binned",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_colour_brewer",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_colour_continuous",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_colour_date",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_colour_datetime",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_colour_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_colour_distiller",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_colour_fermenter",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_colour_gradient",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_colour_gradient2",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_colour_gradientn",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_colour_grey",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_colour_hue",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_colour_identity",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_colour_manual",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_colour_ordinal",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_colour_qualitative",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_colour_steps",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_colour_steps2",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_colour_stepsn",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_colour_viridis_b",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_colour_viridis_c",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_colour_viridis_d",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_continuous_identity",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_description",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_discrete_identity",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_discrete_manual",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_fill_binned",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_fill_brewer",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_fill_continuous",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_fill_date",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_fill_datetime",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_fill_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_fill_distiller",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_fill_fermenter",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_fill_gradient",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_fill_gradient2",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_fill_gradientn",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_fill_grey",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_fill_hue",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_fill_identity",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_fill_manual",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_fill_ordinal",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_fill_qualitative",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_fill_steps",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_fill_steps2",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_fill_stepsn",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_fill_viridis_b",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_fill_viridis_c",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_fill_viridis_d",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_flip_axis",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_flip_position",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_linetype",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_linetype_binned",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_linetype_continuous",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_linetype_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_linetype_identity",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_linetype_manual",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_linewidth",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_linewidth_binned",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_linewidth_continuous",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_linewidth_date",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_linewidth_datetime",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_linewidth_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_linewidth_identity",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_linewidth_manual",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_linewidth_ordinal",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_override_call",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_radius",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_shape",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_shape_binned",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_shape_continuous",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_shape_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_shape_identity",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_shape_manual",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_shape_ordinal",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_size",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_size_area",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_size_binned",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_size_binned_area",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_size_continuous",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_size_date",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_size_datetime",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_size_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_size_identity",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_size_manual",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_size_ordinal",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_type",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_type.character",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_type.Date",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_type.default",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_type.double",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_type.factor",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_type.hms",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_type.integer",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_type.list",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_type.logical",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_type.numeric",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_type.ordered",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_type.POSIXt",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_type.sfc",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_x_binned",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_x_continuous",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_x_date",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_x_datetime",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_x_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_x_log10",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_x_reverse",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_x_sqrt",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_x_time",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_y_binned",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_y_continuous",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_y_date",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_y_datetime",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_y_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_y_log10",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_y_reverse",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_y_sqrt",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_y_time",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scales_list",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "sec_axis",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "seq_asc",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "set_draw_key",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "set_key_size",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "set_last_plot",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "set_sec_axis",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "sf_grob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "sf_rescale01",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "sf_transform_xy",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "should_stop",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "simplify",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "simplify_formula",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "single_value",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "single_value.default",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "single_value.factor",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "snake_class",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "snakeize",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "spiral_arc_length",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "split_matrix",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "split_with_index",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stack_var",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stage",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stage_calculated",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stage_scaled",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stairstep",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "standardise_aes_names",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "standardise_aes_symbols",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_align",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_bin",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_bin_2d",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_bin_hex",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_bin2d",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_binhex",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_boxplot",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_contour",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_contour_filled",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_count",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_density",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_density_2d",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_density_2d_filled",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_density2d",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_density2d_filled",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_ecdf",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_ellipse",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_function",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_identity",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_qq",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_qq_line",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_quantile",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_sf",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_sf_coordinates",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_smooth",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_spoke",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_sum",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_summary",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_summary_2d",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_summary_bin",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_summary_hex",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_summary2d",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_unique",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat_ydensity",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stop_input_type",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "strip_dots",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "strip_stage",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "substitute_aes",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "summarise_by_x",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "summarise_coord",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "summarise_layers",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "summarise_layout",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "summary.ggplot",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "switch_orientation",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "table_add_legends",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "table_add_tag",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "tapply_df",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theme",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theme_all_null",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theme_bw",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theme_classic",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theme_dark",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theme_get",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theme_gray",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theme_grey",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theme_light",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theme_linedraw",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theme_minimal",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theme_replace",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theme_set",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theme_test",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theme_update",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theme_void",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theta_grid",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theta_rescale",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theta_rescale_no_clip",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theta_tickmarks",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "titleGrob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "to_lower_ascii",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "to_upper_ascii",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "tolower",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "toupper",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "trans_support_nbreaks",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "transform_position",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "transform_value",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "translate_shape_string",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "trim",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ulevels",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "unique_combs",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "unique0",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "uniquecols",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "unitType",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "unrowname",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "update_geom_defaults",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "update_guides",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "update_labels",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "update_stat_defaults",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "upto",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "validate_as_data_frame",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "validate_column_vec",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "validate_element",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "validate_facets",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "validate_guide",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "validate_labels",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "validate_mapping",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "validate_theme",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "vars",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "vec_cast.character.mapped_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "vec_cast.double.mapped_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "vec_cast.factor.mapped_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "vec_cast.integer.mapped_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "vec_cast.mapped_discrete.double",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "vec_cast.mapped_discrete.factor",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "vec_cast.mapped_discrete.integer",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "vec_cast.mapped_discrete.logical",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "vec_cast.mapped_discrete.mapped_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "vec_ptype2.character.mapped_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "vec_ptype2.double.mapped_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "vec_ptype2.factor.mapped_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "vec_ptype2.integer.mapped_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "vec_ptype2.mapped_discrete.character",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "vec_ptype2.mapped_discrete.double",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "vec_ptype2.mapped_discrete.factor",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "vec_ptype2.mapped_discrete.integer",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "vec_ptype2.mapped_discrete.mapped_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "vec_rbind0",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "vec_type_friendly",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "version_unavailable",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "view_scale_empty",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "view_scale_primary",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "view_scale_secondary",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "view_scales_from_graticule",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "view_scales_from_scale",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "view_scales_from_scale_with_coord_trans",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "view_scales_polar",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "viewport",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "waiver",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "warn_for_aes_extract_usage",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "warn_for_aes_extract_usage_expr",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "warn_new_infinites",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "weave_axes",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "weave_tables_col",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "weave_tables_row",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "width_cm",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "widthDetails.titleGrob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "widthDetails.zeroGrob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "with_ordered_restart",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "with_seed_null",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "wrap_as_facets_list",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "wrap_dims",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "wrap_hmisc",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "xlab",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "xlim",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "xyz_to_isobands",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "xyz_to_isolines",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ylab",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ylim",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "zeroGrob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "drop",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "name",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "value",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "grob",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "width",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "height",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "xmin",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ymin",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "object",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "objectname",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "data",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "t2name",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "call",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "right",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "vars",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "geom",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "xmax",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ymax",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "xend",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "yend",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "na.rm",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "base",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "sides",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "outside",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scaled",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "short",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "long",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "colour",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "linewidth",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "linetype",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "alpha",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "color",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "size",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "raster",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "interpolate",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "frame",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "default",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "multi_line",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "inherit",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "type",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "grobs",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theme",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "horizontal",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "clip",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis_position",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "angle",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "breaks",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "closed",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "x_range",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "bins",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "center",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "boundary",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "count",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "weight",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "origin",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "binwidth",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "aesthetics",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_name",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "palette",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "labels",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "limits",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "rescaler",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "expand",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "na.value",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "n.breaks",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "nice.breaks",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "transform",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "trans",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "show.limits",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guide",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "position",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "super",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fuzz",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "database",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "regions",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fill",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "xlim",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ylim",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "equal",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "nbins",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "label_df",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "labeller",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "layers",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "step",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "recursive",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "element",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "verbose",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "skip_blank",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "method",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "default_crs",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ticks_per_base",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "minpow",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "maxpow",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "start",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "shortend",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "midend",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "longend",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "level",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "segments",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "first",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ranges",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "layout",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "allow_null",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "allow_na",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "feature",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "action",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "maybe",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "class",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "what",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "allow_infinite",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_fun",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "path",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "filename",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "create.dir",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "drop_list",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "guides",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "required",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "present",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "aesthetic",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_is_discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "allow_empty",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "subclass",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "argname",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "transformed",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "strategy",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check.width",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "reverse",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "from",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "adjust",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "kernel",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "bounds",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "just",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "minor_breaks",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "z_range",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "nrow",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ratio",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "projection",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "parameters",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "orientation",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "coord",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "range",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "segment_length",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_closed",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theta",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "direction",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "r.axis.inside",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "rotate.angle",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "inner.radius",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "r_axis_inside",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "rotate_angle",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "datum",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "label_graticule",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "label_axes",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "lims_method",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ndiscr",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "limx",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "limy",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "wt_var",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "facet",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "draw_quantiles",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "length",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "date_breaks",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "date_labels",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "date_minor_breaks",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "timezone",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "discrete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "continuous",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "self",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "user_env",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "title.position",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "title.theme",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "title.hjust",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "title.vjust",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "label",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "label.position",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "label.theme",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "label.hjust",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "label.vjust",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "keywidth",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "keyheight",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "barwidth",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "barheight",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "byrow",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "frame.colour",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "frame.linewidth",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "frame.linetype",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ticks",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ticks.colour",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ticks.linewidth",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.colour",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.linewidth",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.arrow",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "default.unit",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": ".call",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "finite",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "na.translate",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stackaxis",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "dotdia",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stackposition",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stackdir",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stackratio",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "default.units",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "break_positions",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "break_labels",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check.overlap",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "n.dodge",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "label_element",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "is_vertical",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "params",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "recording",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "description",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "lineend",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "id.lengths",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "family",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "face",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "hjust",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "vjust",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "lineheight",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "margin",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "margin_x",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "margin_y",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "arrow",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "inherit.blank",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "debug",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "possible_columns",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "facets",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "coord_limits",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "range_continuous",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "mult",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "rows",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "cols",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scales",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "space",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "shrink",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "as.table",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "switch",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "margins",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axes",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.labels",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ncol",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "strip.position",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "mode",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "expr",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "table",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "flip",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "flat",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "model",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "region",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "mapping",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "slope",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "intercept",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "show.legend",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stat",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "inherit.aes",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "outline.type",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "outliers",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "outlier.colour",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "outlier.color",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "outlier.fill",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "outlier.shape",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "outlier.size",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "outlier.stroke",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "outlier.alpha",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "notch",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "notchwidth",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "staplewidth",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "varwidth",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "linejoin",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "linemitre",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fatten",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "curvature",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "arrow.fill",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "contour_var",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "binaxis",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "binpositions",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "dotsize",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "stackgroups",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "yintercept",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "parse",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "nudge_x",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "nudge_y",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "label.padding",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "label.r",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "label.size",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "size.unit",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "rule",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "distribution",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "dparams",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "line.p",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fullrange",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fun.geometry",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check_overlap",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "formula",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "trim",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "xintercept",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "plot",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "panel",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "keys",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "which",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "version",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "prefix",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "environment",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "object_name",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "_class",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "_inherit",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "parent",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "device",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "units",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "limitsize",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "subtitle",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "title",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "minor.ticks",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "order",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "prescale.base",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "negative.small",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "short.theme",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "expanded",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "prescale_base",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "negative_small",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "short_theme",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "spacing",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "override.aes",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "nbin",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "display",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "draw.ulim",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "draw.llim",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "available_aes",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "even.steps",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "default_mapping",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "x.minor",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "x.major",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "y.minor",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "y.major",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "new_guide",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "panel_params",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "main_is_orthogonal",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "range_is_orthogonal",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "group_has_equal",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ambiguous",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "main_is_continuous",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "main_is_optional",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fun.args",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": ".variables",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "layer",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "matched",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "indent",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "warn",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "group",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "int_angle",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "show",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "padding",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "text.gp",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "rect.gp",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": ".rows",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": ".cols",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "keep.as.numeric",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": ".multi_line",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": ".default",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "caption",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "alt_insight",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check.aes",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "check.param",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "key_glyph",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "layer_class",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "lims",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "text",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "section",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "book",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "suffix",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fun.data",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fun.max",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fun.min",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "values",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "exact",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "unit",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "col_names",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "value_only",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "empty_idx",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "shift",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "default_width",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "default_height",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "dist",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "exclude",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "final",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "colours",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "na.color",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "h.start",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "extend",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "newpage",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "inner_radius",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "preserve",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "seed",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "jitter.width",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "jitter.height",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "dodge.width",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "xseq",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "isoband_levels",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "dig.lab",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "main",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "xlab",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "ylab",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "quantile",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "grid",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "method.args",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "donut",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "extra_note",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": ".details",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": ".skip_intro",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "dens",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "element_tree",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "complete",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "replace",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "transpose",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "reset_current",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "zero",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "null",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "bbox",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "accuracy",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "string",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "scale_id",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "high",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "midpoint",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "colors",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "begin",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "option",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "solid",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "max_size",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "sec.axis",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "draw_key",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "y_range",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "target_crs",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "source_crs",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "authority_compliant",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theta1",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "theta2",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "after_stat",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "after_scale",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "coef",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "contour",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "args",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "quantiles",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "span",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fun.y",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fun.ymin",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "fun.ymax",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "show_value",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "strip_pronoun",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "summary",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legends",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "index",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "line",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "rect",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "aspect.ratio",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.title",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.title.x",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.title.x.top",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.title.x.bottom",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.title.y",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.title.y.left",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.title.y.right",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.text",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.text.x",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.text.x.top",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.text.x.bottom",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.text.y",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.text.y.left",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.text.y.right",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.text.theta",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.text.r",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.ticks",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.ticks.x",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.ticks.x.top",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.ticks.x.bottom",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.ticks.y",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.ticks.y.left",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.ticks.y.right",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.ticks.theta",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.ticks.r",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.minor.ticks.x.top",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.minor.ticks.x.bottom",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.minor.ticks.y.left",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.minor.ticks.y.right",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.minor.ticks.theta",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.minor.ticks.r",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.ticks.length",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.ticks.length.x",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.ticks.length.x.top",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.ticks.length.x.bottom",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.ticks.length.y",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.ticks.length.y.left",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.ticks.length.y.right",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.ticks.length.theta",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.ticks.length.r",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.minor.ticks.length",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.minor.ticks.length.x",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.minor.ticks.length.x.top",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.minor.ticks.length.x.bottom",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.minor.ticks.length.y",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.minor.ticks.length.y.left",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.minor.ticks.length.y.right",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.minor.ticks.length.theta",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.minor.ticks.length.r",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.line",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.line.x",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.line.x.top",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.line.x.bottom",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.line.y",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.line.y.left",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.line.y.right",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.line.theta",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "axis.line.r",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.background",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.margin",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.spacing",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.spacing.x",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.spacing.y",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.key",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.key.size",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.key.height",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.key.width",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.key.spacing",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.key.spacing.x",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.key.spacing.y",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.frame",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.ticks",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.ticks.length",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.axis.line",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.text",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.text.position",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.title",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.title.position",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.position",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.position.inside",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.direction",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.byrow",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.justification",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.justification.top",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.justification.bottom",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.justification.left",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.justification.right",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.justification.inside",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.location",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.box",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.box.just",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.box.margin",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.box.background",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "legend.box.spacing",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "panel.background",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "panel.border",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "panel.spacing",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "panel.spacing.x",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "panel.spacing.y",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "panel.grid",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "panel.grid.major",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "panel.grid.minor",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "panel.grid.major.x",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "panel.grid.major.y",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "panel.grid.minor.x",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "panel.grid.minor.y",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "panel.ontop",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "plot.background",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "plot.title",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "plot.title.position",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "plot.subtitle",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "plot.caption",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "plot.caption.position",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "plot.tag",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "plot.tag.position",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "plot.tag.location",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "plot.margin",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "strip.background",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "strip.background.x",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "strip.background.y",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "strip.clip",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "strip.placement",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "strip.text",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "strip.text.x",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "strip.text.x.bottom",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "strip.text.x.top",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "strip.text.y",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "strip.text.y.left",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "strip.text.y.right",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "strip.switch.pad.grid",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "strip.switch.pad.wrap",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "validate",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "base_size",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "base_family",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "base_line_size",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "base_rect_size",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "offset",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "trans_x",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "trans_y",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "shape_string",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "recurse",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "elname",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "tree",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": ".error_call",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "continuous_range",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "graticule",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "mask",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "xscale",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "yscale",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "layout.pos.row",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "layout.pos.col",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "old_values",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "new_values",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "panels",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "empty",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "table2",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "col_shift",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "col_width",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "row_shift",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "row_height",
+    "score": 1000,
+    "meta": "ggplot2"
+  },
+  {
+    "value": "code",
+    "score": 1000,
+    "meta": "ggplot2"
+  }
+]

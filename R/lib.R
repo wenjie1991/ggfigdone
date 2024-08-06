@@ -42,6 +42,28 @@ fd_save = function(fdObj) {
     unlock(lock)
 }
 
+fd_generate_pdf = function(fdObj, id) {
+    fd_update(fdObj)
+    status = "error"
+    if (id %in% names(fdObj$env)) {
+        g = fdObj$env[[id]]$g_updated
+        fig_name = fdObj$env[[id]]$name
+        pdf_file = file.path(fdObj$dir, "tmp", paste0(fig_name, ".pdf"))
+        canvas_options = fdObj$env[[id]]$canvas_options
+        ggsave(pdf_file, plot = g, 
+               width = canvas_options$width, 
+               height = canvas_options$height, 
+               units = canvas_options$units, 
+               dpi = canvas_options$dpi)
+        status = "ok"
+        print(paste0("The pdf file is saved to ", pdf_file))
+    }
+    return(list(
+        status = status,
+        message = status
+    ))
+}
+
 ## Save the figure png example to the disk
 fd_plot = function(fdObj, id) {
     file_path = file.path(fdObj$dir, "figures", paste0(id, ".png"))
@@ -75,15 +97,40 @@ fd_plot = function(fdObj, id) {
 #'
 #' @export
 fd_init = function(dir, recursive = TRUE, ...) {
+    ## check if the dir is empty
     if (!dir.exists(dir)) {
         dir.create(dir, recursive = recursive)
+    } else if (length(dir(dir)) == 0) {
+    } else {
+        message("The directory already exists, and is not empty.")
+        prompt = readline("Do you want to remove the content in the directory? (y/n): ")
+        if (prompt == "y") {
+            unlink(dir, recursive = TRUE)
+            dir.create(dir, recursive = recursive)
+        } else {
+            message("The directory is not removed. The initialization is stopped.")
+            return()
+        }
     }
+
     if (!dir.exists(file.path(dir, "figures"))) {
         dir.create(file.path(dir, "figures"))
+    } else {
+        unlink(file.path(dir, "figures"), recursive = TRUE)
+        dir.create(file.path(dir, "figures"))
+    }
+
+    if (!dir.exists(file.path(dir, "tmp"))) {
+        dir.create(file.path(dir, "tmp"))
+    } else {
+        unlink(file.path(dir, "tmp"), recursive = TRUE)
+        dir.create(file.path(dir, "tmp"))
     }
 
     env = new.env()
     readr::write_rds(env, file.path(dir, "env.rds"))
+
+    writeLines("v1", file.path(dir, "version.txt"))
 
     fd_load(dir, ...)
 }
@@ -109,6 +156,13 @@ fd_load = function(dir, auto_database_upgrade = TRUE) {
     if (!dir.exists(dir)) {
         stop("Directory does not exist")
     }
+
+    ## Empty the tmp directory when the R session is ended
+    reg.finalizer(.GlobalEnv, function(e) {
+        message("Removing the temporary files...")
+        unlink(file.path(dir, "tmp/*"), recursive = TRUE)
+        message("Done")
+    }, onexit = TRUE)
 
     ## Check the version of the database
     if (auto_database_upgrade) {
