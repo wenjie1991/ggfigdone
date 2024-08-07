@@ -22,7 +22,9 @@ transform_db_v02v1 <- function(dir) {
         d = g$data
 
         ## Extract the ggplot code
-        code_origin = fd_extract_ggplot_code(g)
+        # code_origin = fd_extract_ggplot_code(g)
+
+        code_origin = "g"
 
         ## Append the updating history history code to the original code
         update_history = x$update_history
