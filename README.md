@@ -8,6 +8,8 @@ It is inconvinient to go back to the original code to make these changes.
 This package provides a simple way to manage ggplot figures. 
 You can easily add the figure to the database and update them later using CLI (command line interface) or GUI (graphical user interface).
 
+![ggfigdone demo](https://github.com/user-attachments/assets/d0c6157c-b3f9-425f-bd57-7a04344b364c)
+
 ## Installation
 
 Install the development version from GitHub:
@@ -54,9 +56,6 @@ fo = fd_load("./fd_dir")
 ## Start the server and open the browser
 fd_server("./fd_dir")
 ```
-
-![Mar-14-2024 11-41-32](https://github.com/wenjie1991/ggfigdone/assets/6602710/bcd260cf-0c8e-4674-ae10-30348e54d141)
-
 
 
 ## Contribution
