@@ -1,7 +1,9 @@
 
 <div align="center">
-<img src="https://github.com/user-attachments/assets/a4248897-731d-4ea5-b489-7ea2586ddd1c" width="240" /> 
+<img src="https://github.com/user-attachments/assets/4d3beba4-04e2-41e2-8645-0887cbde4b5c" width="240" /> 
 </div>
+
+
 
 # ggfigdone: Manage ggplot figures using ggfigdone
 
