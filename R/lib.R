@@ -1,17 +1,18 @@
 ## extract code from the ggplot object
-fd_extract_ggplot_code = function(g) {
-    ## Extract the original code from ggplot object
-    code = constructive:::.cstr_construct(g$mapping)
-    code = constructive:::pipe_to_layers(code, g$layers, plot_env = g$plot_env, one_liner = TRUE)
-    code = constructive:::pipe_to_facets(code, g$facet, one_liner = TRUE)
-    code = constructive:::pipe_to_labels(code, g$labels, g$mapping, g$layers, one_liner = TRUE)
-    code = constructive:::pipe_to_scales(code, g$scales, one_liner = TRUE)
-    code = constructive:::pipe_to_theme(code, g$theme, one_liner = TRUE)
-    code = constructive:::pipe_to_coord(code, g$coordinates, one_liner = TRUE)
-    code = constructive:::repair_attributes_ggplot(g, code, one_liner = TRUE)
-    code = paste0("ggplot(data) + ", gsub("ggplot2::", "", code))
-    code
-}
+## Deprecated: This function is not used anymore
+# fd_extract_ggplot_code = function(g) {
+#     ## Extract the original code from ggplot object
+#     code = constructive:::.cstr_construct(g$mapping)
+#     code = constructive:::pipe_to_layers(code, g$layers, plot_env = g$plot_env, one_liner = TRUE)
+#     code = constructive:::pipe_to_facets(code, g$facet, one_liner = TRUE)
+#     code = constructive:::pipe_to_labels(code, g$labels, g$mapping, g$layers, one_liner = TRUE)
+#     code = constructive:::pipe_to_scales(code, g$scales, one_liner = TRUE)
+#     code = constructive:::pipe_to_theme(code, g$theme, one_liner = TRUE)
+#     code = constructive:::pipe_to_coord(code, g$coordinates, one_liner = TRUE)
+#     code = constructive:::repair_attributes_ggplot(g, code, one_liner = TRUE)
+#     code = paste0("ggplot(data) + ", gsub("ggplot2::", "", code))
+#     code
+# }
 
 
 ## Update fdObj by reading the data **from the disk**
@@ -284,7 +285,8 @@ fd_add = function(g, name, fdObj,
         stop("Figure already exists")
     }
 
-    code_origin = fd_extract_ggplot_code(g)
+    # code_origin = fd_extract_ggplot_code(g)
+    code_origin = "g"
 
     figObj = list(
         g_origin = g,
@@ -431,6 +433,7 @@ fd_update_fig = function(id, expr, fdObj) {
     fd_update(fdObj, do_lock = FALSE)
     if (id %in% names(fdObj$env)) {
         data = fdObj$env[[id]]$data
+        g = fdObj$env[[id]]$g_origin
         code_updated = expr
         g = try(eval(parse(text = code_updated)))
         # Update the environment when the figure is updated
