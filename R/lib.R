@@ -37,7 +37,15 @@ fd_update = function(fdObj_loc, do_lock = TRUE) {
     assign(fdObj_parent, fdObj_loc, envir = parent.frame(n = 1))
 }
 
-## Update the ggfigdone database changes **to the disk**
+#' Update the ggfigdone database changes **to the disk**
+#'
+#' This function saves the ggfigdone data to the disk.
+#' By default, when using the \code{\link[ggfigdone]{fd_load}} funciton to load the databse, the data will be automatically saved to the disk when changes are made.
+#' But if you set the \code{auto_database_upgrade} argument to \code{FALSE} in \code{\link[ggfigdone]{fd_load}}, you need to manually save the data using this function.
+#' 
+#' @param fdObj An object of class `fdObj`.
+#'
+#' @export
 fd_save = function(fdObj) {
     message("Automatic saving the ggfigdone data to the disk ...")
     lock = lock(file.path(fdObj$dir, "/db.lock"), exclusive = TRUE)
@@ -70,7 +78,7 @@ fd_generate_data = function(fdObj, id) {
         fig_name = fdObj$env[[id]]$name
         csv_file = file.path(fdObj$dir, "tmp", paste0(fig_name, ".csv"))
         data = fdObj$env[[id]]$data
-        write.csv(data, csv_file, row.names = FALSE)
+        readr::write_csv(data, csv_file, row.names = FALSE)
         status = "ok"
         print(paste0("The csv file is saved to ", csv_file))
     }
@@ -125,6 +133,7 @@ fd_plot = function(fdObj, id) {
 #'
 #' @param dir A character string specifying the directory path.
 #' @param recursive A logical value. If TRUE, the function will create the directory along with any necessary parent directories if they do not already exist. If FALSE, the function will create the directory only if its parent directory already exists.
+#' @param ... Additional arguments to be passed to \code{\link[ggfigdone]{fd_load}} function.
 #' @return An object of class `fdObj`.
 #' @examples
 #' library(ggplot2)
@@ -179,6 +188,8 @@ fd_init = function(dir, recursive = TRUE, ...) {
 #' This function loads the ggfigdone database from the disk.
 #' 
 #' @param dir A character string representing the directory path.
+#' @param auto_database_upgrade A logical value. If TRUE, the function will automatically upgrade the database to the latest version. 
+#' If FALSE, you need to manually save the data using the \code{\link[ggfigdone]{fd_save}} function.
 #' @return An object of class `fdObj`.
 #' @examples
 #' library(ggplot2)
@@ -310,27 +321,27 @@ fd_add = function(g, name, fdObj,
 }
 
 #' @export
-format.fdObj = function(fdObj) {
-    fd_update(fdObj)
-    lapply(names(fdObj$env), function(id) {
+format.fdObj = function(x, ...) {
+    fd_update(x)
+    lapply(names(x$env), function(id) {
 
         data.table::data.table(
             id = id,
-            name = fdObj$env[[id]]$name,
-            created_date = fdObj$env[[id]]$created_date,
-            updated_date = fdObj$env[[id]]$updated_date,
-            width = fdObj$env[[id]]$canvas_options$width,
-            height = fdObj$env[[id]]$canvas_options$height,
-            units = fdObj$env[[id]]$canvas_options$units,
-            dpi = fdObj$env[[id]]$canvas_options$dpi,
+            name = x$env[[id]]$name,
+            created_date = x$env[[id]]$created_date,
+            updated_date = x$env[[id]]$updated_date,
+            width = x$env[[id]]$canvas_options$width,
+            height = x$env[[id]]$canvas_options$height,
+            units = x$env[[id]]$canvas_options$units,
+            dpi = x$env[[id]]$canvas_options$dpi,
             file_name = file.path(paste0(id, ".png"))
         )
     }) |> data.table::rbindlist()
 }
 
 #' @export
-print.fdObj = function(fdObj) {
-    format(fdObj)
+print.fdObj = function(x, ...) {
+    format(x, ...)
 }
 
 #' List the figures

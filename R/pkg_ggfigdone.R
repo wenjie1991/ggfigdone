@@ -14,4 +14,5 @@
 #' @import httr
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom filelock lock unlock
+#' @importFrom utils browseURL capture.output str
 "_PACKAGE"

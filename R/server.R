@@ -1,5 +1,3 @@
-# font_list = sort(unique(sysfonts::font_files()$family))
-
 response_fd_str_data = function(fo, req) {
     # print("response_fd_str_data")
     parsed_qeury = parse_url(req$QUERY_STRING)$query
@@ -72,15 +70,6 @@ response_fd_change_name = function(fo, req) {
         body = "OK"
     )
 }
-
-response_fd_font_ls = function() {
-    list(
-        status = 200L,
-        headers = list('Content-Type' = "application/json"),
-        body = toJSON(font_list, auto_unbox = F)
-    )
-}
-
 
 response_fd_ls = function(fo) {
     # print("response_fd_ls")
@@ -195,10 +184,6 @@ fd_server = function(dir, host = '0.0.0.0', port = 8080, auto_open = TRUE) {
                 response_fd_rm(fo, req)
             } else if (path == "/fd_update_fig") {
                 response_fd_update_fig(fo, req)
-            } else if (path == "/fd_update_ls") {
-            } else if (path == "/fd_update_rm") {
-            } else if (path == "/fd_font_ls") {
-                response_fd_font_ls()
             } else if (path == "/fd_canvas") {
                 response_fd_canvas(fo, req) 
             } else if (path == "/fd_change_name") {

@@ -10,6 +10,8 @@ fd_init(dir, recursive = TRUE, ...)
 \item{dir}{A character string specifying the directory path.}
 
 \item{recursive}{A logical value. If TRUE, the function will create the directory along with any necessary parent directories if they do not already exist. If FALSE, the function will create the directory only if its parent directory already exists.}
+
+\item{...}{Additional arguments to be passed to \code{\link[ggfigdone]{fd_load}} function.}
 }
 \value{
 An object of class \code{fdObj}.

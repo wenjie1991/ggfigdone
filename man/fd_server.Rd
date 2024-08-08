@@ -4,12 +4,12 @@
 \alias{fd_server}
 \title{Initiates a server for ggfigdone}
 \usage{
-fd_server(dir, host = "localhost", port = 8080, auto_open = TRUE)
+fd_server(dir, host = "0.0.0.0", port = 8080, auto_open = TRUE)
 }
 \arguments{
 \item{dir}{The directory of the ggfigdone database.}
 
-\item{host}{The host on which the server will run; the default is 'localhost'.}
+\item{host}{The host on which the server will run; the default is '0.0.0.0'.}
 
 \item{port}{The port on which the server will run; the default is 8080.}
 
