@@ -1,3 +1,10 @@
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/4d3beba4-04e2-41e2-8645-0887cbde4b5c" width="240" /> 
+</div>
+
+
+
 # ggfigdone: Manage ggplot figures using ggfigdone
 
 ## Description
@@ -8,7 +15,7 @@ It is inconvinient to go back to the original code to make these changes.
 This package provides a simple way to manage ggplot figures. 
 You can easily add the figure to the database and update them later using CLI (command line interface) or GUI (graphical user interface).
 
-![ggfigdone demo](https://github.com/user-attachments/assets/d0c6157c-b3f9-425f-bd57-7a04344b364c)
+![ggfigdone_demo](https://github.com/user-attachments/assets/aa38f9b3-c3d1-4da2-9238-1eb3f6c1175c)
 
 ## Installation
 
