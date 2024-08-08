@@ -7,10 +7,10 @@
 fd_load(dir, auto_database_upgrade = TRUE)
 }
 \arguments{
-\item{dir}{A character string of the directory path}
+\item{dir}{A character string representing the directory path.}
 }
 \value{
-An object of class \code{fdObj}
+An object of class \code{fdObj}.
 }
 \description{
 This function loads the ggfigdone database from the disk.

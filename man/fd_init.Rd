@@ -7,15 +7,15 @@
 fd_init(dir, recursive = TRUE, ...)
 }
 \arguments{
-\item{dir}{A character string of the directory path}
+\item{dir}{A character string specifying the directory path.}
 
-\item{recursive}{A logical value. If TRUE, the function creates the directory and its parent directories if they do not exist. If FALSE, the function creates the directory only if its parent directory exists.}
+\item{recursive}{A logical value. If TRUE, the function will create the directory along with any necessary parent directories if they do not already exist. If FALSE, the function will create the directory only if its parent directory already exists.}
 }
 \value{
-An object of class \code{fdObj}
+An object of class \code{fdObj}.
 }
 \description{
-This function creates a directory serves as a database for ggfigdone.
+This function generates a folder that serves as a database for ggfigdone.
 }
 \examples{
 library(ggplot2)

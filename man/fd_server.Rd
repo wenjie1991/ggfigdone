@@ -2,15 +2,35 @@
 % Please edit documentation in R/server.R
 \name{fd_server}
 \alias{fd_server}
-\title{Start a server for ggfigdone}
+\title{Initiates a server for ggfigdone}
 \usage{
-fd_server(dir, port = 8080)
+fd_server(dir, host = "localhost", port = 8080, auto_open = TRUE)
 }
 \arguments{
-\item{dir}{The directory to save the figures}
+\item{dir}{The directory of the ggfigdone database.}
 
-\item{port}{The port of the server, default is 8080}
+\item{host}{The host on which the server will run; the default is 'localhost'.}
+
+\item{port}{The port on which the server will run; the default is 8080.}
+
+\item{auto_open}{A logical value indicating whether the server should be opened in a web browser; the default is TRUE.}
 }
 \description{
-Start a server for ggfigdone
+This function initiates a server for ggfigdone, which can be accessed through a web browser.
+The web application enables users to manage and modify ggplot figures with ease.
+Users have the ability to:
+\itemize{
+\item Update the ggplot code by adding new components.
+\item Adjust the figure size.
+\item Download the figure as a PDF.
+\item Download the data used to create the figure.
+}
+}
+\details{
+By default the function will open a web browser to access the server.
+
+You can configure the web browser by setting the options:
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(browser = "firefox")  # Set Firefox as the default
+}\if{html}{\out{</div>}}
 }

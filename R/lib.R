@@ -1,48 +1,51 @@
-## extract code from the ggplot object
-## Deprecated: This function is not used anymore
-# fd_extract_ggplot_code = function(g) {
-#     ## Extract the original code from ggplot object
-#     code = constructive:::.cstr_construct(g$mapping)
-#     code = constructive:::pipe_to_layers(code, g$layers, plot_env = g$plot_env, one_liner = TRUE)
-#     code = constructive:::pipe_to_facets(code, g$facet, one_liner = TRUE)
-#     code = constructive:::pipe_to_labels(code, g$labels, g$mapping, g$layers, one_liner = TRUE)
-#     code = constructive:::pipe_to_scales(code, g$scales, one_liner = TRUE)
-#     code = constructive:::pipe_to_theme(code, g$theme, one_liner = TRUE)
-#     code = constructive:::pipe_to_coord(code, g$coordinates, one_liner = TRUE)
-#     code = constructive:::repair_attributes_ggplot(g, code, one_liner = TRUE)
-#     code = paste0("ggplot(data) + ", gsub("ggplot2::", "", code))
-#     code
-# }
+## Update the figure name
+fd_change_name = function(id, name, fdObj) {
+    fd_update(fdObj)
+    lock = lock(file.path(fdObj$dir, "/db.lock"), exclusive = TRUE)
+    if (id %in% names(fdObj$env)) {
+        fdObj$env[[id]]$name = name
+        fdObj$env[[id]]$updated_date = Sys.time()
+    }
+    unlock(lock)
+}
 
 
 ## Update fdObj by reading the data **from the disk**
 fd_update = function(fdObj_loc, do_lock = TRUE) {
+
+    ## Get the fdObj name in the parent environment of the parent environment
     fdObj_global = as.character(substitute(fdObj, env = parent.frame(n = 1)))
+    ## Get the fdObj name in the parent environment
     fdObj_parent = as.character(substitute(fdObj))
-    # print(fdObj_global)
+
     if (do_lock) {
         lock = lock(file.path(fdObj_loc$dir, "/db.lock"), exclusive = FALSE)
     }
     if (!dir.exists(fdObj_loc$dir)) {
         stop("Directory does not exist")
     }
+
+    ## Load the env
     env = readr::read_rds(file.path(fdObj_loc$dir, "env.rds"))
     fdObj_loc$env = env
     if (do_lock) {
         unlock(lock)
     }
+
+    ## Update the fdObj in the environments
     assign(fdObj_global, fdObj_loc, envir = parent.frame(n = 2))
     assign(fdObj_parent, fdObj_loc, envir = parent.frame(n = 1))
 }
 
 ## Update the ggfigdone database changes **to the disk**
 fd_save = function(fdObj) {
-    message("Saving the ggfigdone data to the disk...")
+    message("Automatic saving the ggfigdone data to the disk ...")
     lock = lock(file.path(fdObj$dir, "/db.lock"), exclusive = TRUE)
     readr::write_rds(fdObj$env, file.path(fdObj$dir, "env.rds"))
     unlock(lock)
 }
 
+## Get the data structure of the data used in ggplot object
 fd_str_data = function(fdObj, id) {
     fd_update(fdObj)
     status = "error"
@@ -58,6 +61,7 @@ fd_str_data = function(fdObj, id) {
     ))
 }
 
+## Save the data to a temporary csv file for downloading in the UI
 fd_generate_data = function(fdObj, id) {
     fd_update(fdObj)
     status = "error"
@@ -76,6 +80,7 @@ fd_generate_data = function(fdObj, id) {
     ))
 }
 
+## Generate pdf for downloading in the UI
 fd_generate_pdf = function(fdObj, id) {
     fd_update(fdObj)
     status = "error"
@@ -98,7 +103,7 @@ fd_generate_pdf = function(fdObj, id) {
     ))
 }
 
-## Save the figure png example to the disk
+## Generate png for displaying in the UI
 fd_plot = function(fdObj, id) {
     file_path = file.path(fdObj$dir, "figures", paste0(id, ".png"))
     canvas_options = fdObj$env[[id]]$canvas_options
@@ -116,11 +121,11 @@ fd_plot = function(fdObj, id) {
 
 #' Initiates the ggfigdone database
 #' 
-#' This function creates a directory serves as a database for ggfigdone.
+#' This function generates a folder that serves as a database for ggfigdone.
 #'
-#' @param dir A character string of the directory path
-#' @param recursive A logical value. If TRUE, the function creates the directory and its parent directories if they do not exist. If FALSE, the function creates the directory only if its parent directory exists.
-#' @return An object of class `fdObj`
+#' @param dir A character string specifying the directory path.
+#' @param recursive A logical value. If TRUE, the function will create the directory along with any necessary parent directories if they do not already exist. If FALSE, the function will create the directory only if its parent directory already exists.
+#' @return An object of class `fdObj`.
 #' @examples
 #' library(ggplot2)
 #' ## create ggfigdone database in a temporary directory
@@ -173,8 +178,8 @@ fd_init = function(dir, recursive = TRUE, ...) {
 #' 
 #' This function loads the ggfigdone database from the disk.
 #' 
-#' @param dir A character string of the directory path
-#' @return An object of class `fdObj`
+#' @param dir A character string representing the directory path.
+#' @return An object of class `fdObj`.
 #' @examples
 #' library(ggplot2)
 #' ## create ggfigdone database in a temporary directory
@@ -227,31 +232,24 @@ fd_load = function(dir, auto_database_upgrade = TRUE) {
 
     class(obj) = "fdObj"
 
-    # message("==================\nfdObj is loaded successfully...\nSave the ggfigdone data to the disk using fd_save function.\nIf you forgot, no worries.\nit will be saved automatically when you exit the R session.\n==================")
-
-    # reg.finalizer(.GlobalEnv, function(e) {
-        # message("Saving the ggfigdone data to the disk...")
-        # fd_save(obj)
-        # message("Done Bye Bye ..")
-    # },onexit=TRUE)
 
     obj
 }
 
 #' Add a ggplot object to the ggfigdone database
 #'
-#' This function adds a ggplot object to the ggfigdone database, which also can be used to update the figure given the figure id.
+#' This function adds a ggplot object to the ggfigdone database. It can also be utilized to update an existing figure using its figure ID.
 #' 
-#' @param g A ggplot object
-#' @param name A character string of the figure name
-#' @param fdObj An object of class `fdObj`
-#' @param width A numeric value of the width of the canvas
-#' @param height A numeric value of the height of the canvas
-#' @param units A character string of the units of the canvas
-#' @param dpi A numeric value of the dpi of the canvas
-#' @param overwrite A logical value. If TRUE, the function overwrites the figure if it already exists. If FALSE, the function stops with an error message.
-#' @param id A character string of the figure id. If not provided, the function generates a random id. Otherwise, you can give an existing id to update the corresponding figure.
-#' @return An object of class `fdObj`
+#' @param g A ggplot object.
+#' @param name A character string representing the figure name.
+#' @param fdObj An object of class `fdObj`.
+#' @param width A numeric value specifying the width of the canvas.
+#' @param height A numeric value specifying the height of the canvas.
+#' @param units A character string indicating the units of the canvas.
+#' @param dpi A numeric value denoting the dpi of the canvas.
+#' @param overwrite A logical value. If set to TRUE, the function will overwrite the figure if it already exists. If set to FALSE, the function will terminate with an error message.
+#' @param id A character string representing the figure ID. If not provided, the function will generate a random ID. Alternatively, an existing ID can be provided to update the corresponding figure.
+#' @return An object of class `fdObj`.
 #' @examples
 #' library(ggplot2)
 #'
@@ -337,21 +335,22 @@ print.fdObj = function(fdObj) {
 
 #' List the figures
 #' 
-#' This function returns figures with their parameters.
-#' The parameters include:
-#' - id: the figure id
-#' - name: the figure name
-#' - created_date: the created date
-#' - updated_date: the updated date
-#' - width: the width of the canvas
-#' - height: the height of the canvas
-#' - units: the units of the canvas
-#' - dpi: the dpi of the canvas
-#' - file_name: the file name
-#' - plot_labels: the plot labels
+#' This function provides a list of figures along with their associated parameters.
 #'
-#' @param fdObj An object of class `fdObj`
-#' @return A list of the figures with their parameters
+#' The parameters include:
+#' - id: The unique identifier for the figure
+#' - name: The name of the figure
+#' - created_date: The date the figure was created
+#' - updated_date: The date the figure was last updated
+#' - width: The width of the canvas
+#' - height: The height of the canvas
+#' - units: The units of measurement for the canvas
+#' - dpi: The dots per inch (DPI) of the canvas
+#' - file_name: The name of the file
+#' - plot_labels: The labels used in the plot
+#'
+#' @param fdObj An instance of the `fdObj` class.
+#' @return A list containing the figures along with their respective parameters.
 #' @export
 fd_ls = function(fdObj) {
     fd_update(fdObj)
@@ -380,8 +379,8 @@ fd_ls = function(fdObj) {
 #' 
 #' This function removes a figure from the ggfigdone database.
 #'
-#' @param id A character string of the figure id
-#' @param fdObj An object of class `fdObj`
+#' @param id A character string representing the figure ID.
+#' @param fdObj An object of class `fdObj`.
 #' @export
 fd_rm = function(id, fdObj) {
     fd_update(fdObj)
@@ -396,26 +395,6 @@ fd_rm = function(id, fdObj) {
     } else {
         message("Figure does not exist")
     }
-}
-
-## TODO: Add function to recover the original figure
-fd_back_to_origin = function(id, fdObj) {
-    fd_update(fdObj)
-    if (id %in% names(fdObj$env)) {
-        fdObj$env[[id]]$update_histroy = c()
-        fdObj$env[[id]]$updated_date = Sys.time()
-        fd_plot(fdObj, id)
-    }
-}
-
-fd_change_name = function(id, name, fdObj) {
-    fd_update(fdObj)
-    lock = lock(file.path(fdObj$dir, "/db.lock"), exclusive = TRUE)
-    if (id %in% names(fdObj$env)) {
-        fdObj$env[[id]]$name = name
-        fdObj$env[[id]]$updated_date = Sys.time()
-    }
-    unlock(lock)
 }
 
 #' Update a figure using ggplot expression
@@ -456,13 +435,14 @@ fd_update_fig = function(id, expr, fdObj) {
 
 #' Update the figure canvas size
 #' 
-#' This function updates the figure canvas size.
+#' This function is designed to update the size of the figure canvas.
 #' 
-#' @param id A character string of the figure id
-#' @param fdObj An object of class `fdObj`
-#' @param width A numeric value of the width of the canvas
-#' @param height A numeric value of the height of the canvas
-#' @param units A character string of the units of the canvas, e.g., "cm", "in", "mm", "px"
+#' @param id A character string representing the figure ID.
+#' @param fdObj An object of class `fdObj`.
+#' @param width A numeric value specifying the width of the canvas.
+#' @param height A numeric value specifying the height of the canvas.
+#' @param units A character string indicating the units of measurement for the canvas, such as "cm", "in", "mm", or "px".
+#' @param dpi A numeric value denoting the dots per inch (DPI) of the canvas.
 #' @export
 fd_canvas = function(
     id, 
@@ -482,5 +462,32 @@ fd_canvas = function(
         fd_plot(fdObj, id)
     }
 }
+
+## extract code from the ggplot object
+## Deprecated: This function is not used anymore, wait the {constuctive} package to be improved
+# fd_extract_ggplot_code = function(g) {
+#     ## Extract the original code from ggplot object
+#     code = constructive:::.cstr_construct(g$mapping)
+#     code = constructive:::pipe_to_layers(code, g$layers, plot_env = g$plot_env, one_liner = TRUE)
+#     code = constructive:::pipe_to_facets(code, g$facet, one_liner = TRUE)
+#     code = constructive:::pipe_to_labels(code, g$labels, g$mapping, g$layers, one_liner = TRUE)
+#     code = constructive:::pipe_to_scales(code, g$scales, one_liner = TRUE)
+#     code = constructive:::pipe_to_theme(code, g$theme, one_liner = TRUE)
+#     code = constructive:::pipe_to_coord(code, g$coordinates, one_liner = TRUE)
+#     code = constructive:::repair_attributes_ggplot(g, code, one_liner = TRUE)
+#     code = paste0("ggplot(data) + ", gsub("ggplot2::", "", code))
+#     code
+# }
+
+## TODO: Add function to recover the original figure
+# fd_back_to_origin = function(id, fdObj) {
+#     fd_update(fdObj)
+#     if (id %in% names(fdObj$env)) {
+#         fdObj$env[[id]]$update_histroy = c()
+#         fdObj$env[[id]]$updated_date = Sys.time()
+#         fd_plot(fdObj, id)
+#     }
+# }
+
 
 

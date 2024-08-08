@@ -7,24 +7,26 @@
 fd_ls(fdObj)
 }
 \arguments{
-\item{fdObj}{An object of class \code{fdObj}}
+\item{fdObj}{An instance of the \code{fdObj} class.}
 }
 \value{
-A list of the figures with their parameters
+A list containing the figures along with their respective parameters.
 }
 \description{
-This function returns figures with their parameters.
+This function provides a list of figures along with their associated parameters.
+}
+\details{
 The parameters include:
 \itemize{
-\item id: the figure id
-\item name: the figure name
-\item created_date: the created date
-\item updated_date: the updated date
-\item width: the width of the canvas
-\item height: the height of the canvas
-\item units: the units of the canvas
-\item dpi: the dpi of the canvas
-\item file_name: the file name
-\item plot_labels: the plot labels
+\item id: The unique identifier for the figure
+\item name: The name of the figure
+\item created_date: The date the figure was created
+\item updated_date: The date the figure was last updated
+\item width: The width of the canvas
+\item height: The height of the canvas
+\item units: The units of measurement for the canvas
+\item dpi: The dots per inch (DPI) of the canvas
+\item file_name: The name of the file
+\item plot_labels: The labels used in the plot
 }
 }

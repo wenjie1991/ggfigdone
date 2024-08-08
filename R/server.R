@@ -144,12 +144,30 @@ response_fd_rm = function(fo, req) {
     )
 }
 
-#' Start a server for ggfigdone
+#' Initiates a server for ggfigdone
+#'
+#' This function initiates a server for ggfigdone, which can be accessed through a web browser.
+#' The web application enables users to manage and modify ggplot figures with ease.
+#' Users have the ability to:
+#' - Update the ggplot code by adding new components.
+#' - Adjust the figure size.
+#' - Download the figure as a PDF.
+#' - Download the data used to create the figure.
 #' 
-#' @param dir The directory to save the figures
-#' @param port The port of the server, default is 8080
+#' By default the function will open a web browser to access the server.
+#'
+#' You can configure the web browser by setting the options:
+#' 
+#' ```{r}
+#' options(browser = "firefox")  # Set Firefox as the default
+#' ```
+#' 
+#' @param dir The directory of the ggfigdone database.
+#' @param host The host on which the server will run; the default is '0.0.0.0'.
+#' @param port The port on which the server will run; the default is 8080.
+#' @param auto_open A logical value indicating whether the server should be opened in a web browser; the default is TRUE.
 #' @export
-fd_server = function(dir, port = 8080) {
+fd_server = function(dir, host = '0.0.0.0', port = 8080, auto_open = TRUE) {
     fo = fd_load(dir)
 
     # print(fd_ls(fo))
@@ -209,9 +227,16 @@ fd_server = function(dir, port = 8080) {
     )
 
     # start the server
-    message_text = paste0("Start service: http://localhost:", port, "/index.html")
+    url = paste0("http://", host, ":", port, "/index.html")
+    message_text = paste0("Start service: ", url) 
     message(message_text)
-    runServer(host = "0.0.0.0", port = port, app = app)
+    # runServer(host = "0.0.0.0", port = port, app = app)
+    server <- startServer(host = host, port = port, app = app)
+    if (auto_open) {
+        browseURL(url)
+    }
+    on.exit(stopServer(server))
+    service(0)
 }
 
 

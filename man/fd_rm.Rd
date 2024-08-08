@@ -7,9 +7,9 @@
 fd_rm(id, fdObj)
 }
 \arguments{
-\item{id}{A character string of the figure id}
+\item{id}{A character string representing the figure ID.}
 
-\item{fdObj}{An object of class \code{fdObj}}
+\item{fdObj}{An object of class \code{fdObj}.}
 }
 \description{
 This function removes a figure from the ggfigdone database.

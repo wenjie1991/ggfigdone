@@ -1,8 +1,12 @@
 #' ggfigdone
 #' 
-#' ggfigdone: Manage & Modify ggplot figures using ggfigdone
+#' ggfigdone: Manage & Modify ggplot figures easily
 #' 
-#' When you prepare a presentation or a report, you often need to manage a large number of ggplot figures. You need to change the figure size, modify the title, label, themes, etc. It is inconvinient to go back to the original code to make these changes. This package provides a simple way to manage ggplot figures. You can easily add the figure to the database and update them later using CLI (command line interface) or GUI (graphical user interface).
+#' When preparing a presentation or report, it is often necessary to manage a substantial number of ggplot figures. 
+#' Adjustments such as changing the figure size, modifying titles, labels, and themes may be required. 
+#' Returning to the original code to implement these changes can be inconvenient. 
+#' This package offers a straightforward method for managing ggplot figures. 
+#' Figures can be easily added to the database and subsequently updated using either a GUI (graphical user interface) and/or CLI (command line interface).
 #'
 #' @name ggfigdone
 #' @import ggplot2

@@ -11,35 +11,35 @@ fd_add(
   width = 5,
   height = 5,
   units = "cm",
-  dpi = 600,
+  dpi = 200,
   overwrite = F,
   id = uuid::UUIDgenerate()
 )
 }
 \arguments{
-\item{g}{A ggplot object}
+\item{g}{A ggplot object.}
 
-\item{name}{A character string of the figure name}
+\item{name}{A character string representing the figure name.}
 
-\item{fdObj}{An object of class \code{fdObj}}
+\item{fdObj}{An object of class \code{fdObj}.}
 
-\item{width}{A numeric value of the width of the canvas}
+\item{width}{A numeric value specifying the width of the canvas.}
 
-\item{height}{A numeric value of the height of the canvas}
+\item{height}{A numeric value specifying the height of the canvas.}
 
-\item{units}{A character string of the units of the canvas}
+\item{units}{A character string indicating the units of the canvas.}
 
-\item{dpi}{A numeric value of the dpi of the canvas}
+\item{dpi}{A numeric value denoting the dpi of the canvas.}
 
-\item{overwrite}{A logical value. If TRUE, the function overwrites the figure if it already exists. If FALSE, the function stops with an error message.}
+\item{overwrite}{A logical value. If set to TRUE, the function will overwrite the figure if it already exists. If set to FALSE, the function will terminate with an error message.}
 
-\item{id}{A character string of the figure id. If not provided, the function generates a random id. Otherwise, you can give an existing id to update the corresponding figure.}
+\item{id}{A character string representing the figure ID. If not provided, the function will generate a random ID. Alternatively, an existing ID can be provided to update the corresponding figure.}
 }
 \value{
-An object of class \code{fdObj}
+An object of class \code{fdObj}.
 }
 \description{
-This function adds a ggplot object to the ggfigdone database, which also can be used to update the figure given the figure id.
+This function adds a ggplot object to the ggfigdone database. It can also be utilized to update an existing figure using its figure ID.
 }
 \examples{
 library(ggplot2)

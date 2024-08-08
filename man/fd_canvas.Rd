@@ -9,20 +9,23 @@ fd_canvas(
   fdObj,
   width = fdObj$env[[id]]$canvas_options$width,
   height = fdObj$env[[id]]$canvas_options$height,
-  units = fdObj$env[[id]]$canvas_options$units
+  units = fdObj$env[[id]]$canvas_options$units,
+  dpi = fdObj$env[[id]]$canvas_options$dpi
 )
 }
 \arguments{
-\item{id}{A character string of the figure id}
+\item{id}{A character string representing the figure ID.}
 
-\item{fdObj}{An object of class \code{fdObj}}
+\item{fdObj}{An object of class \code{fdObj}.}
 
-\item{width}{A numeric value of the width of the canvas}
+\item{width}{A numeric value specifying the width of the canvas.}
 
-\item{height}{A numeric value of the height of the canvas}
+\item{height}{A numeric value specifying the height of the canvas.}
 
-\item{units}{A character string of the units of the canvas, e.g., "cm", "in", "mm", "px"}
+\item{units}{A character string indicating the units of measurement for the canvas, such as "cm", "in", "mm", or "px".}
+
+\item{dpi}{A numeric value denoting the dots per inch (DPI) of the canvas.}
 }
 \description{
-This function updates the figure canvas size.
+This function is designed to update the size of the figure canvas.
 }
