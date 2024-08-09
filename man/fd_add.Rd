@@ -46,7 +46,7 @@ library(ggplot2)
 
 ## Initial ggfigdone database using `fd_init`
 db_dir = tempdir()
-fo = fd_init(db_dir)
+fo = fd_init(db_dir, rm_exist = TRUE)
 
 ## Draw a ggplot figure
 g = ggplot(mtcars, aes(x=wt, y=mpg)) + geom_point()

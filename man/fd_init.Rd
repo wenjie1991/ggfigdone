@@ -4,12 +4,14 @@
 \alias{fd_init}
 \title{Initiates the ggfigdone database}
 \usage{
-fd_init(dir, recursive = TRUE, ...)
+fd_init(dir, recursive = TRUE, rm_exist = FALSE, ...)
 }
 \arguments{
 \item{dir}{A character string specifying the directory path.}
 
 \item{recursive}{A logical value. If TRUE, the function will create the directory along with any necessary parent directories if they do not already exist. If FALSE, the function will create the directory only if its parent directory already exists.}
+
+\item{rm_exist}{A logical value. If TRUE, the function will remove the content in the directory if it already exists. If FALSE, the function will ask the user whether to remove the content in the directory.}
 
 \item{...}{Additional arguments to be passed to \code{\link[ggfigdone]{fd_load}} function.}
 }
@@ -25,6 +27,6 @@ library(ggplot2)
 db_dir = tempdir()
 
 ## Initate the ggfigdone database
-fd_init(db_dir)
+fd_init(db_dir, rm_exist = TRUE)
 
 }

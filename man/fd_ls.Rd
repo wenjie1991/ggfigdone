@@ -2,18 +2,21 @@
 % Please edit documentation in R/lib.R
 \name{fd_ls}
 \alias{fd_ls}
+\alias{fd_df}
 \title{List the figures}
 \usage{
 fd_ls(fdObj)
+
+fd_df(fdObj)
 }
 \arguments{
 \item{fdObj}{An instance of the \code{fdObj} class.}
 }
 \value{
-A list containing the figures along with their respective parameters.
+A List/data.frame containing the figures along with their respective parameters.
 }
 \description{
-This function provides a list of figures along with their associated parameters.
+This function provides a List or data.frame of figures along with their associated parameters.
 }
 \details{
 The parameters include:

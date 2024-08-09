@@ -1,3 +1,143 @@
+#' Merge ggfigdone databases
+#'
+#' This function merges two ggfigdone databases. 
+#' The function will update the figures in the 'to' database with the figures in the 'from' database.
+#' If there is a figure with the same ID in both databases, the function will keep the figure with the latest updated date or created date.
+#' 
+#' @param from An object of class `fdObj` that will be merged from.
+#' @param to An object of class `fdObj` that will be merged to.
+#' @param replace A character string specifying the method to keep the figure with the unique ID. It can be either "updated_date" or "created_date".
+#' @return An object of class `fdObj` with the merged database.
+#' @export
+#' @examples
+#' library(ggplot2)
+#' ## create ggfigdone database in a temporary directory
+#' db_dir1 = file.path(tempdir(), "db1")
+#' db_dir2 = file.path(tempdir(), "db2")
+#' fo1 = fd_init(db_dir1, rm_exist = TRUE)
+#' fo2 = fd_init(db_dir2, rm_exist = TRUE)
+#'
+#' ## Draw a ggplot figure
+#' g = ggplot(mtcars, aes(x=wt, y=mpg)) + geom_point()
+#'
+#' ## Add the figure to the database
+#' fd_add(g = g, name  = "fig1", fdObj = fo1)
+#' fd_add(g = g + theme_classic(), name  = "fig2", fdObj = fo2)
+#' 
+#' ## Merge the databases
+#' fo_merge = fd_merge(from = fo1, to = fo2, replace = "updated_date")
+#'
+#' ## Show the updated ggfigdone database
+#' print(fo_merge)
+#'
+#' ##
+fd_merge = function(from, to, replace = "updated_date") {
+
+    if (!inherits(from, "fdObj") || !inherits(to, "fdObj")) {
+        stop("The 'from' and 'to' arguments should be objects of class 'fdObj'")
+    }
+    if (replace != "updated_date" && replace != "created_date") {
+        stop("The 'replace' argument should be either 'updated_date' or 'created_date'")
+    }
+
+    # fd_update(from)
+    # fd_update(to)
+    lock_to = lock(file.path(to$dir, "/db.lock"), exclusive = TRUE)
+    lock_from = lock(file.path(from$dir, "/db.lock"), exclusive = FALSE)
+
+    ## Merge the databases
+    for (id in names(from$env)) {
+        if (id %in% names(to$env)) {
+            if (replace == "updated_date") {
+                if (from$env[[id]]$updated_date > to$env[[id]]$updated_date) {
+                    to$env[[id]] = from$env[[id]]
+                    fd_plot(to, id, do_lock = FALSE)
+                }
+            } else {
+                if (from$env[[id]]$created_date > to$env[[id]]$created_date) {
+                    to$env[[id]] = from$env[[id]]
+                    fd_plot(to, id, do_lock = FALSE)
+                }
+            }
+        } else {
+            to$env[[id]] = from$env[[id]]
+            fd_plot(to, id, do_lock = FALSE)
+        }
+    }
+    unlock(lock_to)
+    unlock(lock_from)
+    to
+}
+
+
+
+#' Keep figure name unique by removing older figures with the same name
+#'
+#' This function keeps the figure name unique by removing the older figures with the same name.
+#' Users can specify whether to keep the figure with the latest updated date or the latest created date.
+#' If a figure is created without changing, the created date and updated date are the same.
+#' 
+#' @param fdObj An object of class `fdObj`.
+#' @param by A character string specifying the method to keep the figure with the unique name. It can be either "updated_date" or "created_date".
+#' @return An object of class `fdObj`.
+#' @export
+#' @examples
+#' library(ggplot2)
+#' ## create ggfigdone database in a temporary directory
+#' db_dir = tempdir()
+#' fo = fd_init(db_dir, rm_exist = TRUE)
+#'
+#' ## Draw a ggplot figure
+#' g = ggplot(mtcars, aes(x=wt, y=mpg)) + geom_point()
+#'
+#' ## Add the figure to the database
+#' fd_add(g = g, name  = "fig1", fdObj = fo)
+#'
+#' ## Add the another figure with the same name
+#' fd_add(g = g + theme_classic(), name  = "fig1", fdObj = fo)
+#' 
+#' ## Keep the figure with the latest created date
+#' fd_unique(fdObj = fo, by = "created_date")
+#'
+#' ## Show the updated ggfigdone database
+#' print(fo)
+#'
+fd_unique = function(fdObj, by = "updated_date") {
+    fd_update(fdObj)
+    lock = lock(file.path(fdObj$dir, "/db.lock"), exclusive = TRUE)
+    unique_names = unique(sapply(fdObj$env, function(x) x$name))
+
+    for (name in unique_names) {
+        ids = names(fdObj$env)[sapply(fdObj$env, function(x) x$name == name)]
+
+        if (length(ids) == 1) {
+            next
+        }
+
+        ## Get old figure id
+        if (by == "updated_date") {
+            new_id = ids[which.max(sapply(ids, function(x) fdObj$env[[x]]$updated_date))]
+            v_old_id = ids[ids != new_id]
+        } else if (by == "created_date") {
+            new_id = ids[which.max(sapply(ids, function(x) fdObj$env[[x]]$created_date))]
+            v_old_id = ids[ids != new_id]
+        } else {
+            unlock(lock)
+            stop("The 'by' argument should be either 'updated_date' or 'created_date'")
+        }
+
+        ## Remove the older figures
+        rm(list = v_old_id, envir = fdObj$env)
+        for (id in v_old_id) {
+            file.remove(file.path(fdObj$dir, "figures", paste0(id, ".png")))
+        }
+        message(paste0(length(v_old_id), " figures with the name '", name, "' are removed."))
+    }
+    fd_save(fdObj, do_lock = FALSE)
+    unlock(lock)
+    fdObj
+}
+
 ## Update the figure name
 fd_change_name = function(id, name, fdObj) {
     fd_update(fdObj)
@@ -22,6 +162,9 @@ fd_update = function(fdObj_loc, do_lock = TRUE) {
         lock = lock(file.path(fdObj_loc$dir, "/db.lock"), exclusive = FALSE)
     }
     if (!dir.exists(fdObj_loc$dir)) {
+        if (do_lock) {
+            unlock(lock)
+        }
         stop("Directory does not exist")
     }
 
@@ -44,13 +187,18 @@ fd_update = function(fdObj_loc, do_lock = TRUE) {
 #' But if you set the \code{auto_database_upgrade} argument to \code{FALSE} in \code{\link[ggfigdone]{fd_load}}, you need to manually save the data using this function.
 #' 
 #' @param fdObj An object of class `fdObj`.
+#' @param do_lock A logical value. If TRUE, the function will lock the database file when saving the data.
 #'
 #' @export
-fd_save = function(fdObj) {
+fd_save = function(fdObj, do_lock = TRUE) {
     message("Automatic saving the ggfigdone data to the disk ...")
-    lock = lock(file.path(fdObj$dir, "/db.lock"), exclusive = TRUE)
+    if (do_lock) {
+        lock = lock(file.path(fdObj$dir, "/db.lock"), exclusive = TRUE)
+    }
     readr::write_rds(fdObj$env, file.path(fdObj$dir, "env.rds"))
-    unlock(lock)
+    if (do_lock) {
+        unlock(lock)
+    }
 }
 
 ## Get the data structure of the data used in ggplot object
@@ -112,18 +260,21 @@ fd_generate_pdf = function(fdObj, id) {
 }
 
 ## Generate png for displaying in the UI
-fd_plot = function(fdObj, id) {
+fd_plot = function(fdObj, id, do_lock = TRUE) {
     file_path = file.path(fdObj$dir, "figures", paste0(id, ".png"))
     canvas_options = fdObj$env[[id]]$canvas_options
     g = fdObj$env[[id]]$g_updated
-    lock = lock(file.path(fdObj$dir, "/db.lock"), exclusive = TRUE)
+    if (do_lock) {
+        lock = lock(file.path(fdObj$dir, "/db.lock"), exclusive = TRUE)
+    }
     ggsave(file_path, plot = g, 
            width = canvas_options$width, 
            height = canvas_options$height, 
            units = canvas_options$units, 
            dpi = canvas_options$dpi)
-    unlock(lock)
-    fd_save(fdObj)
+    if (do_lock) {
+        unlock(lock)
+    }
 }
 
 
@@ -133,6 +284,7 @@ fd_plot = function(fdObj, id) {
 #'
 #' @param dir A character string specifying the directory path.
 #' @param recursive A logical value. If TRUE, the function will create the directory along with any necessary parent directories if they do not already exist. If FALSE, the function will create the directory only if its parent directory already exists.
+#' @param rm_exist A logical value. If TRUE, the function will remove the content in the directory if it already exists. If FALSE, the function will ask the user whether to remove the content in the directory.
 #' @param ... Additional arguments to be passed to \code{\link[ggfigdone]{fd_load}} function.
 #' @return An object of class `fdObj`.
 #' @examples
@@ -141,18 +293,21 @@ fd_plot = function(fdObj, id) {
 #' db_dir = tempdir()
 #' 
 #' ## Initate the ggfigdone database
-#' fd_init(db_dir)
+#' fd_init(db_dir, rm_exist = TRUE)
 #'
 #' @export
-fd_init = function(dir, recursive = TRUE, ...) {
+fd_init = function(dir, recursive = TRUE, rm_exist = FALSE, ...) {
     ## check if the dir is empty
     if (!dir.exists(dir)) {
         dir.create(dir, recursive = recursive)
     } else if (length(dir(dir)) == 0) {
     } else {
         message("The directory already exists, and is not empty.")
-        prompt = readline("Do you want to remove the content in the directory? (y/n): ")
-        if (prompt == "y") {
+        if (!rm_exist) {
+            rm_exist = readline("Do you want to remove the content in the directory? (y/n): ") == 'y'
+        }
+        if (rm_exist) {
+            message("The directory content is removed.")
             unlink(dir, recursive = TRUE)
             dir.create(dir, recursive = recursive)
         } else {
@@ -195,7 +350,7 @@ fd_init = function(dir, recursive = TRUE, ...) {
 #' library(ggplot2)
 #' ## create ggfigdone database in a temporary directory
 #' db_dir = tempdir()
-#' fd_init(db_dir)
+#' fd_init(db_dir, rm_exist = TRUE)
 #'
 #' ## Load the ggfigdone database
 #' fd_load(db_dir)
@@ -266,7 +421,7 @@ fd_load = function(dir, auto_database_upgrade = TRUE) {
 #'
 #' ## Initial ggfigdone database using `fd_init`
 #' db_dir = tempdir()
-#' fo = fd_init(db_dir)
+#' fo = fd_init(db_dir, rm_exist = TRUE)
 #' 
 #' ## Draw a ggplot figure
 #' g = ggplot(mtcars, aes(x=wt, y=mpg)) + geom_point()
@@ -318,13 +473,13 @@ fd_add = function(g, name, fdObj,
     ## Add figObj to the environment
     fdObj$env[[id]] = figObj
     fd_plot(fdObj, id)
+    fd_save(fdObj)
 }
 
 #' @export
 format.fdObj = function(x, ...) {
     fd_update(x)
     lapply(names(x$env), function(id) {
-
         data.table::data.table(
             id = id,
             name = x$env[[id]]$name,
@@ -336,7 +491,7 @@ format.fdObj = function(x, ...) {
             dpi = x$env[[id]]$canvas_options$dpi,
             file_name = file.path(paste0(id, ".png"))
         )
-    }) |> data.table::rbindlist()
+    }) |> data.table::rbindlist() |> as.data.frame()
 }
 
 #' @export
@@ -346,7 +501,7 @@ print.fdObj = function(x, ...) {
 
 #' List the figures
 #' 
-#' This function provides a list of figures along with their associated parameters.
+#' This function provides a List or data.frame of figures along with their associated parameters.
 #'
 #' The parameters include:
 #' - id: The unique identifier for the figure
@@ -361,7 +516,7 @@ print.fdObj = function(x, ...) {
 #' - plot_labels: The labels used in the plot
 #'
 #' @param fdObj An instance of the `fdObj` class.
-#' @return A list containing the figures along with their respective parameters.
+#' @return A List/data.frame containing the figures along with their respective parameters.
 #' @export
 fd_ls = function(fdObj) {
     fd_update(fdObj)
@@ -374,7 +529,6 @@ fd_ls = function(fdObj) {
             name = fdObj$env[[id]]$name,
             created_date = fdObj$env[[id]]$created_date,
             updated_date = fdObj$env[[id]]$updated_date,
-            code_origin = fdObj$env[[id]]$code_origin,
             code_updated = fdObj$env[[id]]$code_updated,
             width = fdObj$env[[id]]$canvas_options$width,
             height = fdObj$env[[id]]$canvas_options$height,
@@ -385,6 +539,29 @@ fd_ls = function(fdObj) {
         )
     })
 }
+
+#' @rdname fd_ls
+#' @export
+fd_df = function(fdObj) {
+    fd_update(fdObj)
+    data.table::rbindlist(lapply(names(fdObj$env), function(id) {
+        plot_labels = fdObj$env[[id]]$g_updated$labels
+        data.table::data.table(
+            id = id,
+            name = fdObj$env[[id]]$name,
+            created_date = fdObj$env[[id]]$created_date,
+            updated_date = fdObj$env[[id]]$updated_date,
+            code_updated = fdObj$env[[id]]$code_updated,
+            width = fdObj$env[[id]]$canvas_options$width,
+            height = fdObj$env[[id]]$canvas_options$height,
+            units = fdObj$env[[id]]$canvas_options$units,
+            dpi = fdObj$env[[id]]$canvas_options$dpi,
+            file_name = file.path(paste0(id, ".png")),
+            plot_labels = plot_labels
+        )
+    })) |> as.data.frame()
+}
+
 
 #' Remove a figure
 #' 
@@ -440,6 +617,7 @@ fd_update_fig = function(id, expr, fdObj) {
     } else {
         return_val = "Figure does not exist"
     }
+    fd_save(fdObj, do_lock = FALSE)
     unlock(lock)
     return(return_val)
 }
@@ -470,7 +648,10 @@ fd_canvas = function(
         fdObj$env[[id]]$canvas_options$units = units
         fdObj$env[[id]]$canvas_options$dpi = dpi
         fdObj$env[[id]]$updated_date = Sys.time()
-        fd_plot(fdObj, id)
+        lock = lock(file.path(fdObj$dir, "/db.lock"), exclusive = TRUE)
+        fd_plot(fdObj, id, do_lock = FALSE)
+        fd_save(fdObj, do_lock = FALSE)
+        unlock(lock)
     }
 }
 
@@ -499,6 +680,4 @@ fd_canvas = function(
 #         fd_plot(fdObj, id)
 #     }
 # }
-
-
 
