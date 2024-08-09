@@ -82,7 +82,12 @@ function changeFigureName() {
                     }
                 }
                 // Update the figure name in the grid
-                $("#" + figure_id + " p").text(new_name);
+                // control the length of the name to 35
+                let display_name = new_name;
+                if (display_name.length > 35) {
+                    display_name = display_name.slice(0, 35) + "...";
+                }
+                $("#" + figure_id + " p").text(display_name);
                 // Update the figure name in the edit container
                 $("#et_figure_name").text(new_name);
             },
@@ -474,10 +479,10 @@ for (let i = 0; i < global_figureList.length; i++) {
 
     // Add figure name to the figure div
     let figureName = $("<p></p>");
-    // Make max length of the name 17 and add "..." at the end
-    let figureNameText = figure.name;
-    if (figureNameText.length > 17) {
-        figureNameText = figureNameText.slice(0, 17) + "...";
+    // Make max length of the name 35 and add "..." at the end
+    let figureNameText = figure.name[0];
+    if (figureNameText.length > 35) {
+        figureNameText = figureNameText.slice(0, 35) + "...";
     }
     figureName.text(figureNameText);
     figureDiv.append(figureName);

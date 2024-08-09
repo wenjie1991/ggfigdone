@@ -22,7 +22,7 @@ If a figure is created without changing, the created date and updated date are t
 \examples{
 library(ggplot2)
 ## create ggfigdone database in a temporary directory
-db_dir = tempdir()
+db_dir = file.path(tempdir(), "fd_unique")
 fo = fd_init(db_dir, rm_exist = TRUE)
 
 ## Draw a ggplot figure

@@ -45,7 +45,7 @@ This function adds a ggplot object to the ggfigdone database. It can also be uti
 library(ggplot2)
 
 ## Initial ggfigdone database using `fd_init`
-db_dir = tempdir()
+db_dir = file.path(tempdir(), "fd_add_exp")
 fo = fd_init(db_dir, rm_exist = TRUE)
 
 ## Draw a ggplot figure

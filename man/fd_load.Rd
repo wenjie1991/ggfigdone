@@ -21,7 +21,7 @@ This function loads the ggfigdone database from the disk.
 \examples{
 library(ggplot2)
 ## create ggfigdone database in a temporary directory
-db_dir = tempdir()
+db_dir = file.path(tempdir(), "fd_load")
 fd_init(db_dir, rm_exist = TRUE)
 
 ## Load the ggfigdone database

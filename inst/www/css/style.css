@@ -63,10 +63,9 @@ hr {
     object-fit: contain;
     resize: none;
     overflow: hidden;
-    line-height: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
 }
 
@@ -74,7 +73,7 @@ hr {
 .grid_figure p {
     margin: 0;
     padding: 10px;
-    text-align: left;
+    text-align: center;
     font-size: 1em;
     font-weight: bold;
 }
@@ -85,7 +84,7 @@ hr {
 
 .grid_figure img {
     width: 90%;
-    height: 80%;
+    height: 70%;
     object-fit: contain;
     object-position: center;
     cursor: pointer;
@@ -180,6 +179,10 @@ hr {
     border-radius: 5px;
     padding: 0 20px;
     gap: 0px;
+}
+
+#edit_tools h2 {
+    width: 90%;
 }
 
 #edit_tools textarea {

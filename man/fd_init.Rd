@@ -24,7 +24,7 @@ This function generates a folder that serves as a database for ggfigdone.
 \examples{
 library(ggplot2)
 ## create ggfigdone database in a temporary directory
-db_dir = tempdir()
+db_dir = file.path(tempdir(), "fd_init")
 
 ## Initate the ggfigdone database
 fd_init(db_dir, rm_exist = TRUE)

@@ -84,7 +84,7 @@ fd_merge = function(from, to, replace = "updated_date") {
 #' @examples
 #' library(ggplot2)
 #' ## create ggfigdone database in a temporary directory
-#' db_dir = tempdir()
+#' db_dir = file.path(tempdir(), "fd_unique")
 #' fo = fd_init(db_dir, rm_exist = TRUE)
 #'
 #' ## Draw a ggplot figure
@@ -290,7 +290,7 @@ fd_plot = function(fdObj, id, do_lock = TRUE) {
 #' @examples
 #' library(ggplot2)
 #' ## create ggfigdone database in a temporary directory
-#' db_dir = tempdir()
+#' db_dir = file.path(tempdir(), "fd_init")
 #' 
 #' ## Initate the ggfigdone database
 #' fd_init(db_dir, rm_exist = TRUE)
@@ -349,7 +349,7 @@ fd_init = function(dir, recursive = TRUE, rm_exist = FALSE, ...) {
 #' @examples
 #' library(ggplot2)
 #' ## create ggfigdone database in a temporary directory
-#' db_dir = tempdir()
+#' db_dir = file.path(tempdir(), "fd_load")
 #' fd_init(db_dir, rm_exist = TRUE)
 #'
 #' ## Load the ggfigdone database
@@ -420,7 +420,7 @@ fd_load = function(dir, auto_database_upgrade = TRUE) {
 #' library(ggplot2)
 #'
 #' ## Initial ggfigdone database using `fd_init`
-#' db_dir = tempdir()
+#' db_dir = file.path(tempdir(), "fd_add_exp")
 #' fo = fd_init(db_dir, rm_exist = TRUE)
 #' 
 #' ## Draw a ggplot figure
