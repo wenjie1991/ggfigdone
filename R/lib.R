@@ -229,7 +229,7 @@ fd_generate_data = function(fdObj, id) {
         data = fdObj$env[[id]]$data
         readr::write_csv(data, csv_file)
         status = "ok"
-        print(paste0("The csv file is saved to ", csv_file))
+        message(paste0("The csv file is saved to ", csv_file))
     }
     return(list(
         status = status,
@@ -252,7 +252,7 @@ fd_generate_pdf = function(fdObj, id) {
                units = canvas_options$units, 
                dpi = canvas_options$dpi)
         status = "ok"
-        print(paste0("The pdf file is saved to ", pdf_file))
+        message(paste0("The pdf file is saved to ", pdf_file))
     }
     return(list(
         status = status,

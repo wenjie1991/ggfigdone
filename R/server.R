@@ -39,7 +39,7 @@ response_fd_download_data = function(fo, req) {
 }
 
 response_fd_download_pdf = function(fo, req) {
-    print("response_fd_download_pdf")
+    # print("response_fd_download_pdf")
     parsed_qeury = parse_url(req$QUERY_STRING)$query
     figure_id = parsed_qeury$id
     res = fd_generate_pdf(fo, figure_id)
