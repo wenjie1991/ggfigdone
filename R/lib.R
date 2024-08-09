@@ -146,6 +146,7 @@ fd_change_name = function(id, name, fdObj) {
         fdObj$env[[id]]$name = name
         fdObj$env[[id]]$updated_date = Sys.time()
     }
+    fd_save(fdObj, do_lock = FALSE)
     unlock(lock)
 }
 
@@ -226,7 +227,7 @@ fd_generate_data = function(fdObj, id) {
         fig_name = fdObj$env[[id]]$name
         csv_file = file.path(fdObj$dir, "tmp", paste0(fig_name, ".csv"))
         data = fdObj$env[[id]]$data
-        readr::write_csv(data, csv_file, row.names = FALSE)
+        readr::write_csv(data, csv_file)
         status = "ok"
         print(paste0("The csv file is saved to ", csv_file))
     }
