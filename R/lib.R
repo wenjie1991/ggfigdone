@@ -438,8 +438,8 @@ fd_load = function(dir, auto_database_upgrade = TRUE) {
 #'
 #' @export
 fd_add = function(g, name, fdObj,
-    width = 5,
-    height = 5,
+    width = 10,
+    height = 10,
     units = "cm",
     dpi = 200,
     overwrite = F,
