@@ -486,9 +486,16 @@ format.fdObj = function(x, ...) {
     cat(paste0("## Number of figures: ", length(x$env)))
     cat("\n")
     ## Last updated date
-    cat(paste0("## Last updated date: "))
-    cat(as.character(as.POSIXct(max(sapply(x$env, function(x) x$updated_date)))))
-    cat("\n")
+    if (length(x$env) == 0) {
+        cat(paste0("## Last updated date: "))
+        cat(as.character(Sys.time()))
+        cat("\n")
+    } else {
+        cat("## Last updated date: ")
+        cat(format(as.POSIXct(max(sapply(x$env, function(x) x$updated_date))), "%Y-%m-%d %H:%M:%S"))
+
+        cat("\n")
+    }
     invisible(x)
 }
 
