@@ -1,0 +1,20 @@
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>/404.html</loc></url>
+<url><loc>/LICENSE-text.html</loc></url>
+<url><loc>/authors.html</loc></url>
+<url><loc>/index.html</loc></url>
+<url><loc>/reference/fd_add.html</loc></url>
+<url><loc>/reference/fd_canvas.html</loc></url>
+<url><loc>/reference/fd_init.html</loc></url>
+<url><loc>/reference/fd_load.html</loc></url>
+<url><loc>/reference/fd_ls.html</loc></url>
+<url><loc>/reference/fd_merge.html</loc></url>
+<url><loc>/reference/fd_rm.html</loc></url>
+<url><loc>/reference/fd_save.html</loc></url>
+<url><loc>/reference/fd_server.html</loc></url>
+<url><loc>/reference/fd_unique.html</loc></url>
+<url><loc>/reference/fd_update_fig.html</loc></url>
+<url><loc>/reference/ggfigdone.html</loc></url>
+<url><loc>/reference/index.html</loc></url>
+</urlset>
+
