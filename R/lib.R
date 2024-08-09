@@ -479,19 +479,17 @@ fd_add = function(g, name, fdObj,
 #' @export
 format.fdObj = function(x, ...) {
     fd_update(x)
-    lapply(names(x$env), function(id) {
-        data.table::data.table(
-            id = id,
-            name = x$env[[id]]$name,
-            created_date = x$env[[id]]$created_date,
-            updated_date = x$env[[id]]$updated_date,
-            width = x$env[[id]]$canvas_options$width,
-            height = x$env[[id]]$canvas_options$height,
-            units = x$env[[id]]$canvas_options$units,
-            dpi = x$env[[id]]$canvas_options$dpi,
-            file_name = file.path(paste0(id, ".png"))
-        )
-    }) |> data.table::rbindlist() |> as.data.frame()
+    cat("##########")
+    cat("\n")
+    cat(paste0("## ggfigdone database: ", x$dir))
+    cat("\n")
+    cat(paste0("## Number of figures: ", length(x$env)))
+    cat("\n")
+    ## Last updated date
+    cat(paste0("## Last updated date: "))
+    cat(as.character(as.POSIXct(max(sapply(x$env, function(x) x$updated_date)))))
+    cat("\n")
+    invisible(x)
 }
 
 #' @export
