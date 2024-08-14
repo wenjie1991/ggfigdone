@@ -5,9 +5,9 @@
 \alias{fd_df}
 \title{List the figures}
 \usage{
-fd_ls(fdObj)
+fd_ls(fdObj = fd_get_db())
 
-fd_df(fdObj)
+fd_df(fdObj = fd_get_db())
 }
 \arguments{
 \item{fdObj}{An instance of the \code{fdObj} class.}

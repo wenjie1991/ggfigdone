@@ -1,3 +1,28 @@
+.db_store <- function() {
+    .last_db = NULL
+
+    list(
+        get = function() .last_db,
+        set = function(x) .last_db <<- x
+    )
+}
+.db <- .db_store()
+
+#' Set the default ggfigdone database
+#' 
+#' @param fdObj An object of class `fdObj` to be set as the default ggfigdone database.
+#' @export
+fd_set_db = function(fdObj) {
+    .db$set(fdObj)
+}
+
+#' Get the default ggfigdone database
+#'
+#' @export
+fd_get_db = function() {
+    .db$get()
+}
+
 #' Merge ggfigdone databases
 #'
 #' This function merges two ggfigdone databases. 
@@ -5,7 +30,7 @@
 #' If there is a figure with the same ID in both databases, the function will keep the figure with the latest updated date or created date.
 #' 
 #' @param from An object of class `fdObj` that will be merged from.
-#' @param to An object of class `fdObj` that will be merged to.
+#' @param to An object of class `fdObj` that will be merged to. The default value is the default ggfigdone database.
 #' @param replace A character string specifying the method to keep the figure with the unique ID. It can be either "updated_date" or "created_date".
 #' @return An object of class `fdObj` with the merged database.
 #' @export
@@ -31,7 +56,7 @@
 #' print(fo_merge)
 #'
 #' ##
-fd_merge = function(from, to, replace = "updated_date") {
+fd_merge = function(from, to = fd_get_db(), replace = "updated_date") {
 
     if (!inherits(from, "fdObj") || !inherits(to, "fdObj")) {
         stop("The 'from' and 'to' arguments should be objects of class 'fdObj'")
@@ -102,7 +127,7 @@ fd_merge = function(from, to, replace = "updated_date") {
 #' ## Show the updated ggfigdone database
 #' print(fo)
 #'
-fd_unique = function(fdObj, by = "updated_date") {
+fd_unique = function(fdObj = fd_get_db(), by = "updated_date") {
     fd_update(fdObj)
     lock = lock(file.path(fdObj$dir, "/db.lock"), exclusive = TRUE)
     unique_names = unique(sapply(fdObj$env, function(x) x$name))
@@ -191,7 +216,7 @@ fd_update = function(fdObj_loc, do_lock = TRUE) {
 #' @param do_lock A logical value. If TRUE, the function will lock the database file when saving the data.
 #'
 #' @export
-fd_save = function(fdObj, do_lock = TRUE) {
+fd_save = function(fdObj = fd_get_db(), do_lock = TRUE) {
     message("Automatic saving the ggfigdone data to the disk ...")
     if (do_lock) {
         lock = lock(file.path(fdObj$dir, "/db.lock"), exclusive = TRUE)
@@ -287,6 +312,7 @@ fd_plot = function(fdObj, id, do_lock = TRUE) {
 #' @param recursive A logical value. If TRUE, the function will create the directory along with any necessary parent directories if they do not already exist. If FALSE, the function will create the directory only if its parent directory already exists.
 #' @param rm_exist A logical value. If TRUE, the function will remove the content in the directory if it already exists. If FALSE, the function will ask the user whether to remove the content in the directory.
 #' @param ... Additional arguments to be passed to \code{\link[ggfigdone]{fd_load}} function.
+#' @param set_default A logical value. If TRUE, the function will set the database as the default database.
 #' @return An object of class `fdObj`.
 #' @examples
 #' library(ggplot2)
@@ -297,7 +323,7 @@ fd_plot = function(fdObj, id, do_lock = TRUE) {
 #' fd_init(db_dir, rm_exist = TRUE)
 #'
 #' @export
-fd_init = function(dir, recursive = TRUE, rm_exist = FALSE, ...) {
+fd_init = function(dir, recursive = TRUE, rm_exist = FALSE, set_default = TRUE, ...) {
     ## check if the dir is empty
     if (!dir.exists(dir)) {
         dir.create(dir, recursive = recursive)
@@ -336,7 +362,7 @@ fd_init = function(dir, recursive = TRUE, rm_exist = FALSE, ...) {
 
     writeLines("v1", file.path(dir, "version.txt"))
 
-    fd_load(dir, ...)
+    fd_load(dir, set_default = set_default, ...)
 }
 
 #' Load the ggfigdone database
@@ -346,6 +372,7 @@ fd_init = function(dir, recursive = TRUE, rm_exist = FALSE, ...) {
 #' @param dir A character string representing the directory path.
 #' @param auto_database_upgrade A logical value. If TRUE, the function will automatically upgrade the database to the latest version. 
 #' If FALSE, you need to manually save the data using the \code{\link[ggfigdone]{fd_save}} function.
+#' @param set_default A logical value. If TRUE, the function will set the database as the default database.
 #' @return An object of class `fdObj`.
 #' @examples
 #' library(ggplot2)
@@ -357,7 +384,7 @@ fd_init = function(dir, recursive = TRUE, rm_exist = FALSE, ...) {
 #' fd_load(db_dir)
 #'
 #' @export
-fd_load = function(dir, auto_database_upgrade = TRUE) {
+fd_load = function(dir, auto_database_upgrade = TRUE, set_default = TRUE) {
     ## Check if the directory exists
     if (!dir.exists(dir)) {
         stop("Directory does not exist")
@@ -399,6 +426,9 @@ fd_load = function(dir, auto_database_upgrade = TRUE) {
 
     class(obj) = "fdObj"
 
+    if (set_default) {
+        fd_set_db(obj)
+    }
 
     obj
 }
@@ -437,7 +467,7 @@ fd_load = function(dir, auto_database_upgrade = TRUE) {
 #' print(fo)
 #'
 #' @export
-fd_add = function(g, name, fdObj,
+fd_add = function(name, g = last_plot(), fdObj = fd_get_db(),
     width = 10,
     height = 10,
     units = "cm",
@@ -524,7 +554,7 @@ print.fdObj = function(x, ...) {
 #' @param fdObj An instance of the `fdObj` class.
 #' @return A List/data.frame containing the figures along with their respective parameters.
 #' @export
-fd_ls = function(fdObj) {
+fd_ls = function(fdObj = fd_get_db()) {
     fd_update(fdObj)
     lapply(names(fdObj$env), function(id) {
 
@@ -548,7 +578,7 @@ fd_ls = function(fdObj) {
 
 #' @rdname fd_ls
 #' @export
-fd_df = function(fdObj) {
+fd_df = function(fdObj = fd_get_db()) {
     fd_update(fdObj)
     data.table::rbindlist(lapply(names(fdObj$env), function(id) {
         plot_labels = fdObj$env[[id]]$g_updated$labels
@@ -576,7 +606,7 @@ fd_df = function(fdObj) {
 #' @param id A character string representing the figure ID.
 #' @param fdObj An object of class `fdObj`.
 #' @export
-fd_rm = function(id, fdObj) {
+fd_rm = function(id, fdObj = fd_get_db()) {
     fd_update(fdObj)
     if (id %in% names(fdObj$env)) {
         lock = lock(file.path(fdObj$dir, "/db.lock"), exclusive = TRUE)
@@ -600,7 +630,7 @@ fd_rm = function(id, fdObj) {
 #' @param fdObj An object of class `fdObj`
 #' @return A character string of the status
 #' @export
-fd_update_fig = function(id, expr, fdObj) {
+fd_update_fig = function(id, expr, fdObj = fd_get_db()) {
     return_val = NULL
     lock = lock(file.path(fdObj$dir, "/db.lock"), exclusive = TRUE)
     fd_update(fdObj, do_lock = FALSE)
@@ -641,7 +671,7 @@ fd_update_fig = function(id, expr, fdObj) {
 #' @export
 fd_canvas = function(
     id, 
-    fdObj,
+    fdObj = fd_get_db(),
     width = fdObj$env[[id]]$canvas_options$width,
     height = fdObj$env[[id]]$canvas_options$height,
     units = fdObj$env[[id]]$canvas_options$units,

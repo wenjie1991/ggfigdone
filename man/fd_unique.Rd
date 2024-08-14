@@ -4,7 +4,7 @@
 \alias{fd_unique}
 \title{Keep figure name unique by removing older figures with the same name}
 \usage{
-fd_unique(fdObj, by = "updated_date")
+fd_unique(fdObj = fd_get_db(), by = "updated_date")
 }
 \arguments{
 \item{fdObj}{An object of class \code{fdObj}.}

@@ -4,13 +4,15 @@
 \alias{fd_load}
 \title{Load the ggfigdone database}
 \usage{
-fd_load(dir, auto_database_upgrade = TRUE)
+fd_load(dir, auto_database_upgrade = TRUE, set_default = TRUE)
 }
 \arguments{
 \item{dir}{A character string representing the directory path.}
 
 \item{auto_database_upgrade}{A logical value. If TRUE, the function will automatically upgrade the database to the latest version.
 If FALSE, you need to manually save the data using the \code{\link[ggfigdone]{fd_save}} function.}
+
+\item{set_default}{A logical value. If TRUE, the function will set the database as the default database.}
 }
 \value{
 An object of class \code{fdObj}.

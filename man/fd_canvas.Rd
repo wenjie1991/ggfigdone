@@ -6,7 +6,7 @@
 \usage{
 fd_canvas(
   id,
-  fdObj,
+  fdObj = fd_get_db(),
   width = fdObj$env[[id]]$canvas_options$width,
   height = fdObj$env[[id]]$canvas_options$height,
   units = fdObj$env[[id]]$canvas_options$units,

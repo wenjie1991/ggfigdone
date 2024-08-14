@@ -4,12 +4,12 @@
 \alias{fd_merge}
 \title{Merge ggfigdone databases}
 \usage{
-fd_merge(from, to, replace = "updated_date")
+fd_merge(from, to = fd_get_db(), replace = "updated_date")
 }
 \arguments{
 \item{from}{An object of class \code{fdObj} that will be merged from.}
 
-\item{to}{An object of class \code{fdObj} that will be merged to.}
+\item{to}{An object of class \code{fdObj} that will be merged to. The default value is the default ggfigdone database.}
 
 \item{replace}{A character string specifying the method to keep the figure with the unique ID. It can be either "updated_date" or "created_date".}
 }

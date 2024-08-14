@@ -4,7 +4,7 @@
 \alias{fd_update_fig}
 \title{Update a figure using ggplot expression}
 \usage{
-fd_update_fig(id, expr, fdObj)
+fd_update_fig(id, expr, fdObj = fd_get_db())
 }
 \arguments{
 \item{id}{A character string of the figure id}

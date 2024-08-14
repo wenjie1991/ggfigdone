@@ -5,11 +5,11 @@
 \title{Add a ggplot object to the ggfigdone database}
 \usage{
 fd_add(
-  g,
   name,
-  fdObj,
-  width = 5,
-  height = 5,
+  g = last_plot(),
+  fdObj = fd_get_db(),
+  width = 10,
+  height = 10,
   units = "cm",
   dpi = 200,
   overwrite = F,
@@ -17,9 +17,9 @@ fd_add(
 )
 }
 \arguments{
-\item{g}{A ggplot object.}
-
 \item{name}{A character string representing the figure name.}
+
+\item{g}{A ggplot object.}
 
 \item{fdObj}{An object of class \code{fdObj}.}
 

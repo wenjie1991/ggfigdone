@@ -4,7 +4,7 @@
 \alias{fd_init}
 \title{Initiates the ggfigdone database}
 \usage{
-fd_init(dir, recursive = TRUE, rm_exist = FALSE, ...)
+fd_init(dir, recursive = TRUE, rm_exist = FALSE, set_default = TRUE, ...)
 }
 \arguments{
 \item{dir}{A character string specifying the directory path.}
@@ -12,6 +12,8 @@ fd_init(dir, recursive = TRUE, rm_exist = FALSE, ...)
 \item{recursive}{A logical value. If TRUE, the function will create the directory along with any necessary parent directories if they do not already exist. If FALSE, the function will create the directory only if its parent directory already exists.}
 
 \item{rm_exist}{A logical value. If TRUE, the function will remove the content in the directory if it already exists. If FALSE, the function will ask the user whether to remove the content in the directory.}
+
+\item{set_default}{A logical value. If TRUE, the function will set the database as the default database.}
 
 \item{...}{Additional arguments to be passed to \code{\link[ggfigdone]{fd_load}} function.}
 }

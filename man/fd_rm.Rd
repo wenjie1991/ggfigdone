@@ -4,7 +4,7 @@
 \alias{fd_rm}
 \title{Remove a figure}
 \usage{
-fd_rm(id, fdObj)
+fd_rm(id, fdObj = fd_get_db())
 }
 \arguments{
 \item{id}{A character string representing the figure ID.}

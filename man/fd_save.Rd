@@ -4,7 +4,7 @@
 \alias{fd_save}
 \title{Update the ggfigdone database changes \strong{to the disk}}
 \usage{
-fd_save(fdObj, do_lock = TRUE)
+fd_save(fdObj = fd_get_db(), do_lock = TRUE)
 }
 \arguments{
 \item{fdObj}{An object of class \code{fdObj}.}

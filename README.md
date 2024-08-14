@@ -33,22 +33,28 @@ remotes::install_github("wenjie1991/ggfigdone")
 
 First, you need to initialize the database and add figures to it.
 
+Next time, you only need to load the database to add more figures or update the existing figures.
+
 
 ```r
 library(ggfigdone)
+library(ggplot2)
 
 ## Initial ggfigdone database using `fd_init`
 ## The database location is `./fd_dir`
+## Load existing database using `fd_load("./fd_dir")`
 fo = fd_init("./fd_dir")
 
 ## Draw a ggplot figure
 g = ggplot(mtcars, aes(x=wt, y=mpg)) + geom_point()
 
 ## Add the figure to the database
-fd_add(g = g, name  = "fig1", fo, overwrite = T)
+## The last plot is added to the last initialized/loaded database
+fd_add(name  = "fig1")
 
 ## Add the same figure with a different name
-fd_add(g = g, name  = "fig2", fo, overwrite = T)
+## You can specify the ggplot object and database name
+fd_add(g = g, name  = "fig2", fo)
 
 ## The hard disk database is automatically updated, no need to save operations.
 ```
@@ -58,13 +64,11 @@ fd_add(g = g, name  = "fig2", fo, overwrite = T)
 Then you can start the server and open the browser to manage the figures.
 
 ```r
-## Load the database
-fo = fd_load("./fd_dir")
-
-## Start the server and open the browser
+## To start the server, provide the database location 
 fd_server("./fd_dir")
-```
 
+## Open the browser and go to http://localhost:8080/index.html
+```
 
 ## Contribution
 
