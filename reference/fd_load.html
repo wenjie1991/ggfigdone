@@ -17,13 +17,16 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ggfigdone</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="http://github.com/wenjie1991/ggfigdone/" class="external-link">
@@ -50,7 +53,7 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">fd_load</span><span class="op">(</span><span class="va">dir</span>, auto_database_upgrade <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">fd_load</span><span class="op">(</span><span class="va">dir</span>, auto_database_upgrade <span class="op">=</span> <span class="cn">TRUE</span>, set_default <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -65,6 +68,10 @@
 <dd><p>A logical value. If TRUE, the function will automatically upgrade the database to the latest version.
 If FALSE, you need to manually save the data using the <code><a href="fd_save.html">fd_save</a></code> function.</p></dd>
 
+
+<dt id="arg-set-default">set_default<a class="anchor" aria-label="anchor" href="#arg-set-default"></a></dt>
+<dd><p>A logical value. If TRUE, the function will set the database as the default database.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
@@ -77,21 +84,19 @@ If FALSE, you need to manually save the data using the <code><a href="fd_save.ht
 <span class="r-in"><span><span class="co">## create ggfigdone database in a temporary directory</span></span></span>
 <span class="r-in"><span><span class="va">db_dir</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"fd_load"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="fd_init.html">fd_init</a></span><span class="op">(</span><span class="va">db_dir</span>, rm_exist <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> The directory already exists, and is not empty.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> The directory content is removed.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> The database version is up-to-date.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ##########</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## ggfigdone database: /tmp/Rtmp7ds0uT/fd_load</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ## ggfigdone database: /tmp/RtmpTpGYE1/fd_load</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ## Number of figures: 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## Last updated date: 2024-08-09 16:43:39.606742</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ## Last updated date: 2024-08-14 14:16:47.838793</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Load the ggfigdone database</span></span></span>
 <span class="r-in"><span><span class="fu">fd_load</span><span class="op">(</span><span class="va">db_dir</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> The database version is up-to-date.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ##########</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## ggfigdone database: /tmp/Rtmp7ds0uT/fd_load</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ## ggfigdone database: /tmp/RtmpTpGYE1/fd_load</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ## Number of figures: 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## Last updated date: 2024-08-09 16:43:39.608754</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ## Last updated date: 2024-08-14 14:16:47.851326</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

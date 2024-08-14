@@ -17,13 +17,16 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ggfigdone</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="http://github.com/wenjie1991/ggfigdone/" class="external-link">
@@ -50,7 +53,7 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">fd_init</span><span class="op">(</span><span class="va">dir</span>, recursive <span class="op">=</span> <span class="cn">TRUE</span>, rm_exist <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">fd_init</span><span class="op">(</span><span class="va">dir</span>, recursive <span class="op">=</span> <span class="cn">TRUE</span>, rm_exist <span class="op">=</span> <span class="cn">FALSE</span>, set_default <span class="op">=</span> <span class="cn">TRUE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -67,6 +70,10 @@
 
 <dt id="arg-rm-exist">rm_exist<a class="anchor" aria-label="anchor" href="#arg-rm-exist"></a></dt>
 <dd><p>A logical value. If TRUE, the function will remove the content in the directory if it already exists. If FALSE, the function will ask the user whether to remove the content in the directory.</p></dd>
+
+
+<dt id="arg-set-default">set_default<a class="anchor" aria-label="anchor" href="#arg-set-default"></a></dt>
+<dd><p>A logical value. If TRUE, the function will set the database as the default database.</p></dd>
 
 
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
@@ -86,13 +93,11 @@
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Initate the ggfigdone database</span></span></span>
 <span class="r-in"><span><span class="fu">fd_init</span><span class="op">(</span><span class="va">db_dir</span>, rm_exist <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> The directory already exists, and is not empty.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> The directory content is removed.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> The database version is up-to-date.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ##########</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## ggfigdone database: /tmp/Rtmp7ds0uT/fd_init</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ## ggfigdone database: /tmp/RtmpTpGYE1/fd_init</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ## Number of figures: 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## Last updated date: 2024-08-09 16:43:39.345337</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ## Last updated date: 2024-08-14 14:16:47.704069</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

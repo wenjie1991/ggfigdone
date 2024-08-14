@@ -17,13 +17,16 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ggfigdone</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="http://github.com/wenjie1991/ggfigdone/" class="external-link">
@@ -52,7 +55,7 @@
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">fd_canvas</span><span class="op">(</span></span>
 <span>  <span class="va">id</span>,</span>
-<span>  <span class="va">fdObj</span>,</span>
+<span>  fdObj <span class="op">=</span> <span class="fu"><a href="fd_get_db.html">fd_get_db</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  width <span class="op">=</span> <span class="va">fdObj</span><span class="op">$</span><span class="va">env</span><span class="op">[[</span><span class="va">id</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">canvas_options</span><span class="op">$</span><span class="va">width</span>,</span>
 <span>  height <span class="op">=</span> <span class="va">fdObj</span><span class="op">$</span><span class="va">env</span><span class="op">[[</span><span class="va">id</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">canvas_options</span><span class="op">$</span><span class="va">height</span>,</span>
 <span>  units <span class="op">=</span> <span class="va">fdObj</span><span class="op">$</span><span class="va">env</span><span class="op">[[</span><span class="va">id</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">canvas_options</span><span class="op">$</span><span class="va">units</span>,</span>

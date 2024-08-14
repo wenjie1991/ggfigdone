@@ -19,13 +19,16 @@ If a figure is created without changing, the created date and updated date are t
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ggfigdone</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="http://github.com/wenjie1991/ggfigdone/" class="external-link">
@@ -54,7 +57,7 @@ If a figure is created without changing, the created date and updated date are t
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">fd_unique</span><span class="op">(</span><span class="va">fdObj</span>, by <span class="op">=</span> <span class="st">"updated_date"</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">fd_unique</span><span class="op">(</span>fdObj <span class="op">=</span> <span class="fu"><a href="fd_get_db.html">fd_get_db</a></span><span class="op">(</span><span class="op">)</span>, by <span class="op">=</span> <span class="st">"updated_date"</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -80,8 +83,6 @@ If a figure is created without changing, the created date and updated date are t
 <span class="r-in"><span><span class="co">## create ggfigdone database in a temporary directory</span></span></span>
 <span class="r-in"><span><span class="va">db_dir</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"fd_unique"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">fo</span> <span class="op">=</span> <span class="fu"><a href="fd_init.html">fd_init</a></span><span class="op">(</span><span class="va">db_dir</span>, rm_exist <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> The directory already exists, and is not empty.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> The directory content is removed.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> The database version is up-to-date.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Draw a ggplot figure</span></span></span>
@@ -102,16 +103,16 @@ If a figure is created without changing, the created date and updated date are t
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 1 figures with the name 'fig1' are removed.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Automatic saving the ggfigdone data to the disk ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ##########</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## ggfigdone database: /tmp/Rtmp7ds0uT/fd_unique</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ## ggfigdone database: /tmp/RtmpTpGYE1/fd_unique</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ## Number of figures: 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## Last updated date: 2024-08-09 16:43:41</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ## Last updated date: 2024-08-14 14:16:49</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Show the updated ggfigdone database</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">fo</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ##########</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## ggfigdone database: /tmp/Rtmp7ds0uT/fd_unique</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ## ggfigdone database: /tmp/RtmpTpGYE1/fd_unique</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ## Number of figures: 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## Last updated date: 2024-08-09 16:43:41</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ## Last updated date: 2024-08-14 14:16:49</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

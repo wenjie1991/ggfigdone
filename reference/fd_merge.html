@@ -19,13 +19,16 @@ If there is a figure with the same ID in both databases, the function will keep 
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ggfigdone</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="http://github.com/wenjie1991/ggfigdone/" class="external-link">
@@ -54,7 +57,7 @@ If there is a figure with the same ID in both databases, the function will keep 
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">fd_merge</span><span class="op">(</span><span class="va">from</span>, <span class="va">to</span>, replace <span class="op">=</span> <span class="st">"updated_date"</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">fd_merge</span><span class="op">(</span><span class="va">from</span>, to <span class="op">=</span> <span class="fu"><a href="fd_get_db.html">fd_get_db</a></span><span class="op">(</span><span class="op">)</span>, replace <span class="op">=</span> <span class="st">"updated_date"</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -66,7 +69,7 @@ If there is a figure with the same ID in both databases, the function will keep 
 
 
 <dt id="arg-to">to<a class="anchor" aria-label="anchor" href="#arg-to"></a></dt>
-<dd><p>An object of class <code>fdObj</code> that will be merged to.</p></dd>
+<dd><p>An object of class <code>fdObj</code> that will be merged to. The default value is the default ggfigdone database.</p></dd>
 
 
 <dt id="arg-replace">replace<a class="anchor" aria-label="anchor" href="#arg-replace"></a></dt>
@@ -85,12 +88,8 @@ If there is a figure with the same ID in both databases, the function will keep 
 <span class="r-in"><span><span class="va">db_dir1</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"db1"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">db_dir2</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"db2"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">fo1</span> <span class="op">=</span> <span class="fu"><a href="fd_init.html">fd_init</a></span><span class="op">(</span><span class="va">db_dir1</span>, rm_exist <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> The directory already exists, and is not empty.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> The directory content is removed.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> The database version is up-to-date.</span>
 <span class="r-in"><span><span class="va">fo2</span> <span class="op">=</span> <span class="fu"><a href="fd_init.html">fd_init</a></span><span class="op">(</span><span class="va">db_dir2</span>, rm_exist <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> The directory already exists, and is not empty.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> The directory content is removed.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> The database version is up-to-date.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Draw a ggplot figure</span></span></span>
@@ -110,9 +109,9 @@ If there is a figure with the same ID in both databases, the function will keep 
 <span class="r-in"><span><span class="co">## Show the updated ggfigdone database</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">fo_merge</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ##########</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## ggfigdone database: /tmp/Rtmp7ds0uT/db2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ## ggfigdone database: /tmp/RtmpTpGYE1/db2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ## Number of figures: 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## Last updated date: 2024-08-09 16:43:40</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ## Last updated date: 2024-08-14 14:16:48</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">##</span></span></span>
 </code></pre></div>
