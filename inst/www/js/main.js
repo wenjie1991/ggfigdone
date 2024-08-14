@@ -1,9 +1,9 @@
 // Jquery is enabled in the html file
 
+// Function to get the ggplot data structure from the server
 function strData() {
     // Get the figure id
     let figure_id = $("#et_figure_id").text();
-    let figure_name = $("#et_figure_name").text();
     let baseUrl = window.location.origin;
     let url = baseUrl + "/fd_str_data?id=" + figure_id;
     $.ajax({
@@ -18,6 +18,20 @@ function strData() {
     });
 }
 
+// Function to order the figure list by name or updated date
+function orderFigureList() {
+    if (global_figure_order_by == "name") {
+        global_figureList.sort(function (a, b) {
+            return a.name.localeCompare(b.name);
+        });
+    } else if (global_figure_order_by == "updated_date") {
+        global_figureList.sort(function (a, b) {
+            return a.updated_date.localeCompare(b.updated_date);
+        });
+    }
+}
+
+// Function to download the data table of the figure
 function downloadData() {
     // Get the figure id
     let figure_id = $("#et_figure_id").text();
@@ -35,6 +49,7 @@ function downloadData() {
     });
 }
 
+// Function to download the figure as a PDF file
 function downloadPDF() {
     // Get the figure id
     let figure_id = $("#et_figure_id").text();
@@ -81,13 +96,6 @@ function changeFigureName() {
                         break;
                     }
                 }
-                // Update the figure name in the grid
-                // control the length of the name to 35
-                let display_name = new_name;
-                if (display_name.length > 35) {
-                    display_name = display_name.slice(0, 35) + "...";
-                }
-                $("#" + figure_id + " p").text(display_name);
                 // Update the figure name in the edit container
                 $("#et_figure_name").text(new_name);
             },
@@ -128,7 +136,21 @@ function deleteFigure() {
     }
 }
 
+
+// Get figure object from a list of figures
+function getFigure(figure_id, figureList) {
+    let figure = {};
+    for (let i = 0; i < figureList.length; i++) {
+        if (figureList[i].id == figure_id) {
+            figure = figureList[i];
+            break;
+        }
+    }
+    return figure;
+}
+
 // Get font list from server
+// NOTE: No longer needed, need to be removed
 function getFontList() {
     let fontList;
     let baseUrl = window.location.origin;
@@ -144,19 +166,9 @@ function getFontList() {
     return fontList;
 }
 
-// Get figure from a list of figures
-function getFigure(figure_id, figureList) {
-    let figure = {};
-    for (let i = 0; i < figureList.length; i++) {
-        if (figureList[i].id == figure_id) {
-            figure = figureList[i];
-            break;
-        }
-    }
-    return figure;
-}
 
 // Function to check if the <text> value is changed by the user
+// NOTE: No longer needed, need to be removed
 function checkChangeText(new_value, old_value) {
     // when new value is "" and old_value is "" or undefined, return false
     // else compare the new value and old value
@@ -187,6 +199,7 @@ function getFigureList() {
     return figureList;
 }
 
+// Function to link the figure image to grid
 function linkFigure(img, figure) {
     let baseUrl = window.location.origin;
     img.attr(
@@ -200,6 +213,7 @@ function linkFigure(img, figure) {
     return img;
 }
 
+// Update the info in the figure edit container
 function updateEditToolHtml(figure) {
     // Update figure name
     $("#et_figure_name").text(figure.name);
@@ -212,32 +226,7 @@ function updateEditToolHtml(figure) {
     $("#et_update_date").text(figure.updated_date);
     // Update code
     //$("#code").val(figure.code_updated);
-    editor_code.setValue(figure.code_updated[0], 1);
-
-
-    // Update figure labels
-    // if (figure.plot_labels.title != undefined) {
-    //     $("#et_figure_title").val(figure.plot_labels.title);
-    // } else {
-    //     $("#et_figure_title").val("");
-    // }
-    // if (figure.plot_labels.x != undefined) {
-    //     $("#et_figure_xlab").val(figure.plot_labels.x);
-    // } else {
-    //     $("#et_figure_xlab").val("");
-    // }
-    // if (figure.plot_labels.y != undefined) {
-    //     $("#et_figure_ylab").val(figure.plot_labels.y);
-    // } else {
-    //     $("#et_figure_ylab").val("");
-    // }
-
-    // Update figure theme options
-    // if (figure.theme_options.font_family != "") {
-    //     $("#et_figure_font_family").val(figure.theme_options.font_family);
-    // } else {
-    //     $("#et_figure_font_family").val("");
-    // }
+    editor_code.setValue(figure.code_updated, 1);
 
     // Updata canvas size
     $("#height").val(figure.height);
@@ -253,7 +242,7 @@ function updateEditToolHtml(figure) {
     // Up
 }
 
-// Load the figure
+// Load the figure in the edit container
 function loadFigure(figure_id, figureList) {
     // find the figure by name from the figureList
     let figure = getFigure(figure_id, figureList);
@@ -269,20 +258,7 @@ function loadFigure(figure_id, figureList) {
     figureDiv.append(img);
 }
 
-function preparePlotThemeCode() {
-    let gg_code_theme = [];
 
-    // font family
-    let input_font = $("#et_figure_font_family").val();
-
-    if (input_font != "") {
-        gg_code_theme.push(
-            'theme(text = element_text(family = "' + input_font + '"))'
-        );
-    }
-
-    return gg_code_theme.join(" +\n");
-}
 
 // NOTE: No longer needed, need to be removed
 function preparePlotLabsCode() {
@@ -308,39 +284,7 @@ function preparePlotLabsCode() {
     return gg_code_lab.join(" +\n");
 }
 
-function updateFigure(figure_id, gg_code, figureList) {
-
-    console.log(gg_code);
-    let baseUrl = window.location.origin;
-
-    let url =
-        baseUrl + "/fd_update_fig" +
-            "?id=" +
-            figure_id +
-            "&gg_code=" +
-            gg_code;
-    $.ajax({
-        url: url,
-        async: false,
-        type: "GET",
-        success: function (data) {
-            console.log(data);
-            figureList = getFigureList();
-            loadFigure(figure_id, figureList);
-        },
-        error: function (xhr, status, error) {
-            if (xhr.status == 400) {
-                // Show the error message in the #error_window
-                $("#error_window").css("display", "flex");
-                $("#error_message").text(xhr.responseText);
-                console.log(xhr.responseText);
-            }
-        },
-    });
-    return figureList;
-}
-
-// make a post versio of the updateFigure function
+// make update figure by POST request
 function updateFigurePost(figure_id, gg_code, figureList) {
     let baseUrl = window.location.origin;
     let url = baseUrl + "/fd_update_fig";
@@ -413,17 +357,22 @@ function updataFigureSize(figure_id, height, width, units, dpi, figureList) {
 function closeEditContainer() {
     $("#img_edit_container").css("display", "none");
 
+    // Refresh the figure list
+    global_figureList = getFigureList();
+
     // Update the figure grid
-    let figure_id = $("#img_canvas img").attr("alt");
-    let figure = {};
-    for (let i = 0; i < global_figureList.length; i++) {
-        if (global_figureList[i].id == figure_id) {
-            figure = global_figureList[i];
-            break;
-        }
-    }
-    let img = $("#" + figure.id + " img").first();
-    linkFigure(img, figure);
+    initFigureGrid();
+
+    //let figure_id = $("#img_canvas img").attr("alt");
+    //let figure = {};
+    //for (let i = 0; i < global_figureList.length; i++) {
+        //if (global_figureList[i].id == figure_id) {
+            //figure = global_figureList[i];
+            //break;
+        //}
+    //}
+    //let img = $("#" + figure.id + " img").first();
+    //linkFigure(img, figure);
 
     // Delete the error message
     $("#error_window").css("display", "none");
@@ -434,6 +383,52 @@ function closeEditContainer() {
 
     // Hide the mask
     $("#mask").css("display", "none");
+
+}
+
+function initFigureGrid() {
+    var container = $("#img_grid_container");
+    orderFigureList();
+    container.empty();
+    for (let i = 0; i < global_figureList.length; i++) {
+        let figure = global_figureList[i];
+        let figureDiv = $("<div></div>");
+        figureDiv.addClass("grid_figure");
+        figureDiv.attr("id", figure.id);
+        let img = $("<img>");
+        linkFigure(img, figure);
+        figureDiv.append(img);
+        container.append(figureDiv);
+
+        // Add figure name to the figure div
+        let figureName = $("<p></p>");
+        // Make max length of the name 35 and add "..." at the end
+        let figureNameText = figure.name;
+        if (figureNameText.length > 35) {
+            figureNameText = figureNameText.slice(0, 35) + "...";
+        }
+        figureName.text(figureNameText);
+        figureDiv.append(figureName);
+
+        // When click each figure, show figure edit canvas
+        figureDiv.click(function () {
+            // Get the figure id
+            let figure_id = $(this).attr("id");
+            console.log(figure_id);
+
+            // Show the #img_edit_container
+            $("#img_edit_container").css("display", "flex");
+            $("#mask").css("display", "flex");
+
+            // Load the previous code
+            //$("#code").val(figure.code_updated);
+            //editor.setValue(figure.code_updated);
+            editor_code.setValue(figure.code_updated, 1);
+
+
+            loadFigure(figure_id, global_figureList);
+        });
+    }
 }
 
 
@@ -454,6 +449,8 @@ function closeEditContainer() {
     //font_select.append(option);
 //}
 
+var global_figure_order_by = "name";
+
 // Get the figure list table from server
 var global_figureList = getFigureList();
 
@@ -466,66 +463,7 @@ $("#img_edit_container .btn_close").click(function () {
 });
 
 // Generate the figure grid in the container
-var container = $("#img_grid_container");
-for (let i = 0; i < global_figureList.length; i++) {
-    let figure = global_figureList[i];
-    let figureDiv = $("<div></div>");
-    figureDiv.addClass("grid_figure");
-    figureDiv.attr("id", figure.id);
-    let img = $("<img>");
-    linkFigure(img, figure);
-    figureDiv.append(img);
-    container.append(figureDiv);
-
-    // Add figure name to the figure div
-    let figureName = $("<p></p>");
-    // Make max length of the name 35 and add "..." at the end
-    let figureNameText = figure.name[0];
-    if (figureNameText.length > 35) {
-        figureNameText = figureNameText.slice(0, 35) + "...";
-    }
-    figureName.text(figureNameText);
-    figureDiv.append(figureName);
-
-    // When click each figure, show figure edit canvas
-    figureDiv.click(function () {
-        // Get the figure id
-        let figure_id = $(this).attr("id");
-        console.log(figure_id);
-
-        // Show the #img_edit_container
-        $("#img_edit_container").css("display", "flex");
-        $("#mask").css("display", "flex");
-
-        // Load the previous code
-        //$("#code").val(figure.code_updated[0]);
-        //editor.setValue(figure.code_updated[0]);
-        editor_code.setValue(figure.code_updated[0], 1);
-
-
-        loadFigure(figure_id, global_figureList);
-    });
-}
-
-// Update ggplot code textarea
-// NOTE: No longer needed, need to be removed
-$("#btn_add_to_code").click(function () {
-    let figure_id = $("#img_canvas img").attr("alt");
-
-    let gg_code_lab = preparePlotLabsCode(figure_id, global_figureList);
-    let gg_code_theme = preparePlotThemeCode(figure_id, global_figureList);
-    let gg_code_area = $("code").val();
-
-    let gg_code = [gg_code_area, gg_code_lab, gg_code_theme];
-    gg_code = gg_code.filter(function (e) {
-        return e !== undefined && e != "";
-    }).join(" +\n");
-
-    if (gg_code != "") {
-        //$("#code").val(gg_code);
-        editor_code.setValue(gg_code);
-    }
-});
+initFigureGrid();
 
 // Submit changes of canvas
 $("#btn_change_canvas").click(function () {
@@ -612,3 +550,26 @@ $("#bt_data").click(function () {
     strData();
 });
 
+// Order the figure list by name or updated date
+$("#btn_order_name").click(function () {
+    global_figure_order_by = "name";
+    $("#btn_order_name").addClass("tab_active");
+    $("#btn_order_date").removeClass("tab_active");
+    global_figure_order_by = "name";
+    initFigureGrid();
+});
+
+$("#btn_order_date").click(function () {
+    global_figure_order_by = "updated_date";
+    $("#btn_order_name").removeClass("tab_active");
+    $("#btn_order_date").addClass("tab_active");
+    global_figure_order_by = "updated_date";
+    initFigureGrid();
+});
+
+
+// Refresh the figure list by clicking the refresh button
+$("#btn_refresh").click(function () {
+    global_figureList = getFigureList();
+    initFigureGrid();
+});

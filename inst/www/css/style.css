@@ -47,6 +47,12 @@ hr {
     justify-content: space-evenly;
 }
 
+#img_grid_option {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0;
+}
+
 #img_grid_container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

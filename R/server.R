@@ -76,7 +76,7 @@ response_fd_ls = function(fo) {
     list(
         status = 200L,
         headers = list('Content-Type' = "application/json"),
-        body = toJSON(fd_ls(fo), auto_unbox = F)
+        body = toJSON(fd_ls(fo), auto_unbox = T)
     )
 }
 
