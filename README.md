@@ -4,7 +4,6 @@
 </div>
 
 
-
 # ggfigdone: Manage ggplot figures using ggfigdone
 [![R](https://github.com/wenjie1991/ggfigdone/actions/workflows/r.yml/badge.svg)](https://github.com/wenjie1991/ggfigdone/actions/workflows/r.yml)
 

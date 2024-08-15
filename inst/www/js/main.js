@@ -22,7 +22,13 @@ function strData() {
 function orderFigureList() {
     if (global_figure_order_by == "name") {
         global_figureList.sort(function (a, b) {
-            return a.name.localeCompare(b.name);
+            // If two figures have the same name, 
+            // then the order should be decided by updated date
+            if (a.name == b.name) {
+                return a.updated_date.localeCompare(b.updated_date);
+            } else {
+                return a.name.localeCompare(b.name);
+            }
         });
     } else if (global_figure_order_by == "updated_date") {
         global_figureList.sort(function (a, b) {
@@ -566,7 +572,6 @@ $("#btn_order_date").click(function () {
     global_figure_order_by = "updated_date";
     initFigureGrid();
 });
-
 
 // Refresh the figure list by clicking the refresh button
 $("#btn_refresh").click(function () {
