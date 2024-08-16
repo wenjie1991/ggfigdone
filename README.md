@@ -7,6 +7,7 @@
 # ggfigdone: Manage ggplot figures using ggfigdone
 [![R](https://github.com/wenjie1991/ggfigdone/actions/workflows/r.yml/badge.svg)](https://github.com/wenjie1991/ggfigdone/actions/workflows/r.yml)
 
+
 ## Description
 
 When you prepare a presentation or a report, you often need to manage a large number of ggplot figures. 
@@ -15,7 +16,7 @@ It is inconvinient to go back to the original code to make these changes.
 This package provides a simple way to manage ggplot figures. 
 You can easily add the figure to the database and update them later using CLI (command line interface) or GUI (graphical user interface).
 
-![ggfigdone_demo](https://github.com/user-attachments/assets/aa38f9b3-c3d1-4da2-9238-1eb3f6c1175c)
+![ggfigdone_demo](https://github.com/user-attachments/assets/a0d4d01d-105a-4fc0-bda5-c7cc3e6dbd48)
 
 ## Installation
 
