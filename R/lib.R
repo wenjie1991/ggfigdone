@@ -11,6 +11,7 @@
 #' Set the default ggfigdone database
 #' 
 #' @param fdObj An object of class `fdObj` to be set as the default ggfigdone database.
+#' @return No return value, the default ggfigdone database is set to an environment variable.
 #' @export
 fd_set_db = function(fdObj) {
     .db$set(fdObj)
@@ -18,6 +19,7 @@ fd_set_db = function(fdObj) {
 
 #' Get the default ggfigdone database
 #'
+#' @return An object of class `fdObj` representing the default ggfigdone database.
 #' @export
 fd_get_db = function() {
     .db$get()
@@ -214,7 +216,7 @@ fd_update = function(fdObj_loc, do_lock = TRUE) {
 #' 
 #' @param fdObj An object of class `fdObj`.
 #' @param do_lock A logical value. If TRUE, the function will lock the database file when saving the data.
-#'
+#' @return No return value, changes are made directly to the ggfigdone database.
 #' @export
 fd_save = function(fdObj = fd_get_db(), do_lock = TRUE) {
     message("Automatic saving the ggfigdone data to the disk ...")
@@ -472,7 +474,7 @@ fd_add = function(name, g = last_plot(), fdObj = fd_get_db(),
     height = 10,
     units = "cm",
     dpi = 200,
-    overwrite = F,
+    overwrite = FALSE,
     id = uuid::UUIDgenerate()) 
 {
     fd_update(fdObj)
@@ -605,6 +607,7 @@ fd_df = function(fdObj = fd_get_db()) {
 #'
 #' @param id A character string representing the figure ID.
 #' @param fdObj An object of class `fdObj`.
+#' @return No return value, changes are made directly to the ggfigdone database.
 #' @export
 fd_rm = function(id, fdObj = fd_get_db()) {
     fd_update(fdObj)
@@ -668,6 +671,7 @@ fd_update_fig = function(id, expr, fdObj = fd_get_db()) {
 #' @param height A numeric value specifying the height of the canvas.
 #' @param units A character string indicating the units of measurement for the canvas, such as "cm", "in", "mm", or "px".
 #' @param dpi A numeric value denoting the dots per inch (DPI) of the canvas.
+#' @return No return value, changes are made directly to the ggfigdone database.
 #' @export
 fd_canvas = function(
     id, 

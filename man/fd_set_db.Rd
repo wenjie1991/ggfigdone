@@ -9,6 +9,9 @@ fd_set_db(fdObj)
 \arguments{
 \item{fdObj}{An object of class \code{fdObj} to be set as the default ggfigdone database.}
 }
+\value{
+No return value, the default ggfigdone database is set to an environment variable.
+}
 \description{
 Set the default ggfigdone database
 }

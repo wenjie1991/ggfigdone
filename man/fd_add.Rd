@@ -12,7 +12,7 @@ fd_add(
   height = 10,
   units = "cm",
   dpi = 200,
-  overwrite = F,
+  overwrite = FALSE,
   id = uuid::UUIDgenerate()
 )
 }

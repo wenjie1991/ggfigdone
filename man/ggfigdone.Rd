@@ -18,8 +18,6 @@ Figures can be easily added to the database and subsequently updated using eithe
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/wenjie1991/ggfigdone}
-  \item \url{https://wenjie1991.github.io/ggfigdone/}
   \item Report bugs at \url{https://github.com/wenjie1991/ggfigdone/issues}
 }
 

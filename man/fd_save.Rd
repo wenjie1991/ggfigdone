@@ -11,6 +11,9 @@ fd_save(fdObj = fd_get_db(), do_lock = TRUE)
 
 \item{do_lock}{A logical value. If TRUE, the function will lock the database file when saving the data.}
 }
+\value{
+No return value, changes are made directly to the ggfigdone database.
+}
 \description{
 This function saves the ggfigdone data to the disk.
 By default, when using the \code{\link[ggfigdone]{fd_load}} funciton to load the databse, the data will be automatically saved to the disk when changes are made.

@@ -26,6 +26,9 @@ fd_canvas(
 
 \item{dpi}{A numeric value denoting the dots per inch (DPI) of the canvas.}
 }
+\value{
+No return value, changes are made directly to the ggfigdone database.
+}
 \description{
 This function is designed to update the size of the figure canvas.
 }

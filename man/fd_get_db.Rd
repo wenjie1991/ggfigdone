@@ -6,6 +6,9 @@
 \usage{
 fd_get_db()
 }
+\value{
+An object of class \code{fdObj} representing the default ggfigdone database.
+}
 \description{
 Get the default ggfigdone database
 }

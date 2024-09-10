@@ -155,6 +155,7 @@ response_fd_rm = function(fo, req) {
 #' @param host The host on which the server will run; the default is '0.0.0.0'.
 #' @param port The port on which the server will run; the default is 8080.
 #' @param auto_open A logical value indicating whether the server should be opened in a web browser; the default is TRUE.
+#' @return No return value, the function is called for its side effects.
 #' @export
 fd_server = function(dir, host = '0.0.0.0', port = 8080, auto_open = TRUE) {
     fo = fd_load(dir)

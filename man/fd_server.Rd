@@ -15,6 +15,9 @@ fd_server(dir, host = "0.0.0.0", port = 8080, auto_open = TRUE)
 
 \item{auto_open}{A logical value indicating whether the server should be opened in a web browser; the default is TRUE.}
 }
+\value{
+No return value, the function is called for its side effects.
+}
 \description{
 This function initiates a server for ggfigdone, which can be accessed through a web browser.
 The web application enables users to manage and modify ggplot figures with ease.

@@ -11,6 +11,9 @@ fd_rm(id, fdObj = fd_get_db())
 
 \item{fdObj}{An object of class \code{fdObj}.}
 }
+\value{
+No return value, changes are made directly to the ggfigdone database.
+}
 \description{
 This function removes a figure from the ggfigdone database.
 }
