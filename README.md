@@ -20,12 +20,19 @@ You can easily add the figure to the database and update them later using CLI (c
 
 ## Installation
 
+Install the stable version from CRAN:
+
+```r
+install.packages("ggfigdone")
+```
+
 Install the development version from GitHub:
 
 ```r
 # install.packages("remotes")
 remotes::install_github("wenjie1991/ggfigdone")
 ```
+
 
 ## Demo
 
