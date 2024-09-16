@@ -76,4 +76,4 @@ This package is being developed. Feel free to contribute to the package by sendi
 
 ## License
 
-MIT License
+GPL-3
