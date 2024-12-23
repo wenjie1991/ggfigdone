@@ -1,4 +1,9 @@
-* {
+/* Active folloiwing code will make the editor text area have error of charater with */
+/** {
+    font-family: monospace;
+/*}*/
+
+td {
     font-family: monospace;
 }
 
