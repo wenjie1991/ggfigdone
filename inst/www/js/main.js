@@ -1,5 +1,16 @@
 // Jquery is enabled in the html file
 
+// Get the token from the url
+const urlParams = new URLSearchParams(window.location.search);
+var token_query = "";
+if (urlParams.has('token')) {
+    token_query = "token=" + urlParams.get('token');
+} else {
+    token_query = "";
+}
+
+
+
 // Function to get the ggplot data structure from the server
 function strData() {
     // Get the figure id
@@ -7,7 +18,7 @@ function strData() {
     let baseUrl = window.location.origin;
     let url = baseUrl + "/fd_str_data?id=" + figure_id;
     $.ajax({
-        url: url,
+        url: url + "&" + token_query,
         type: "GET",
         success: function (data) {
             console.log(data);
@@ -45,7 +56,7 @@ function downloadData() {
     let baseUrl = window.location.origin;
     let url = baseUrl + "/fd_download_data?id=" + figure_id;
     $.ajax({
-        url: url,
+        url: url + "&" + token_query,
         type: "GET",
         success: function (data) {
             console.log(data);
@@ -63,7 +74,7 @@ function downloadPDF() {
     let baseUrl = window.location.origin;
     let url = baseUrl + "/fd_download_pdf?id=" + figure_id;
     $.ajax({
-        url: url,
+        url: url + "&" + token_query,
         type: "GET",
         success: function (data) {
             console.log(data);
@@ -78,7 +89,7 @@ function changeFigureName() {
     // Get the old name
     let old_name = $("#et_figure_name").text();
     // Popup a dialog to get the new name
-    let new_name = prompt("Please enter the new name", old_name);
+    let new_name = prompt("Please enter the new name:", old_name);
     // the new_name can not be empty or full of space
     if (new_name == "" || new_name.trim() == "") {
         // popup a dialog to warn the user
@@ -91,7 +102,7 @@ function changeFigureName() {
         let baseUrl = window.location.origin;
         let url = baseUrl + "/fd_change_name?id=" + figure_id + "&new_name=" + new_name;
         $.ajax({
-            url: url,
+            url: url + "&" + token_query,
             type: "GET",
             success: function (data) {
                 console.log(data);
@@ -122,7 +133,7 @@ function deleteFigure() {
         // if the user click "OK", delete the figure
         let url = baseUrl + "/fd_rm?id=" + figure_id;
         $.ajax({
-            url: url,
+            url: url + "&" + token_query,
             type: "GET",
             success: function (data) {
                 console.log(data);
@@ -162,7 +173,7 @@ function getFontList() {
     let baseUrl = window.location.origin;
     let url = baseUrl + "/fd_font_ls";
     $.ajax({
-        url: url,
+        url: url + "?" + token_query,
         type: "GET",
         async: false,
         success: function (data) {
@@ -195,7 +206,7 @@ function getFigureList() {
     let baseUrl = window.location.origin;
     let url = baseUrl + "/fd_ls";
     $.ajax({
-        url: url,
+        url: url + "?" + token_query,
         type: "GET",
         async: false,
         success: function (data) {
@@ -299,7 +310,7 @@ function updateFigurePost(figure_id, gg_code, figureList) {
         gg_code: gg_code,
     };
     $.ajax({
-        url: url,
+        url: url + "?" + token_query,
         async: false,
         // send data in format of JSON
         type: "POST",
@@ -338,7 +349,7 @@ function updataFigureSize(figure_id, height, width, units, dpi, figureList) {
             dpi;
 
     $.ajax({
-        url: url,
+        url: url + "&" + token_query,
         async: false,
         type: "GET",
         success: function (data) {
@@ -457,11 +468,18 @@ function initFigureGrid() {
 
 var global_figure_order_by = "name";
 
+
 // Get the figure list table from server
 var global_figureList = getFigureList();
 
 $("#mask").click(function () {
-    closeEditContainer();
+    // if the z-index of the mask is 3, close the chat container
+    if ($("#mask").css("z-index") == "4") {
+        closeChatContainer();
+    } else {
+        // if the z-index of the mask is 2, close the edit container
+        closeEditContainer();
+    }
 });
 
 $("#img_edit_container .btn_close").click(function () {
@@ -520,12 +538,13 @@ $("#btn_change_figure").click(function () {
 
 
 // Close Editor container by ESC key
+// HACK: Handle the chat LLM as well
 // Add an event listener to the document
-document.addEventListener("keydown", function(event) {
-  if (event.key === "Escape" || event.keyCode === 27) {
-    closeEditContainer();
-  }
-});
+//document.addEventListener("keydown", function(event) {
+  //if (event.key === "Escape" || event.keyCode === 27) {
+    //closeEditContainer();
+  //}
+//});
 
 // Tab of canvas size and ggplot code
 $("#bt_canvas").click(function () {
@@ -578,3 +597,183 @@ $("#btn_refresh").click(function () {
     global_figureList = getFigureList();
     initFigureGrid();
 });
+
+////////////////////////////////////////////////////////////////////////
+//                            ChatGPT LLM                             //
+////////////////////////////////////////////////////////////////////////
+// TODO: Create a new file for ChatGPT LLM
+
+let codeBlock = "";
+
+// LLM button
+$("#btn_llm").click(function () {
+    // Change the mask z-index to 3
+    $("#mask").css("z-index", "4");
+    // Show the LLM container
+    $("#chat_container").css("display", "block");
+    // init the conversation history
+    initConversationHistory();
+    // init codeBlock
+    codeBlock = editor_code.getValue();
+});
+
+// Use Code button
+$("#btn_use_code").click(function () {
+    // Set the editor_code value to the codeBlock
+    editor_code.setValue(codeBlock, -1);
+    closeChatContainer();
+});
+
+
+
+
+
+// close chat container
+function closeChatContainer() {
+    // Close the chat container
+    $("#chat_container").css("display", "none");
+    // Change the mask z-index to 2
+    $("#mask").css("z-index", "2");
+    // Clear the codeBlock
+    codeBlock = "";
+    // Clear the chat log
+    $("#chat-log").empty();
+}
+
+// Close chat container
+$("#chat_container .btn_close").click(function () {
+    closeChatContainer();
+});
+
+
+
+// Get the API key from the url
+var apiKey = "";
+$.get("/openai_api_key?" + token_query, function (data) {
+    // hide the LLM button if the API key is empty
+    console.log("LLM key" + data);
+    if (data == "") {
+        $("#btn_llm").css("display", "none");
+    }
+    apiKey = data;
+});
+
+
+const chatLog = document.getElementById("chat-log");
+const userInput = document.getElementById("user-input");
+const sendButton = document.getElementById("btn_send_llm");
+
+let conversationHistory = [];
+
+function initConversationHistory() {
+    conversationHistory = [
+        { 
+            role: "system",
+            content: "You are an assistant to translate nature language to R ggplot2 code, by modifying the given ggplot2 code include ggplot obj g by '\n--code--\n'. Output the explanation, which is followed by R programming language code. Both are seperated by '\n--code--\n'."}
+    ];
+}
+
+function trimConversationHistory() {
+    const MAX_HISTORY_TOKENS = 1500;  // Set a target for how many tokens you want to use for history
+
+    let tokenCount = 0;
+    let trimmedHistory = [];
+
+    // Iterate from the most recent message backwards
+    for (let i = conversationHistory.length - 1; i >= 0; i--) {
+        const message = conversationHistory[i];
+        const messageTokens = message.content.split(" ").length; // Approximate token count by splitting words
+
+        if (tokenCount + messageTokens > MAX_HISTORY_TOKENS) {
+            break; // Stop adding messages when token limit is reached
+        }
+
+        tokenCount += messageTokens;
+        trimmedHistory.unshift(message); // Add to the beginning of trimmed history
+    }
+
+    conversationHistory = trimmedHistory;  // Replace with trimmed history
+}
+
+
+sendButton.addEventListener("click", async () => {
+
+    var userMessage = userInput.value.trim();
+
+    // If the user message is empty, return
+    if (userMessage === "") {
+        return;
+    }
+
+    userMessage = userMessage + "\n--code--\n" + codeBlock;
+
+    if (userMessage) {
+        addMessageToChatLog(userMessage, 'user');
+        conversationHistory.push({ role: 'user', content: userMessage });
+        userInput.value = '';
+        const gptResponse = await getChatGPTResponse();
+        // Get the response
+        //const message = gptResponse.split('--code--')[0].trim();
+        const message = gptResponse;
+        // HACK: If there is no code in respnse, ...
+        if (gptResponse.includes('--code--')) {
+            // Update the code block with the new code
+            codeBlock = gptResponse.split('--code--')[1];
+            // Remove markdown quotes
+            codeBlock = codeBlock.replace(/```.*/g, '');
+            codeBlock = codeBlock.trim();
+        }
+        // Update the code block with the new code
+        // TODO: Update the code block with the new code
+        addMessageToChatLog(message, 'gpt');
+        conversationHistory.push({ role: 'assistant', content: message });
+    }
+});
+
+// TODO: Use specific key to send the message
+//userInput.addEventListener("keypress", (event) => {
+    //if (event.key === "Enter") {
+        //sendButton.click();
+    //}
+//});
+
+function addMessageToChatLog(message, sender) {
+    const messageDiv = document.createElement("div");
+    messageDiv.classList.add("message", sender);
+
+    // Render Markdown if sender is GPT
+    messageDiv.innerHTML = marked.parse(message, {breaks: true}); 
+
+    chatLog.appendChild(messageDiv);
+    chatLog.scrollTop = chatLog.scrollHeight;
+}
+
+async function getChatGPTResponse() {
+    trimConversationHistory();  // Trim history to fit within token limits
+
+    const endpoint = 'https://api.openai.com/v1/chat/completions';
+    const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`
+    };
+    const body = {
+        model: 'gpt-4o-mini',  // Using the ChatGPT model
+        messages:  conversationHistory,
+        max_tokens: 1000,
+        temperature: 0.7,
+    };
+
+    try {
+        const response = await fetch(endpoint, {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify(body)
+        });
+
+        const data = await response.json();
+        return data.choices[0].message.content.trim();
+    } catch (error) {
+        console.error('Error fetching response from GPT-3:', error);
+        return 'Sorry, I am having trouble connecting to the server. Please try again later.';
+    }
+}

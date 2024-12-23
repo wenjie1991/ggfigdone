@@ -34,6 +34,7 @@ button {
     background-color: black;
 }
 
+
 button:hover {
     cursor: pointer;
 }
@@ -204,6 +205,11 @@ button {
     margin: 5px 0px;
 }
 
+.button_container {
+    align-self: flex-end;
+    float: right;
+}
+
 #btn_add_to_code {
     align-self: center;
 }
@@ -277,4 +283,76 @@ button {
     right: 0;
     bottom: 0;
     left: 0;
+}
+
+
+#chat_container {
+    position: fixed;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 6;
+    display: none;
+}
+
+#chat-log {
+    height: 400px;
+    width: 100%;
+    overflow-y: auto;
+    /*padding: 5px;*/
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.message {
+    margin: 5px 0;
+}
+
+.message.user {
+    text-align: right;
+    color: #007bff;
+}
+
+#user-input {
+    width: 100%;
+    flex: 1;
+    font-size: 1em;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+#send-button:hover {
+    background-color: #0056b3;
+}
+
+.message.gpt {
+    text-align: left;
+    color: #000;
+    background-color: #f8f9fa;
+    padding: 2px;
+    border-radius: 5px;
+    margin: 2px 0;
+}
+
+/* Styling for Markdown code blocks */
+.message.gpt pre {
+    background: #2d2d2d;
+    color: #f8f8f2;
+    padding: 2px;
+    border-radius: 5px;
+    overflow: auto;
+}
+
+.message.gpt code {
+    /*background: #f1f1f1;*/
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 90%;
 }

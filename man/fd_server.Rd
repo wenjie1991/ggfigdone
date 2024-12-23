@@ -4,16 +4,25 @@
 \alias{fd_server}
 \title{Initiates a server for ggfigdone}
 \usage{
-fd_server(dir, host = "0.0.0.0", port = 8080, auto_open = TRUE)
+fd_server(
+  dir,
+  host = getOption("ggfigdone.host", "0.0.0.0"),
+  port = getOption("ggfigdone.port", 8080),
+  token = getOption("ggfigdone.token", TRUE),
+  auto_open = getOption("ggfigdone.auto_open", FALSE)
+)
 }
 \arguments{
 \item{dir}{The directory of the ggfigdone database.}
 
-\item{host}{The host on which the server will run; the default is '0.0.0.0'.}
+\item{host}{Server host name or IP address; the default is "0.0.0.0".}
 
 \item{port}{The port on which the server will run; the default is 8080.}
 
-\item{auto_open}{A logical value indicating whether the server should be opened in a web browser; the default is TRUE.}
+\item{token}{A logical value indicating whether a token should be used to access the server.}
+
+\item{auto_open}{A logical value indicating whether the server should be
+opened in a web browser; the default is TRUE.}
 }
 \value{
 No return value, the function is called for its side effects.

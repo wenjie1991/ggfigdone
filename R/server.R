@@ -1,7 +1,7 @@
 response_fd_str_data = function(fo, req) {
     # print("response_fd_str_data")
-    parsed_qeury = parse_url(req$QUERY_STRING)$query
-    figure_id = parsed_qeury$id
+    parsed_query = parse_url(req$QUERY_STRING)$query
+    figure_id = parsed_query$id
     res = fd_str_data(fo, figure_id)
     if (res$status == "error") {
         list(
@@ -20,8 +20,8 @@ response_fd_str_data = function(fo, req) {
 
 response_fd_download_data = function(fo, req) {
     # print("response_fd_download_data")
-    parsed_qeury = parse_url(req$QUERY_STRING)$query
-    figure_id = parsed_qeury$id
+    parsed_query = parse_url(req$QUERY_STRING)$query
+    figure_id = parsed_query$id
     res = fd_generate_data(fo, figure_id)
     if (res$status == "error") {
         list(
@@ -40,8 +40,8 @@ response_fd_download_data = function(fo, req) {
 
 response_fd_download_pdf = function(fo, req) {
     # print("response_fd_download_pdf")
-    parsed_qeury = parse_url(req$QUERY_STRING)$query
-    figure_id = parsed_qeury$id
+    parsed_query = parse_url(req$QUERY_STRING)$query
+    figure_id = parsed_query$id
     res = fd_generate_pdf(fo, figure_id)
     if (res$status == "error") {
         list(
@@ -60,9 +60,9 @@ response_fd_download_pdf = function(fo, req) {
 
 response_fd_change_name = function(fo, req) {
     # print("response_fd_change_name")
-    parsed_qeury = parse_url(req$QUERY_STRING)$query
-    figure_id = parsed_qeury$id
-    new_name = parsed_qeury$new_name
+    parsed_query = parse_url(req$QUERY_STRING)$query
+    figure_id = parsed_query$id
+    new_name = parsed_query$new_name
     fd_change_name(figure_id, new_name, fo)
     list(
         status = 200L,
@@ -82,12 +82,12 @@ response_fd_ls = function(fo) {
 
 response_fd_canvas = function(fo, req) {
     # print("response_fd_canvas")
-    parsed_qeury = parse_url(req$QUERY_STRING)$query
-    figure_name = parsed_qeury$id
-    width = as.numeric(parsed_qeury$width)
-    height = as.numeric(parsed_qeury$height)
-    units = parsed_qeury$units
-    dpi = as.numeric(parsed_qeury$dpi)
+    parsed_query = parse_url(req$QUERY_STRING)$query
+    figure_name = parsed_query$id
+    width = as.numeric(parsed_query$width)
+    height = as.numeric(parsed_query$height)
+    units = parsed_query$units
+    dpi = as.numeric(parsed_query$dpi)
     # print(figure_name)
     fd_canvas(figure_name, fo, width, height, units, dpi)
     list(
@@ -102,9 +102,9 @@ response_fd_update_fig = function(fo, req) {
     input <- req[["rook.input"]]
     ## get the data from the POST request
     postdata <- input$read_lines()
-    parsed_qeury = jsonlite::fromJSON(postdata)
-    figure_name = parsed_qeury$id
-    expr = parsed_qeury$gg_code
+    parsed_query = jsonlite::fromJSON(postdata)
+    figure_name = parsed_query$id
+    expr = parsed_query$gg_code
     res = fd_update_fig(figure_name, expr, fo)
     if (inherits(res, "try-error")) {
         list(
@@ -123,13 +123,25 @@ response_fd_update_fig = function(fo, req) {
 
 response_fd_rm = function(fo, req) {
     # print("response_fd_rm")
-    parsed_qeury = parse_url(req$QUERY_STRING)$query
-    figure_id = parsed_qeury$id
+    parsed_query = parse_url(req$QUERY_STRING)$query
+    figure_id = parsed_query$id
     fd_rm(figure_id, fo)
     list(
         status = 200L,
         headers = list('Content-Type' = "text/plain"),
         body = "OK"
+    )
+}
+
+# Serve a static file
+serveFile <- function(filepath) {
+    # Read the file contents
+    file_contents <- readChar(filepath, file.info(filepath)$size)
+
+    list(
+        status = 200L,
+        headers = list("Content-Type" = "text/html"),
+        body = file_contents
     )
 }
 
@@ -152,12 +164,22 @@ response_fd_rm = function(fo, req) {
 #' ```
 #' 
 #' @param dir The directory of the ggfigdone database.
-#' @param host The host on which the server will run; the default is '0.0.0.0'.
+#' @param host Server host name or IP address; the default is "0.0.0.0".
 #' @param port The port on which the server will run; the default is 8080.
-#' @param auto_open A logical value indicating whether the server should be opened in a web browser; the default is TRUE.
+#' @param token A logical value indicating whether a token should be used to access the server.
+#' @param auto_open A logical value indicating whether the server should be
+#' opened in a web browser; the default is TRUE.
 #' @return No return value, the function is called for its side effects.
 #' @export
-fd_server = function(dir, host = '0.0.0.0', port = 8080, auto_open = TRUE) {
+fd_server = function(
+    dir, 
+    host = getOption("ggfigdone.host", "0.0.0.0"),
+    port = getOption("ggfigdone.port", 8080),
+    token = getOption("ggfigdone.token", TRUE),
+    openai_api_key = Sys.getenv("OPENAI_API_KEY"),
+    auto_open = getOption("ggfigdone.auto_open", FALSE)
+) {
+
     fo = fd_load(dir)
 
     # print(fd_ls(fo))
@@ -166,6 +188,14 @@ fd_server = function(dir, host = '0.0.0.0', port = 8080, auto_open = TRUE) {
     # on.exit(fd_save(fo))
 
     www_dir = system.file("www", package = "ggfigdone")
+
+    ## Token to access the server
+    tok = 
+        if (token) {
+            uuid::UUIDgenerate()
+        } else {
+            ""
+        }
 
     # create a server
     # which can change the file size, and the figure will be updated
@@ -178,8 +208,20 @@ fd_server = function(dir, host = '0.0.0.0', port = 8080, auto_open = TRUE) {
             # QUERY_STRING: the query string of the request
 
             path = req$PATH_INFO
-            # print(path)
-            if (path == "/fd_ls") {
+            parsed_query = parse_url(req$QUERY_STRING)
+            # print(parsed_query)
+
+            if (token) {
+                given_token = try(parsed_query$query$token)
+
+                if (is(given_token, "try-error") | given_token != tok) {
+                    return (serveFile(file.path(www_dir, "404-token.html")))
+                }
+            }
+
+            if (path == "/fd") {
+                serveFile(file.path(www_dir, "index.html"))
+            } else if (path == "/fd_ls") {
                 response_fd_ls(fo)
             } else if (path == "/fd_rm") {
                 response_fd_rm(fo, req)
@@ -195,25 +237,30 @@ fd_server = function(dir, host = '0.0.0.0', port = 8080, auto_open = TRUE) {
                 response_fd_download_data(fo, req)
             } else if (path == "/fd_str_data") {
                 response_fd_str_data(fo, req)
-            } else {
+            } else if (path == "/openai_api_key") {
                 list(
-                    status = 404L,
+                    status = 200L,
                     headers = list('Content-Type' = "text/plain"),
-                    body = "Not Found"
+                    body = openai_api_key
                 )
+            } else {
+                serveFile(file.path(www_dir, "404.html"))
             }
         },
         staticPaths = list(
             "/figure" = file.path(dir, "figures"),
             "/tmp" = file.path(dir, "tmp"),
             "/css" = file.path(www_dir, "css"),
-            "/js" = file.path(www_dir, "js"),
-            "/index.html" = file.path(www_dir, "index.html")
+            "/js" = file.path(www_dir, "js")
+            # "/index.html" = file.path(www_dir, "index.html")
         )
     )
 
     # start the server
-    url = paste0("http://", host, ":", port, "/index.html")
+    url = paste0("http://", host, ":", port, "/fd") 
+    if (token) {
+        url = paste0(url, "?token=", tok)
+    }
     message_text = paste0("Start service: ", url) 
     message(message_text)
     # runServer(host = "0.0.0.0", port = port, app = app)
