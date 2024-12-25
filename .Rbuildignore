@@ -1,4 +1,5 @@
 ^LICENSE\.md$
 ^docs$
 ^\.github$
+fd_dir
 

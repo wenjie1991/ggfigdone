@@ -12,6 +12,7 @@
 #' @import ggplot2
 #' @import httpuv
 #' @import httr
+#' @importFrom methods is
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom filelock lock unlock
 #' @importFrom utils browseURL capture.output str

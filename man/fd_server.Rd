@@ -8,6 +8,12 @@ fd_server(
   dir,
   host = getOption("ggfigdone.host", "0.0.0.0"),
   port = getOption("ggfigdone.port", 8080),
+  llm_api_key = getOption("ggfigdone.llm_api_key", NULL),
+  llm_api_url = getOption("ggfigdone.llm_api_url",
+    "https://api.openai.com/v1/chat/completions"),
+  llm_model = getOption("ggfigdone.llm_model", "gpt-4o-mini"),
+  llm_max_tokens = getOption("ggfigdone.llm_max_tokens", 1000),
+  llm_temperature = getOption("ggfigdone.llm_temperature", 0.5),
   token = getOption("ggfigdone.token", TRUE),
   auto_open = getOption("ggfigdone.auto_open", FALSE)
 )
@@ -18,6 +24,22 @@ fd_server(
 \item{host}{Server host name or IP address; the default is "0.0.0.0".}
 
 \item{port}{The port on which the server will run; the default is 8080.}
+
+\item{llm_api_key}{The API key for the large language model service; the
+default is NULL. When NULL, the service will not be available.}
+
+\item{llm_api_url}{The URL for the OpenAI language model; the default is
+"https://api.openai.com/v1/chat/completions".}
+
+\item{llm_model}{The model to use for the large language model; the default
+is "gpt-4o-mini".}
+
+\item{llm_max_tokens}{The maximum number of tokens to generate; the default is 1000.}
+
+\item{llm_temperature}{The temperature for the language model; the default is 0.5.
+The temperature is a hyperparameter that controls the randomness of the
+generated text. Lower temperatures will generate more predictable text, while
+higher temperatures will generate more random text.}
 
 \item{token}{A logical value indicating whether a token should be used to access the server.}
 
@@ -45,4 +67,19 @@ You can configure the web browser by setting the options:
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{options(browser = "firefox")  # Set Firefox as the default
 }\if{html}{\out{</div>}}
+}
+\examples{
+\dontrun{
+library(ggplot2)
+## Initialize the database
+fo = fd_init("./fd_dir")
+## Draw a ggplot figure
+g = ggplot(mtcars, aes(x=wt, y=mpg)) + geom_point()
+
+## Add the figure to the database
+fd_add(name  = "fig1")
+
+## Start the server
+fd_server("./fd_dir")
+}
 }
