@@ -26,7 +26,7 @@ https://github.com/user-attachments/assets/7bcccfdd-e48d-49c7-9c18-ec0c41ee0481
 
 ### Update figures by LLM
 
-Utilizing the LLM to convert your natural language idea into {ggplot2} code.
+Utilizing the LLM to convert your idea in natural language into {ggplot2} code.
 
 https://github.com/user-attachments/assets/524a6d44-012d-4a55-8a5a-83b44f1ffadd
 
@@ -96,7 +96,7 @@ fd_server("./fd_dir")
 **OpenAI API**
 
 
-Please visit the OpenAI website at https://openai.com/ and follow the instructions in the video. You may need to update your payment methods.
+To get API key, you can visit the OpenAI website at https://openai.com/ and follow the instructions in the video. You may need to update your payment methods.
 
 https://github.com/user-attachments/assets/e5fc4feb-5dc4-4473-826d-ec69b5c0d9a5
 
@@ -104,9 +104,9 @@ https://github.com/user-attachments/assets/e5fc4feb-5dc4-4473-826d-ec69b5c0d9a5
 **Free API key**
 
 
-You can access a free LLM service at this link: https://github.com/cheahjs/free-llm-api-resources
+You can find free LLM service at this link: https://github.com/cheahjs/free-llm-api-resources
 
-The following video demonstrates how to apply the GroqCloud key for free.
+The following video demonstrates how to apply the **GroqCloud** key for free.
 
 Link: https://console.groq.com/login
 
@@ -123,7 +123,7 @@ The default configuration is the OpenAI service, where you only need to provide 
 
 ```r
 fd_server("./fd_dir", 
-    llm_api_key = "sk-use_your_own_key_here"),
+    llm_api_key = "sk-use_your_own_key_here")
 )
 ```
 
@@ -134,8 +134,8 @@ To use Croq or any other service, you must configure the parameters `llm_api_url
 ```r
 fd_server("./fd_dir", 
     llm_api_url = "https://api.groq.com/openai/v1/chat/completions",
-    llm_api_key = "gsk_use_your_own_key_here"), 
-    llm_model = "llama-3.3-70b-versatile",
+    llm_api_key = "gsk_use_your_own_key_here", 
+    llm_model = "llama-3.3-70b-versatile"
 )
 ```
 
@@ -145,11 +145,11 @@ You can configure the default LLM service in `.Rprofile` using the following cod
 
 ```r
 options(
-  llm_api_key = "gsk-use_your_own_key_here",
-  llm_api_url = "https://api.groq.com/openai/v1/chat/completions",
-  llm_model = "llama-3.3-70b-versatile",
-  llm_temperature = "0.5",
-  llm_max_tokens = 1000
+  ggfigdone.llm_api_key = "gsk-use_your_own_key_here",
+  ggfigdone.llm_api_url = "https://api.groq.com/openai/v1/chat/completions",
+  ggfigdone.llm_model = "llama-3.3-70b-versatile",
+  ggfigdone.llm_temperature = "0.5",
+  ggfigdone.llm_max_tokens = 1000
 )
 ```
 
