@@ -14,6 +14,7 @@ When you prepare a presentation or a report, you often need to manage a large nu
 You need to change the figure size, modify the title, label, themes, etc. 
 It is inconvinient to go back to the original code to make these changes.
 This package provides a simple way to manage ggplot figures. 
+
 You can easily add the figure to the database and update them later using CLI (command line interface) or GUI (graphical user interface).
 
 ![ggfigdone_demo](https://github.com/user-attachments/assets/a0d4d01d-105a-4fc0-bda5-c7cc3e6dbd48)
@@ -32,6 +33,7 @@ Install the development version from GitHub:
 # install.packages("remotes")
 remotes::install_github("wenjie1991/ggfigdone")
 ```
+
 
 
 ## Demo
@@ -83,4 +85,4 @@ This package is being developed. Feel free to contribute to the package by sendi
 
 ## License
 
-GPL-3
+MIT

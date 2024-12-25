@@ -166,27 +166,71 @@ serveFile <- function(filepath) {
 #' @param dir The directory of the ggfigdone database.
 #' @param host Server host name or IP address; the default is "0.0.0.0".
 #' @param port The port on which the server will run; the default is 8080.
+#' @param llm_api_key The API key for the large language model service; the
+#' default is NULL. When NULL, the service will not be available.
+#' @param llm_api_url The URL for the OpenAI language model; the default is
+#' "https://api.openai.com/v1/chat/completions".
+#' @param llm_model The model to use for the large language model; the default
+#' is "gpt-4o-mini".
+#' @param llm_max_tokens The maximum number of tokens to generate; the default is 1000.
+#' @param llm_temperature The temperature for the language model; the default is 0.5.
+#' The temperature is a hyperparameter that controls the randomness of the
+#' generated text. Lower temperatures will generate more predictable text, while
+#' higher temperatures will generate more random text.
 #' @param token A logical value indicating whether a token should be used to access the server.
 #' @param auto_open A logical value indicating whether the server should be
 #' opened in a web browser; the default is TRUE.
 #' @return No return value, the function is called for its side effects.
+#' @examples
+#' \dontrun{
+#' library(ggplot2)
+#' ## Initialize the database
+#' fo = fd_init("./fd_dir")
+#' ## Draw a ggplot figure
+#' g = ggplot(mtcars, aes(x=wt, y=mpg)) + geom_point()
+#' 
+#' ## Add the figure to the database
+#' fd_add(name  = "fig1")
+#' 
+#' ## Start the server
+#' fd_server("./fd_dir")
+#' }
 #' @export
 fd_server = function(
     dir, 
     host = getOption("ggfigdone.host", "0.0.0.0"),
     port = getOption("ggfigdone.port", 8080),
+    llm_api_key = getOption("ggfigdone.llm_api_key", NULL),
+    llm_api_url = getOption("ggfigdone.llm_api_url", "https://api.openai.com/v1/chat/completions"),
+    llm_model = getOption("ggfigdone.llm_model", "gpt-4o-mini"),
+    llm_max_tokens = getOption("ggfigdone.llm_max_tokens", 1000),
+    llm_temperature = getOption("ggfigdone.llm_temperature", 0.5),
     token = getOption("ggfigdone.token", TRUE),
-    openai_api_key = Sys.getenv("OPENAI_API_KEY"),
     auto_open = getOption("ggfigdone.auto_open", FALSE)
 ) {
 
-    fo = fd_load(dir)
+    ## Large language model configuration
+    llm_config = 
+        if (is.null(llm_api_key)) {
+            message("The large language model service is not available.")
+            NULL
+        } else {
+            list(
+                api_url = llm_api_url,
+                api_key = llm_api_key,
+                model = llm_model,
+                max_tokens = llm_max_tokens,
+                temperature = llm_temperature
+            )
+        }
 
+    ## Load the database
+    fo = fd_load(dir)
     # print(fd_ls(fo))
     # print(format(fo))
-
     # on.exit(fd_save(fo))
 
+    ## Directory of the web application
     www_dir = system.file("www", package = "ggfigdone")
 
     ## Token to access the server
@@ -237,11 +281,11 @@ fd_server = function(
                 response_fd_download_data(fo, req)
             } else if (path == "/fd_str_data") {
                 response_fd_str_data(fo, req)
-            } else if (path == "/openai_api_key") {
+            } else if (path == "/llm_config") {
                 list(
                     status = 200L,
-                    headers = list('Content-Type' = "text/plain"),
-                    body = openai_api_key
+                    headers = list('Content-Type' = "application/json"),
+                    body = toJSON(llm_config, auto_unbox = T)
                 )
             } else {
                 serveFile(file.path(www_dir, "404.html"))

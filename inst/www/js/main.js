@@ -647,15 +647,18 @@ $("#chat_container .btn_close").click(function () {
 
 
 
-// Get the API key from the url
-var apiKey = "";
-$.get("/openai_api_key?" + token_query, function (data) {
-    // hide the LLM button if the API key is empty
-    console.log("LLM key" + data);
-    if (data == "") {
+// Get the llm_config from the url
+// NOTE: The ajax is async, so the llm_config is not available immediately
+// How to solve this problem?
+let llm_config = null;
+$.get("/llm_config?" + token_query, function (data) {
+    // if data is not null or empty, show the LLM button
+    if (data == null) { 
         $("#btn_llm").css("display", "none");
+        console.log("LLM is not available");
+    } else {
+        llm_config = data;
     }
-    apiKey = data;
 });
 
 
@@ -669,7 +672,7 @@ function initConversationHistory() {
     conversationHistory = [
         { 
             role: "system",
-            content: "You are an assistant to translate nature language to R ggplot2 code, by modifying the given ggplot2 code include ggplot obj g by '\n--code--\n'. Output the explanation, which is followed by R programming language code. Both are seperated by '\n--code--\n'."}
+            content: "You are an assistant to translate nature language to R ggplot2 code, by modifying the given ggplot2 code include ggplot object `g` followed by '\n--code--\n'. Output the explanation, which is followed by R programming language code. Use '\n--code--\n' to seperate explanation and updated code. Do not quote the updated code."}
     ];
 }
 
@@ -724,7 +727,6 @@ sendButton.addEventListener("click", async () => {
             codeBlock = codeBlock.trim();
         }
         // Update the code block with the new code
-        // TODO: Update the code block with the new code
         addMessageToChatLog(message, 'gpt');
         conversationHistory.push({ role: 'assistant', content: message });
     }
@@ -751,16 +753,16 @@ function addMessageToChatLog(message, sender) {
 async function getChatGPTResponse() {
     trimConversationHistory();  // Trim history to fit within token limits
 
-    const endpoint = 'https://api.openai.com/v1/chat/completions';
+    const endpoint = llm_config.api_url;
     const headers = {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`
+        'Authorization': `Bearer ${llm_config.api_key}`
     };
     const body = {
-        model: 'gpt-4o-mini',  // Using the ChatGPT model
+        model: llm_config.model,
         messages:  conversationHistory,
-        max_tokens: 1000,
-        temperature: 0.7,
+        max_tokens: + llm_config.max_tokens,
+        temperature: + llm_config.temperature,
     };
 
     try {
@@ -773,7 +775,7 @@ async function getChatGPTResponse() {
         const data = await response.json();
         return data.choices[0].message.content.trim();
     } catch (error) {
-        console.error('Error fetching response from GPT-3:', error);
+        console.error('Error fetching response from LLM:', error);
         return 'Sorry, I am having trouble connecting to the server. Please try again later.';
     }
 }
