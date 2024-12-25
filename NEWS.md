@@ -1,3 +1,9 @@
+## Version 0.1.3
+
+- Feature: Introduce LLM (large language model).
+- Security: Add token-based authentication for the browser GUI.
+
+
 ## Version 0.1.2
 
 - Feature: Introduce an option to sort the figures either by name or by the date they were last updated in the browser GUI.

@@ -1,6 +1,6 @@
 Package: ggfigdone
 Title: Manage & Modify 'ggplot' Figures using 'ggfigdone'
-Version: 0.1.2
+Version: 0.1.3
 Authors@R: 
     person("Wenjie", "SUN", , "sunwjie@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-3100-2346"))
